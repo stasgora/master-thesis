@@ -1,4 +1,5 @@
-meta/title_page.pdf
+meta/*.pdf
+thesis.pdf
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
