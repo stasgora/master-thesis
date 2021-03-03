@@ -12,7 +12,7 @@ Pośród artykułów o charakterze teoretycznym często wymieniane są zastosowa
 
 Analiza zachowania użytkowników jest tematem większości publikacji zawierających eksperymenty \cite{2_Real_Time_HAR, 59_Air_Pressure_HAR, 33_Inertial_Study}. Jej popularność jest spodowowana wysoką dostępnością telefonów zawierających nadające się do tego celu sensory oraz dużą ilością opublikowanych już na ten temat prac i materiałów obniżających barierę wejściową.
 
-Pośród pozostałych zastosowań wyróżniają się te współtworzące inteligentny dom \cite{36_Smart_Home_HAR} a także te związane z wykrywaniem aktywności sportowych \cite{29_Daily_Sport_HAR}
+Spośród pozostałych zastosowań wyróżniają się te współtworzące inteligentny dom, jak na przykład sterowanie oświetleniem zależnie od wykrytej aktywności \cite{36_Smart_Home_HAR} a także te związane z wykrywaniem aktywności sportowych \cite{29_Daily_Sport_HAR} które możnaby zintegrować z istniejącymi platformami takimi jak \textit{Strava}.
 
 \centertable{
 	\hline \textbf{Zastosowanie} & \textbf{Przegląd/Analiza} & \textbf{Eksperyment} & \textbf{Suma} \\
@@ -27,7 +27,9 @@ Pośród pozostałych zastosowań wyróżniają się te współtworzące intelig
 	\hline
 }{|l | c | c || c|}{Najczęściej pojawiające się zastosowania}{uses_analysis}
 
-monitorowania stanu zdrowia \cite{HAR_Survey_Ultrasonic} poprzez zbieranie informacji o pulsie i oddechu
+Akcelerometr, magnetometr oraz żyroskop, występujące często razem jako tak zwany \textit{``Inertial measurement unit''} są najpopularniejmym zestawem wybieranym przez autorów artykułów \cite{30_Context_Awareness, 32_Accel_Phone_HAR}. Nadają się one dobrze do wykrywania aktywności ruchowych, zarówno przemieszczania jak i wykonywanych gestów i ruchów ciała pod warunkiem rozmieszczenia wielu sensorów na ciele osoby monitorowanej, jak w \cite{29_Daily_Sport_HAR}.
+
+Przykłady wykorzystania pulsometra pojawiają się zarówno w obszarze medyczno-zdrowotnym \cite{22_HAR_Survey_Ultrasonic} przy monitorowaniu parametrów życiowych jak i rekreacyjno-sportowym \cite{51_Fixbit_tracker} przy zapisie aktywności fizycznej.
 \centertable{
 	\hline \textbf{Sensor} & \textbf{Przegląd/Analiza} & \textbf{Eksperyment} & \textbf{Suma} \\
 	\hline Akcelerometr & 10 & 15 & 25 \\
@@ -46,6 +48,18 @@ monitorowania stanu zdrowia \cite{HAR_Survey_Ultrasonic} poprzez zbieranie infor
 	\hline
 }{|l | c | c || c|}{Najczęściej wykorzystywane sensory}{sensor_analysis}
 
+Zdecydowanie najpopularniejszymi modalnościami są proste aktywności ruchowe. Zaliczają się do nich zwykle:
+\begin{itemize}
+    \item Chodzenie
+    \item Stanie
+    \item Bieganie
+    \item Siedzenie
+    \item Leżenie
+    \item Wchodzenie, Schodzenie po schodach
+\end{itemize}
+
+Powyższa lista może lekko różnić się od eksperymentu do eksperymentu jednak stanowi dobrą przekrojową reprezentację najczęściej wykrywanych modalności ruchowych. Aktywności te są łatwo wykrywalne za pomocą akcelerometru, czasami połączonego z żyroskopem i magnetometrem, co wpływa na popularność wykorzystania tych sensorów (\ref{tab:sensor_analysis}).
+
 \centertable{
 	\hline \textbf{Modalność} & \textbf{Przegląd/Analiza} & \textbf{Eksperyment} & \textbf{Suma} \\
 	\hline Aktywność ruchowa & 11 & 16 & 27 \\
@@ -59,18 +73,6 @@ monitorowania stanu zdrowia \cite{HAR_Survey_Ultrasonic} poprzez zbieranie infor
 	\hline Ruch rąk / ramion & 2 & 2 & 4 \\
 	\hline
 }{|l | c | c || c|}{Najczęściej obserwowane modalności}{modality_analysis}
-
-Zdecydowanie najpopularniejszymi modalnościami są proste aktywności ruchowe. Zaliczają się do nich zwykle:
-\begin{itemize}
-    \item Chodzenie
-    \item Stanie
-    \item Bieganie
-    \item Siedzenie
-    \item Leżenie
-    \item Wchodzenie, Schodzenie po schodach
-\end{itemize}
-
-Powyższa lista może lekko różnić się od eksperymentu do eksperymentu jednak stanowi dobrą przekrojową reprezentację najczęściej wykrywanych modalności ruchowych. Aktywności te są łatwo wykrywalne za pomocą akcelerometru, czasami połączonego z żyroskopem i magnetometrem, co wpływa na popularność wykorzystania tych sensorów (\ref{tab:sensor_analysis}).
 
 \centertable{
 	\hline \textbf{Metryka} & \textbf{Przegląd/Analiza} & \textbf{Eksperyment} & \textbf{Suma} \\
