@@ -29,7 +29,9 @@ Spośród pozostałych zastosowań wyróżniają się te współtworzące inteli
 
 Akcelerometr, magnetometr oraz żyroskop, występujące często razem jako tak zwany \textit{``Inertial measurement unit''} są najpopularniejmym zestawem wybieranym przez autorów artykułów \cite{30_Context_Awareness, 32_Accel_Phone_HAR}. Nadają się one dobrze do wykrywania aktywności ruchowych, zarówno przemieszczania jak i wykonywanych gestów i ruchów ciała pod warunkiem rozmieszczenia wielu sensorów na ciele osoby monitorowanej, jak w \cite{29_Daily_Sport_HAR}.
 
-Przykłady wykorzystania pulsometra pojawiają się zarówno w obszarze medyczno-zdrowotnym \cite{22_HAR_Survey_Ultrasonic} przy monitorowaniu parametrów życiowych jak i rekreacyjno-sportowym \cite{51_Fixbit_tracker} przy zapisie aktywności fizycznej.
+Mikrofon jest sensorem o szerokim zastosowaniu. Jest używany w środowiskach domowych do zbierania dzwięków z otoczenia i identyfikowania na ich podstawie czynności takich jak chodzenie, stukanie, owieranie / zamykanie drzwi lub odkurzanie \cite{46_Indor_Audio_Rec}. Jednym z ciekawszych przykładów jego wykorzystania jest emitowanie ultradzwiękowych sygnałów i nasłuchiwanie echa głośnikiem \cite{22_HAR_Survey_Ultrasonic}. Ta technika która leży u podstawy działania sonaru pozwala na wykrycie położenia i względnego ruchu pobliskich przedmiotów poprzez wykorzystanie efektu Dopplera.
+
+Przykłady wykorzystania pulsometra pojawiają się zarówno w obszarze medyczno-zdrowotnym \cite{62_The_Long_Review} przy monitorowaniu parametrów życiowych jak i rekreacyjno-sportowym \cite{51_Fixbit_tracker} przy zapisie aktywności fizycznej.
 \centertable{
 	\hline \textbf{Sensor} & \textbf{Przegląd/Analiza} & \textbf{Eksperyment} & \textbf{Suma} \\
 	\hline Akcelerometr & 10 & 15 & 25 \\
@@ -60,6 +62,24 @@ Zdecydowanie najpopularniejszymi modalnościami są proste aktywności ruchowe. 
 
 Powyższa lista może lekko różnić się od eksperymentu do eksperymentu jednak stanowi dobrą przekrojową reprezentację najczęściej wykrywanych modalności ruchowych. Aktywności te są łatwo wykrywalne za pomocą akcelerometru, czasami połączonego z żyroskopem i magnetometrem, co wpływa na popularność wykorzystania tych sensorów (\ref{tab:sensor_analysis}).
 
+Sensory zawarte w smartphonach dają duże możliwości monitorowania i analizy wzorców przemieszczania się ludzi w miastach. Na podstawie danych GPS, GSM oraz WiFi zebranych od ponad 1000 uczestników przez \textit{``Future Mobility Survey''} \cite{26_Mobility_Sensing} prezentuje kategoryzację miejsc przebywania i przemieszczania się na:
+\begin{itemize}
+    \item Dom
+    \item Praca
+    \item Edukacja
+    \item Odbiór / transport
+    \item Posiłek
+    \item Zakupy
+    \item Wizyta lekarska
+    \item Spotkanie
+    \item Rekreacja
+    \item Odwiedziny
+    \item Rozrywka
+\end{itemize}
+
+Duża część eksperymentów skupia się na rozpoznawaniu prostych, ``niskopoziomowych'' aktywności. Charakteryzują się one któtkim czasem trwania i małym skomplikowaniem przy wykrywaniu. Kolejnym poziomem abstrakcji, którego podejmuje się niewielka część przestudiowanych publikacji, jest złożenie tych prostych aktywności i próba wywnioskowania na ich postawie bardziej złożonych, dłużej trwających aktywności.
+\cite{38_High_Lvl_HAR}
+
 \centertable{
 	\hline \textbf{Modalność} & \textbf{Przegląd/Analiza} & \textbf{Eksperyment} & \textbf{Suma} \\
 	\hline Aktywność ruchowa & 11 & 16 & 27 \\
@@ -73,6 +93,7 @@ Powyższa lista może lekko różnić się od eksperymentu do eksperymentu jedna
 	\hline Ruch rąk / ramion & 2 & 2 & 4 \\
 	\hline
 }{|l | c | c || c|}{Najczęściej obserwowane modalności}{modality_analysis}
+
 
 \centertable{
 	\hline \textbf{Metryka} & \textbf{Przegląd/Analiza} & \textbf{Eksperyment} & \textbf{Suma} \\
