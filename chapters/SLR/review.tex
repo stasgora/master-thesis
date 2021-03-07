@@ -1,15 +1,21 @@
 \section{Przegląd}
-Zapytanie zostało wykonane na trzech wyszukiwarkach, a wybrane wyniki scalone po poprzednim usunięciu duplikatów. W wyniku otrzymano 650 artykułów.
+Zapytanie zostało wykonane na trzech wyszukiwarkach, a wybrane wyniki scalone po poprzednim usunięciu duplikatów. W wyniku otrzymano 648 artykułów.
 \centertable{
 	\hline \textbf{Wyszukiwarka} & \textbf{Ilość zwróconych wyników} & \textbf{Ilość duplikatów} \\
-	\hline Web of Science & 329 & N/A \\
+	\hline Web of Science & 329 & nd. \\
 	\hline IEEE Explore & 378 & 76 \\
 	\hline PubMed & 114 & 95 \\
 	\hline
 }{|c | c | c|}{Ilość zwróconych wyników}{article_count}
 
-\subsection{Filtrowanie}
-W celu wyodrębnienia najbardziej pasujących artykułów oraz zmniejszenia ich liczby została zastosowana wielostopniowa selekcja. Pierwszym etapem była ocena istotności wyników po ich tytułach w skali od 0 do 2.
+\subsection{Selekcja}
+W celu wyodrębnienia najbardziej pasujących artykułów oraz zmniejszenia ich liczby została zastosowana wielostopniowa selekcja. W każdym z etapów przyjęte zostały następujące kryteria oraz skala oceny pozycji:
+\begin{itemize}
+    \item {\bf 0} - Publikacja zupełnie nie pasuje do zadawanego pytania
+    \item {\bf 1} - Artykuł dotyczy rozważanego zagadnienia, jednak nie pasuje do kryteriów kategorii {\bf 2}
+    \item {\bf 2} - Pozycja porusza oryginalny lub interesujący temat mogący wnieść dużą wartość do przeglądu
+\end{itemize}
+Pierwszym etapem była ocena istotności wyników po ich tytułach:
 \centertable{
 	\hline \textbf{Źródło}& \textbf{Ilość} & \textbf{0} & \textbf{1} & \textbf{2} \\
 	\hline Web of Science & 329 & 98 & 180 & 51 \\
