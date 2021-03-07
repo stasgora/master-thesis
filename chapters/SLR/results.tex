@@ -8,7 +8,8 @@ Z pośród wyselekcjonowanych artykułów 12 zostało sklasyfikowanych jako \tex
 	\hline
 }{|c | c | c | c|}{Podział na typy artykułów}{area_clasification}
 
-Pośród artykułów o charakterze teoretycznym często wymieniane są zastosowania z kategorii opieki medycznej takie jak monitorowania stanu zdrowia \cite{22_HAR_Survey_Ultrasonic} lub wspomaganie rehabilitacji \cite{35_HAR_Wearable_Review}. Popularym tematem jest też asysta osób starszych, szczególnie tych mieszkających samotnie \cite{21_HAR_Smartphone}. Proponowane rozwiązania, określane najczęściej jako \textit{``Ambient Assisted Living''} mogą pomóc w przypadku problemu lub wypadku poprzez zawiadomienie odpowiednich osób lub służb.
+\subsection{Zastosowania}
+Pośród artykułów o charakterze teoretycznym często wymieniane są zastosowania z kategorii opieki medycznej takie jak monitorowania stanu zdrowia \cite{22_HAR_Survey_Ultrasonic} lub wspomaganie rehabilitacji \cite{35_HAR_Wearable_Review}. Popularnym tematem jest też asysta osób starszych, szczególnie tych mieszkających samotnie \cite{21_HAR_Smartphone}. Proponowane rozwiązania, określane najczęściej jako \textit{``Ambient Assisted Living''} mogą pomóc w przypadku problemu lub wypadku poprzez zawiadomienie odpowiednich osób lub służb.
 
 Analiza zachowania użytkowników jest tematem większości publikacji zawierających eksperymenty \cite{2_Real_Time_HAR, 59_Air_Pressure_HAR, 33_Inertial_Study}. Jej popularność jest spowodowana wysoką dostępnością telefonów zawierających nadające się do tego celu sensory oraz dużą ilością opublikowanych już na ten temat prac i materiałów obniżających barierę wejściową.
 
@@ -27,9 +28,10 @@ Spośród pozostałych zastosowań wyróżniają się te współtworzące inteli
 	\hline
 }{|l | c | c || c|}{Najczęściej pojawiające się zastosowania}{uses_analysis}
 
+\subsection{Sensory}
 Akcelerometr, magnetometr oraz żyroskop, występujące często razem jako tak zwany \textit{``Inertial measurement unit''} są najpopularniejszym zestawem wybieranym przez autorów artykułów \cite{30_Context_Awareness, 32_Accel_Phone_HAR}. Nadają się one dobrze do wykrywania aktywności ruchowych, zarówno przemieszczania jak i wykonywanych gestów i ruchów ciała pod warunkiem rozmieszczenia wielu sensorów na ciele osoby monitorowanej, jak w \cite{29_Daily_Sport_HAR}.
 
-Mikrofon jest sensorem o szerokim zastosowaniu. Jest używany w środowiskach domowych do zbierania dźwięków z otoczenia i identyfikowania na ich podstawie czynności takich jak chodzenie, stukanie, otwieranie / zamykanie drzwi lub odkurzanie \cite{46_Indor_Audio_Rec}. Jednym z ciekawszych przykładów jego wykorzystania jest emitowanie ultradźwiękowych sygnałów i nasłuchiwanie echa głośnikiem \cite{22_HAR_Survey_Ultrasonic}. Ta technika która leży u podstawy działania sonaru pozwala na wykrycie położenia i względnego ruchu pobliskich przedmiotów poprzez wykorzystanie efektu Dopplera.
+Mikrofon jest sensorem o szerokim zastosowaniu. Jest używany w środowiskach domowych do zbierania dźwięków z otoczenia i identyfikowania na ich podstawie czynności takich jak chodzenie, stukanie, otwieranie / zamykanie drzwi lub odkurzanie \cite{46_Indor_Audio_Rec}. Jednym z ciekawszych przykładów jego wykorzystania jest emitowanie ultradźwiękowych sygnałów i nasłuchiwanie echa mikrofonem \cite{22_HAR_Survey_Ultrasonic}. Ta technika która leży u podstawy działania sonaru pozwala na wykrycie położenia i względnego ruchu pobliskich przedmiotów poprzez wykorzystanie efektu Dopplera.
 
 Przykłady wykorzystania pulsometra pojawiają się zarówno w obszarze medyczno-zdrowotnym \cite{62_The_Long_Review} przy monitorowaniu parametrów życiowych jak i rekreacyjno-sportowym \cite{51_Fixbit_tracker} przy zapisie aktywności fizycznej.
 \centertable{
@@ -63,28 +65,7 @@ Zdecydowanie najpopularniejszymi modalnościami są proste aktywności ruchowe. 
 
 Powyższa lista może lekko różnić się od eksperymentu do eksperymentu jednak stanowi dobrą przekrojową reprezentację najczęściej wykrywanych modalności ruchowych. Aktywności te są łatwo wykrywalne za pomocą akcelerometru, czasami połączonego z żyroskopem i magnetometrem, co wpływa na popularność wykorzystania tych sensorów (\ref{tab:sensor_analysis}).
 
-\subsection{Poziomy modalności}
-Duża część eksperymentów skupia się na rozpoznawaniu prostych, ``niskopoziomowych'' modalności. Charakteryzują się one krótkim czasem trwania, niską złożonością i prostym mechanizmem wykrywania. Kolejnym poziomem abstrakcji, którego podejmuje się niewielka część przestudiowanych publikacji, jest złożenie tych prostych modalności i próba wywnioskowania na ich postawie bardziej złożonych modalności.
-
-Przykładowo przy określaniu lokalizacji użytkownika za proste modalności można uznać przebywanie w jednym miejscu oraz przemieszczanie się. Mogą tu także zostać zebrane dane takie jak prędkość poruszania lub pokonana droga. Za wyższy poziom modalności może zostać uznane określenie celu podróży oraz przypisanie  nazwy miejscu przebywania odpowiedniej dla danej osoby.
-
-Sensory zawarte w smartphonach dają duże możliwości monitorowania i analizy wzorców przemieszczania się ludzi w miastach. Na podstawie danych GPS, GSM oraz WiFi zebranych od ponad 1000 uczestników przez \textit{``Future Mobility Survey''} \cite{26_Mobility_Sensing} prezentuje kategoryzację miejsc przebywania i przemieszczania rozpoznając między innymi:
-\begin{itemize}
-    \item Dom
-    \item Pracę
-    \item Edukację
-    \item Odbiór / transport
-    \item Posiłek
-    \item Zakupy
-    \item Wizytę lekarską
-    \item Spotkanie
-    \item Rekreację
-    \item Odwiedziny
-    \item Rozrywkę
-\end{itemize}
-
-W \cite{38_High_Lvl_HAR} zaprezentowane jest wykrywanie modalności wyższego poziomu w środowisku domowym takich jak picie kawy, jedzenie kanapki oraz sprzątanie pokoju. Na każdą z tych czynności składa się seria ruchów, jak na przykład krojenie chleba lub otworzenie lodówki które muszą zostać zidentyfikowane. W tym celu śledzone są ruchy kończyn. Autorzy dochodzą do wniosku że łatwiej wykryć jest modalności które nie wymagają skomplikowanych interakcji z otoczeniem, takie jak relaks lub poruszanie po pomieszczeniu.
-
+\subsection{Modalności}
 \centertable{
 	\hline \textbf{Modalność} & \textbf{Przegląd/Analiza} & \textbf{Eksperyment} & \textbf{Suma} \\
 	\hline Aktywność ruchowa & 11 & 16 & 27 \\
@@ -99,6 +80,19 @@ W \cite{38_High_Lvl_HAR} zaprezentowane jest wykrywanie modalności wyższego po
 	\hline
 }{|l | c | c || c|}{Najczęściej obserwowane modalności}{modality_analysis}
 
+\subsection{Metryki}
+Metryki używane w procesie wykrywania aktywności są bardzo liczne. W poniższych zestawieniach wymienione zostały te pojawiające się najczęściej.
+
+\centertable{
+	\hline \textbf{Sensor} & \textbf{Przegląd/Analiza} & \textbf{Eksperyment} & \textbf{Suma} \\
+	\hline Akcelerometr & 20 & 20 & 27 \\
+	\hline Pulsometr & 0 & 5 & 5 \\
+	\hline Mikrofon & 3 & 3 & 6 \\
+	\hline GPS & 0 & 4 & 4 \\
+	\hline Żyroskop & 1 & 0 & 1 \\
+	\hline\hline {\bf Suma} & 24 & 32 & 43 \\
+	\hline
+}{|l | c | c || c|}{Ilość rodzajów metryk dotyczących danego sensora}{modality_stats}
 
 \centertable{
 	\hline \textbf{Metryka} & \textbf{Przegląd/Analiza} & \textbf{Eksperyment} & \textbf{Suma} \\
