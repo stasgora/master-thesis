@@ -1,0 +1,53 @@
+\subsection{Modalności}
+\centertable{
+	\hline \textbf{Modalność} & \textbf{Przegląd/Analiza} & \textbf{Eksperyment} & \textbf{Suma} \\
+	\hline Aktywność ruchowa & 11 & 16 & 27 \\
+	\hline Ruch ciała & 7 & 11 & 18 \\
+	\hline Poza ciała & 9 & 4 & 13 \\
+	\hline Wykonywane gesty & 4 & 2 & 6 \\
+	\hline Podnoszenie przedmiotów & 2 & 2 & 4 \\
+	\hline Bicie serca & 1 & 3 & 4 \\
+	\hline Jedzenie & 1 & 3 & 4 \\
+	\hline Picie & 2 & 2 & 4 \\
+	\hline Ruch rąk / ramion & 2 & 2 & 4 \\
+	\hline
+}{|l | c | c || c|}{Najczęściej obserwowane modalności}{modality_analysis}
+
+\subsection{Metryki}
+Metryki używane w procesie wykrywania aktywności są bardzo liczne. W poniższych zestawieniach wymienione zostały te pojawiające się najczęściej.
+
+\centertable{
+	\hline \textbf{Sensor} & \textbf{Przegląd/Analiza} & \textbf{Eksperyment} & \textbf{Suma} \\
+	\hline Akcelerometr & 20 & 20 & 27 \\
+	\hline Pulsometr & 0 & 5 & 5 \\
+	\hline Mikrofon & 3 & 3 & 6 \\
+	\hline GPS & 0 & 4 & 4 \\
+	\hline Żyroskop & 1 & 0 & 1 \\
+	\hline\hline {\bf Suma} & 24 & 32 & 43 \\
+	\hline
+}{|l | c | c || c|}{Ilość rodzajów metryk dotyczących danego sensora}{modality_stats}
+
+\centertable{
+	\hline \textbf{Metryka} & \textbf{Przegląd/Analiza} & \textbf{Eksperyment} & \textbf{Suma} \\
+	\hline Standard Deviation & 5 & 10 & 15 \\
+	\hline Min, Max & 4 & 7 & 11 \\
+	\hline Mean, Median & 3 & 8 & 11 \\
+	\hline Signal Magnitude Area & 2 & 5 & 7 \\
+	\hline Mean Absolute Deviation & 3 & 3 & 6 \\
+	\hline Variance & 2 & 3 & 5 \\
+	\hline Corelation Coefficients & 2 & 3 & 5 \\
+	\hline Interquartile Range & 2 & 3 & 5 \\
+	\hline Signal Entropy & 2 & 3 & 5 \\
+	\hline Root Mean Square & 2 & 2 & 4 \\
+	\hline
+}{|l | c | c || c|}{Najczęściej używane metryki - {\bf Akcelerometr}}{accl_features}
+
+\centertable{
+	\hline \textbf{Metryka} & \textbf{Eksperyment} & \textbf{Suma} \\
+	\hline Step frequency & 2 & 2 \\
+	\hline Power Spectral Density & 2 & 2 \\
+	\hline Variance & 1 & 1 \\
+	\hline FFT Peaks \& Energy & 1 & 1 \\
+	\hline Trunk inclination & 1 & 1 \\
+	\hline
+}{|l | c || c|}{Najczęściej używane metryki - {\bf Pulsometr}}{heart_rate_features}

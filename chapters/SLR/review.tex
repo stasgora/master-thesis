@@ -1,6 +1,6 @@
 \section{Przegląd}
 
-\subsection{Zbieranie wyników}
+\subsection{Zbieranie publikacji}
 Zapytanie zostało wykonane na trzech wyszukiwarkach: \textit{Web of Science}, \textit{IEEE Explore} oraz \textit{PubMed}. Z powodu różnic w składni musiało ono zostać dostosowane do każdej z wyszukiwarek z osobna. Zależnie od możliwości wyszukiwarki końcówki słów z zapytania zostały zamienione na symbole wieloznaczne (*) w celu ich dopasowania do możliwie wielu form danego słowa.
 
 Dla przykładu \textit{Web of Science} stosuje dwuliterowe klucze dla każdego z pól, np. atrubutowi {\bf Title} odpowiada {\bf TI}. Zapytanie dostosowane do tej wyszukiwarki wygląda następująco:
@@ -26,7 +26,7 @@ Zastosowane zaawansowane ustawienia wyszukiwania:
 \end{itemize}
 
 \subsection{Łączenie wyników}
-Każda z używanych wyszukiwarek oferuje poprawnie danych w formie pliku {\it .csv}, jednak zawarte w nim kolumny są różnie ułożone i inaczej podpisane. Z tego powodu został stworzony skrypt łączący wyniki z trzech baz w całość, wybierający tylko potrzebne kolumny. Dodatkowo sprawdzał on i pomijał duplikaty wyników występujące w przypadku gdy ta sama publikacja została znaleziona przez więcej niż jedną wyszukiwarkę. W wyniku otrzymano 648 artykułów.
+Każda z używanych wyszukiwarek oferuje poprawnie danych w formie pliku {\it .csv}, jednak zawarte w nim kolumny są różnie ułożone i inaczej podpisane. Z tego powodu został stworzony skrypt łączący wyniki z trzech baz w całość, wybierający tylko potrzebne kolumny (Tytuł, Abstrakt oraz Listę autorów). Dodatkowo sprawdzał on i pomijał duplikaty wyników występujące w przypadku gdy ta sama publikacja została znaleziona przez więcej niż jedną wyszukiwarkę. W wyniku otrzymano 648 artykułów.
 \centertable{
 	\hline \textbf{Wyszukiwarka} & \textbf{Ilość zwróconych wyników} & \textbf{Ilość duplikatów} \\
 	\hline Web of Science & 329 & nd. \\
@@ -35,11 +35,11 @@ Każda z używanych wyszukiwarek oferuje poprawnie danych w formie pliku {\it .c
 	\hline
 }{|c | c | c|}{Ilość zwróconych wyników}{article_count}
 
-\subsection{Selekcja}
+\subsection{Selekcja artykułów}
 W celu wyodrębnienia najbardziej pasujących artykułów oraz zmniejszenia ich liczby została zastosowana wielostopniowa selekcja. W każdym z etapów przyjęte zostały następujące kryteria oraz skala oceny pozycji:
 \begin{itemize}
     \item {\bf 0} - Publikacja zupełnie nie pasuje do zadawanego pytania
-    \item {\bf 1} - Artykuł dotyczy rozważanego zagadnienia, jednak nie pasuje do kryteriów kategorii {\bf 2}
+    \item {\bf 1} - Artykuł dotyczy rozważanego zagadnienia, jednak nie pasuje do kryteriów kategorii {\it 2}
     \item {\bf 2} - Pozycja porusza oryginalny lub interesujący temat mogący wnieść dużą wartość do przeglądu
 \end{itemize}
 Pierwszym etapem była ocena istotności wyników po ich tytułach:

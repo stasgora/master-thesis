@@ -1,4 +1,22 @@
 \section{Analiza ilościowa}
+Publikacje oznaczone jako {\bf 2} podczas selekcji abstraktów zostały przeczytane a artykuły które otrzymały ocenę {\bf 2} podczas dodatkowej selekcji przejrzane. Obie grupy stanowiły bazę do wykonanej analizy ilościowej.
+
+\subsection{Szukane informacje}
+Podczas zapoznawania się z wybranymi publikacjami aktywnie szukane i spisywane były informacje z pięciu kategorii:
+\begin{itemize}
+    \item {\bf Kategoria}: Typ artykułu. Występują tu trzy wartości:
+    \begin{itemize}
+		\item {\it Przegląd teoretyczny}: Opisuje teoretyczne zagadnienia związane z danym tematem. Podaje definicje i przykłady.
+		\item {\it Meta-analiza}: Jest zbiorem wielu publikacji na określony temat. Dokonuje porównania ich założeń, podejścia oraz wyników.
+		\item {\it Eksperyment}: Opisuje oryginalny proces wykrywania aktywności używający wybranych sensorów. Zwykle przeprowadza jego testy na grupie uczesników.
+	\end{itemize}
+    \item {\bf Zastosowania}: Ogólne obszary poruszane w artykule do których należą wykrywane modalności.
+    \item {\bf Sensory}: Urządzenia rejestrujące sygnały z otoczenia używane przez autorów.
+    \item {\bf Modalności}: Podstawowe zdarenia które są wykrywane w procesie rozpoznawania aktywności.
+    \item {\bf Metryki}: Wzory matematyczne używane do transformacji sygnałów przy ich przetwarzaniu.
+\end{itemize}
+
+\subsection{Kategoria}
 Z pośród wyselekcjonowanych artykułów 12 zostało sklasyfikowanych jako \textit{Przegląd teoretyczny} lub \textit{Meta-analiza} podczas gdy pozostałe 20 zawierało opis przeprowadzonego przez autorów eksperymentu. Niektóre z artykułów zostały zaliczone do więcej niż jednej kategorii. Połowa przeglądów zawierała jednocześnie meta-analizę zbioru opublikowanych eksperymentów.
 \centertable{
 	\hline \textbf{Klasyfikacja} & \textbf{Przegląd teoretyczny} & \textbf{Meta-analiza} & \textbf{Eksperyment} \\
@@ -8,113 +26,5 @@ Z pośród wyselekcjonowanych artykułów 12 zostało sklasyfikowanych jako \tex
 	\hline
 }{|c | c | c | c|}{Podział na typy artykułów}{area_clasification}
 
-\subsection{Zastosowania}
-Pośród artykułów o charakterze teoretycznym często wymieniane są zastosowania z kategorii opieki medycznej takie jak monitorowania stanu zdrowia \cite{22_HAR_Survey_Ultrasonic} lub wspomaganie rehabilitacji \cite{35_HAR_Wearable_Review}. Popularnym tematem jest też asysta osób starszych, szczególnie tych mieszkających samotnie \cite{21_HAR_Smartphone}. Proponowane rozwiązania, określane najczęściej jako \textit{``Ambient Assisted Living''} mogą pomóc w przypadku problemu lub wypadku poprzez zawiadomienie odpowiednich osób lub służb.
-
-Analiza zachowania użytkowników jest tematem większości publikacji zawierających eksperymenty \cite{2_Real_Time_HAR, 59_Air_Pressure_HAR, 33_Inertial_Study}. Jej popularność jest spowodowana wysoką dostępnością telefonów zawierających nadające się do tego celu sensory oraz dużą ilością opublikowanych już na ten temat prac i materiałów obniżających barierę wejściową.
-
-Spośród pozostałych zastosowań wyróżniają się te współtworzące inteligentny dom, jak na przykład sterowanie oświetleniem zależnie od wykrytej aktywności \cite{36_Smart_Home_HAR} a także te związane z wykrywaniem aktywności sportowych \cite{29_Daily_Sport_HAR} które można by zintegrować z istniejącymi platformami takimi jak \textit{Strava}.
-
-\centertable{
-	\hline \textbf{Zastosowanie} & \textbf{Przegląd/Analiza} & \textbf{Eksperyment} & \textbf{Suma} \\
-	\hline Analiza zachowania & 8 & 12 & 20 \\
-	\hline Opieka zdrowotna & 8 & 4 & 12 \\
-	\hline Asysta osób starszych & 7 & 3 & 10 \\
-	\hline Sport & 5 & 4 & 9 \\
-	\hline Bezpieczeństwo & 7 & 0 & 7 \\
-	\hline Monitorowanie pacjentów & 4 & 2 & 6 \\
-	\hline Inteligentny dom & 4 & 2 & 6 \\
-	\hline Rozrywka & 3 & 0 & 3 \\
-	\hline
-}{|l | c | c || c|}{Najczęściej pojawiające się zastosowania}{uses_analysis}
-
-\subsection{Sensory}
-Akcelerometr, magnetometr oraz żyroskop, występujące często razem jako tak zwany \textit{``Inertial measurement unit''} są najpopularniejszym zestawem wybieranym przez autorów artykułów \cite{30_Context_Awareness, 32_Accel_Phone_HAR}. Nadają się one dobrze do wykrywania aktywności ruchowych, zarówno przemieszczania jak i wykonywanych gestów i ruchów ciała pod warunkiem rozmieszczenia wielu sensorów na ciele osoby monitorowanej, jak w \cite{29_Daily_Sport_HAR}.
-
-Mikrofon jest sensorem o szerokim zastosowaniu. Jest używany w środowiskach domowych do zbierania dźwięków z otoczenia i identyfikowania na ich podstawie czynności takich jak chodzenie, stukanie, otwieranie / zamykanie drzwi lub odkurzanie \cite{46_Indor_Audio_Rec}. Jednym z ciekawszych przykładów jego wykorzystania jest emitowanie ultradźwiękowych sygnałów i nasłuchiwanie echa mikrofonem \cite{22_HAR_Survey_Ultrasonic}. Ta technika która leży u podstawy działania sonaru pozwala na wykrycie położenia i względnego ruchu pobliskich przedmiotów poprzez wykorzystanie efektu Dopplera.
-
-Przykłady wykorzystania pulsometra pojawiają się zarówno w obszarze medyczno-zdrowotnym \cite{62_The_Long_Review} przy monitorowaniu parametrów życiowych jak i rekreacyjno-sportowym \cite{51_Fixbit_tracker} przy zapisie aktywności fizycznej.
-\centertable{
-	\hline \textbf{Sensor} & \textbf{Przegląd/Analiza} & \textbf{Eksperyment} & \textbf{Suma} \\
-	\hline Akcelerometr & 10 & 15 & 25 \\
-	\hline Mikrofon & 8 & 7 & 15 \\
-	\hline Magnetometr & 7 & 7 & 14 \\
-	\hline Żyroskop & 7 & 7 & 14 \\
-	\hline Kamera & 9 & 2 & 11 \\
-	\hline GPS & 6 & 3 & 9 \\
-	\hline Pulsometr & 6 & 2 & 8 \\
-	\hline Termometr & 7 & 0 & 7 \\
-	\hline Radio/RFID & 6 & 1 & 7 \\
-	\hline Czujnik światła & 6 & 0 & 6 \\
-	\hline WiFi & 4 & 1 & 5 \\
-	\hline Bluetooth & 4 & 1 & 5 \\
-	\hline Barometr & 4 & 1 & 5 \\
-	\hline
-}{|l | c | c || c|}{Najczęściej wykorzystywane sensory}{sensor_analysis}
-
-Zdecydowanie najpopularniejszymi modalnościami są proste aktywności ruchowe. Zaliczają się do nich zwykle:
-\begin{itemize}
-    \item Chodzenie
-    \item Stanie
-    \item Bieganie
-    \item Siedzenie
-    \item Leżenie
-    \item Wchodzenie, Schodzenie po schodach
-    \label{base_modalities}
-\end{itemize}
-
-Powyższa lista może lekko różnić się od eksperymentu do eksperymentu jednak stanowi dobrą przekrojową reprezentację najczęściej wykrywanych modalności ruchowych. Aktywności te są łatwo wykrywalne za pomocą akcelerometru, czasami połączonego z żyroskopem i magnetometrem, co wpływa na popularność wykorzystania tych sensorów (\ref{tab:sensor_analysis}).
-
-\subsection{Modalności}
-\centertable{
-	\hline \textbf{Modalność} & \textbf{Przegląd/Analiza} & \textbf{Eksperyment} & \textbf{Suma} \\
-	\hline Aktywność ruchowa & 11 & 16 & 27 \\
-	\hline Ruch ciała & 7 & 11 & 18 \\
-	\hline Poza ciała & 9 & 4 & 13 \\
-	\hline Wykonywane gesty & 4 & 2 & 6 \\
-	\hline Podnoszenie przedmiotów & 2 & 2 & 4 \\
-	\hline Bicie serca & 1 & 3 & 4 \\
-	\hline Jedzenie & 1 & 3 & 4 \\
-	\hline Picie & 2 & 2 & 4 \\
-	\hline Ruch rąk / ramion & 2 & 2 & 4 \\
-	\hline
-}{|l | c | c || c|}{Najczęściej obserwowane modalności}{modality_analysis}
-
-\subsection{Metryki}
-Metryki używane w procesie wykrywania aktywności są bardzo liczne. W poniższych zestawieniach wymienione zostały te pojawiające się najczęściej.
-
-\centertable{
-	\hline \textbf{Sensor} & \textbf{Przegląd/Analiza} & \textbf{Eksperyment} & \textbf{Suma} \\
-	\hline Akcelerometr & 20 & 20 & 27 \\
-	\hline Pulsometr & 0 & 5 & 5 \\
-	\hline Mikrofon & 3 & 3 & 6 \\
-	\hline GPS & 0 & 4 & 4 \\
-	\hline Żyroskop & 1 & 0 & 1 \\
-	\hline\hline {\bf Suma} & 24 & 32 & 43 \\
-	\hline
-}{|l | c | c || c|}{Ilość rodzajów metryk dotyczących danego sensora}{modality_stats}
-
-\centertable{
-	\hline \textbf{Metryka} & \textbf{Przegląd/Analiza} & \textbf{Eksperyment} & \textbf{Suma} \\
-	\hline Standard Deviation & 5 & 10 & 15 \\
-	\hline Min, Max & 4 & 7 & 11 \\
-	\hline Mean, Median & 3 & 8 & 11 \\
-	\hline Signal Magnitude Area & 2 & 5 & 7 \\
-	\hline Mean Absolute Deviation & 3 & 3 & 6 \\
-	\hline Variance & 2 & 3 & 5 \\
-	\hline Corelation Coefficients & 2 & 3 & 5 \\
-	\hline Interquartile Range & 2 & 3 & 5 \\
-	\hline Signal Entropy & 2 & 3 & 5 \\
-	\hline Root Mean Square & 2 & 2 & 4 \\
-	\hline
-}{|l | c | c || c|}{Najczęściej używane metryki - {\bf Akcelerometr}}{accl_features}
-
-\centertable{
-	\hline \textbf{Metryka} & \textbf{Eksperyment} & \textbf{Suma} \\
-	\hline Step frequency & 2 & 2 \\
-	\hline Power Spectral Density & 2 & 2 \\
-	\hline Variance & 1 & 1 \\
-	\hline FFT Peaks \& Energy & 1 & 1 \\
-	\hline Trunk inclination & 1 & 1 \\
-	\hline
-}{|l | c || c|}{Najczęściej używane metryki - {\bf Pulsometr}}{heart_rate_features}
+\input{\chapterPath/uses_sensors.tex}
+\input{\chapterPath/modalities_metrics.tex}
