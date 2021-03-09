@@ -1,4 +1,17 @@
 \subsection{Modalności}
+Zdecydowanie najpopularniejszymi wśród zebranych publikacji modalnościami są proste aktywności ruchowe. Wymienia je, w przypadku przeglądu, lub wykrywa w przeprowadzanym eksperymencie ponad 84\% przeglądanych artykułów. Do aktywności ruchowych zaliczają się najczęściej:
+\begin{itemize}
+    \item Chodzenie
+    \item Stanie
+    \item Bieganie
+    \item Siedzenie
+    \item Leżenie
+    \item Wchodzenie, Schodzenie po schodach
+    \label{base_modalities}
+\end{itemize}
+
+Aktywności te są łatwo wykrywalne za pomocą akcelerometru, czasami połączonego z żyroskopem i magnetometrem, co wpływa na popularność wykorzystania tych sensorów \ref{tab:sensor_analysis} oraz częstą kategoryzację w grupie zastosowań ``Analiza zachowania'' \ref{tab:uses_analysis}. 
+
 \centertable{
 	\hline \textbf{Modalność} & \textbf{Przegląd/Analiza} & \textbf{Eksperyment} & \textbf{Suma} \\
 	\hline Aktywność ruchowa & 11 & 16 & 27 \\
@@ -14,7 +27,7 @@
 }{|l | c | c || c|}{Najczęściej obserwowane modalności}{modality_analysis}
 
 \subsection{Metryki}
-Metryki używane w procesie wykrywania aktywności są bardzo liczne. W poniższych zestawieniach wymienione zostały te pojawiające się najczęściej.
+Metryki używane w procesie wykrywania aktywności są bardzo liczne. Z powodu już wspomnianej dużej ilości publikacji i eksperymentów używających akcelerometru większość używanych i wymienianych metryk dotyczy właśnie do tego sensora. Oprócz tego paru autorów wymienia wybrane przez siebie metryki odpowiednie dla pulsometru \cite{4_HAR_Features}, mikrofonu \cite{22_HAR_Survey_Ultrasonic, 46_Indor_Audio_Rec} oraz GPS \cite{26_Mobility_Sensing}. Warto zaznaczyć że część z autorów zupełnie pomija temat metryk w swoich publikacjach.
 
 \centertable{
 	\hline \textbf{Sensor} & \textbf{Przegląd/Analiza} & \textbf{Eksperyment} & \textbf{Suma} \\
@@ -27,6 +40,7 @@ Metryki używane w procesie wykrywania aktywności są bardzo liczne. W poniższ
 	\hline
 }{|l | c | c || c|}{Ilość rodzajów metryk dotyczących danego sensora}{modality_stats}
 
+W przypadku akcelerometru proste metryki, takie jak odchylenie standardowe, średnia, mediana oraz wartości minimalne i maksymalne są używane zdecydowanie najczęściej co świadczy o ich uniwersalności. Rzadziej pojawiają się metryki związane z entropią sygnału, rozstępem międzykwartylowym czy średnią kwadratową.
 \centertable{
 	\hline \textbf{Metryka} & \textbf{Przegląd/Analiza} & \textbf{Eksperyment} & \textbf{Suma} \\
 	\hline Standard Deviation & 5 & 10 & 15 \\

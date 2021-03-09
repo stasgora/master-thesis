@@ -19,15 +19,15 @@ Spośród pozostałych zastosowań wyróżniają się te współtworzące inteli
 }{|l | c | c || c|}{Najczęściej pojawiające się zastosowania}{uses_analysis}
 
 \subsection{Sensory}
-Akcelerometr, magnetometr oraz żyroskop, występujące często razem jako tak zwany \textit{``Inertial measurement unit''} są najpopularniejszym zestawem wybieranym przez autorów artykułów \cite{30_Context_Awareness, 32_Accel_Phone_HAR}. Nadają się one dobrze do wykrywania aktywności ruchowych, zarówno przemieszczania jak i wykonywanych gestów i ruchów ciała pod warunkiem rozmieszczenia wielu sensorów na ciele osoby monitorowanej, jak w \cite{29_Daily_Sport_HAR}.
+Akcelerometr, magnetometr oraz żyroskop, występujące często razem jako tak zwany \textit{``Inertial measurement unit''} są najpopularniejszym zestawem wybieranym przez autorów artykułów \cite{30_Context_Awareness, 32_Accel_Phone_HAR}. Nadają się one dobrze do wykrywania aktywności ruchowych takich jak przemieszczanie się. Pod warunkiem rozmieszczenia wielu sensorów na ciele osoby monitorowanej, jak w \cite{29_Daily_Sport_HAR} możliwe jest także rozpoznawanie wykonywanych gestów i ruchów ciała.
 
-Mikrofon jest sensorem o szerokim zastosowaniu. Jest używany w środowiskach domowych do zbierania dźwięków z otoczenia i identyfikowania na ich podstawie czynności takich jak chodzenie, stukanie, otwieranie / zamykanie drzwi lub odkurzanie \cite{46_Indor_Audio_Rec}. Jednym z ciekawszych przykładów jego wykorzystania jest emitowanie ultradźwiękowych sygnałów i nasłuchiwanie echa mikrofonem \cite{22_HAR_Survey_Ultrasonic}. Ta technika która leży u podstawy działania sonaru pozwala na wykrycie położenia i względnego ruchu pobliskich przedmiotów poprzez wykorzystanie efektu Dopplera.
+Mikrofon jest sensorem o szerokim zastosowaniu. Jest używany w środowiskach domowych do zbierania dźwięków z otoczenia i identyfikowania na ich podstawie czynności takich jak chodzenie, stukanie, otwieranie / zamykanie drzwi lub odkurzanie \cite{46_Indor_Audio_Rec}. Jednym z ciekawszych przykładów jego wykorzystania zaproponowanym w jednej z publikacji jest emitowanie ultradźwiękowych sygnałów i nasłuchiwanie echa mikrofonem \cite{22_HAR_Survey_Ultrasonic}. Ta technika, leżąca u podstawy działania sonaru pozwala na wykrycie położenia i względnego ruchu pobliskich przedmiotów poprzez wykorzystanie efektu Dopplera.
 
-Przykłady wykorzystania pulsometra pojawiają się zarówno w obszarze medyczno-zdrowotnym \cite{62_The_Long_Review} przy monitorowaniu parametrów życiowych jak i rekreacyjno-sportowym \cite{51_Fixbit_tracker} przy zapisie aktywności fizycznej.
+Przykłady wykorzystania pulsometra pojawiają się zarówno w obszarze medyczno-zdrowotnym \cite{62_The_Long_Review} przy monitorowaniu parametrów życiowych jak i rekreacyjno-sportowym \cite{51_Fixbit_tracker} przy zapisie aktywności fizycznej użytkownika. Rytm i szybkość bicia serca dostarczają użyteczne i jenocześnie proste w przetwarzaniu i interpretacji dane o aktualnym stanie i poziomowi wysiłku monitorowanej osoby.
 \centertable{
 	\hline \textbf{Sensor} & \textbf{Przegląd/Analiza} & \textbf{Eksperyment} & \textbf{Suma} \\
-	\hline Akcelerometr & 10 & 15 & 25 \\
-	\hline Mikrofon & 8 & 7 & 15 \\
+	\hline Akcelerometr & 10 & 16 & 26 \\
+	\hline Mikrofon & 8 & 6 & 14 \\
 	\hline Magnetometr & 7 & 7 & 14 \\
 	\hline Żyroskop & 7 & 7 & 14 \\
 	\hline Kamera & 9 & 2 & 11 \\
@@ -41,16 +41,3 @@ Przykłady wykorzystania pulsometra pojawiają się zarówno w obszarze medyczno
 	\hline Barometr & 4 & 1 & 5 \\
 	\hline
 }{|l | c | c || c|}{Najczęściej wykorzystywane sensory}{sensor_analysis}
-
-Zdecydowanie najpopularniejszymi modalnościami są proste aktywności ruchowe. Zaliczają się do nich zwykle:
-\begin{itemize}
-    \item Chodzenie
-    \item Stanie
-    \item Bieganie
-    \item Siedzenie
-    \item Leżenie
-    \item Wchodzenie, Schodzenie po schodach
-    \label{base_modalities}
-\end{itemize}
-
-Powyższa lista może lekko różnić się od eksperymentu do eksperymentu jednak stanowi dobrą przekrojową reprezentację najczęściej wykrywanych modalności ruchowych. Aktywności te są łatwo wykrywalne za pomocą akcelerometru, czasami połączonego z żyroskopem i magnetometrem, co wpływa na popularność wykorzystania tych sensorów (\ref{tab:sensor_analysis}).
