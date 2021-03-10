@@ -56,6 +56,8 @@ W przypadku akcelerometru proste metryki, takie jak odchylenie standardowe, śre
 	\hline
 }{|l | c | c || c|}{Najczęściej używane metryki - {\bf Akcelerometr}}{accl_features}
 
+Proces wykrywania aktywności zaproponowany w \cite{4_HAR_Features} wykorzystujący akcelerometr oraz pulsometr przykłada dużą wagę do metryk. Po zebraniu i wstępnym przetworzeniu danych z sensorów następuje faza wyodrębnienia cech, której celem jest wydobycie możliwie wielu informacji z uzyskanych sygnałów. Następnie na ich podstawie następuje selekcja najważniejszych metryk używanych przy uczeniu klasyfikatora aktywności. Pod uwagę zwięte zostały zarówno cechy z dziedziny czasu (np. {\it Mean Absolute Deviation}) jak i częstotliwości (np. {\it Power Spectral Density}) źródłowego sygnału.
+
 \centertable{
 	\hline \textbf{Metryka} & \textbf{Eksperyment} & \textbf{Suma} \\
 	\hline Step frequency & 2 & 2 \\
