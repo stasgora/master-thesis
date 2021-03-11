@@ -1,5 +1,8 @@
 \section{Wnioski}
-Przeprowadzenie systematycznego przeglądu literatury pozwoliło na głębszą analizę procesu stojącego za identyfikowaniem modalności i wykrywaniem aktywności. Zidentyfikowało też popularne cele zastosowania tych technik uwypuklając obszary w których nadal brakuje obszernych i szczegółowych badań i eksperymentów.
+Przeprowadzenie systematycznego przeglądu literatury pozwoliło na szczegółową analizę procesów wykorzystywanych do identyfikowania modalności. W jego trakcie udało się zidentyfikowałać popularne cele zastosowania technik analizy aktywności jak i najczęściej wykorzystywane do tego celu sensory, modalności i metryki. Jednocze uwidocznione zostały obszary w których nadal brakuje obszernych i szczegółowych badań i eksperymentów.
+
+\subsection{Kompletność informacji}
+Część opublikowanych opisów eksperymentów skupiała się nieinteresujących z punktu wiedzenia tego przeglądu aspektach wykrywania aktywności, takich jak używanych klasyfikatorach i algorytmach uczenia maszynowego. Równocześnie ponad 1/3 (34\%) z przeglądanych artykułów pomija zupełnie temat metryk używanych w procesie wykrywania aktywności pomimo ważnej roli którą w nim pełnią. Braki te mają dużego wpływu na wyniki i wnioski niniejszego przeglądu, jednak należy zaznaczyć że z ich względu zebrane i przedstawione tu informacje nie są w pełni kompletne i nie przedstawiają pełnego obrazu przestudiowanych eksperymentów. 
 
 \subsection{Poziomy modalności}
 \label{sec:modality_levels}
@@ -24,8 +27,11 @@ Sensory zawarte w smartphonach dają duże możliwości monitorowania i analizy 
 
 W \cite{38_High_Lvl_HAR} zaprezentowane jest wykrywanie modalności wyższego poziomu w środowisku domowym takich jak picie kawy, jedzenie kanapki oraz sprzątanie pokoju. Na każdą z tych czynności składa się seria ruchów, jak na przykład krojenie chleba lub otworzenie lodówki które muszą zostać zidentyfikowane. W tym celu śledzone są ruchy kończyn. Autorzy dochodzą do wniosku że łatwiej wykryć jest modalności które nie wymagają skomplikowanych interakcji z otoczeniem, takie jak relaks lub poruszanie po pomieszczeniu.
 
-\subsection{Równowaga artykułów}
-Użycie akcelerometru do przeprowadzenia analizy zachowania poprzez wykrycie aktywności ruchowych jest podejściem które pojawia się w przeważającej części przeglądanej literatury, m.in. \cite{59_Air_Pressure_HAR, 33_Inertial_Study, 29_Daily_Sport_HAR, 30_Context_Awareness, 32_Accel_Phone_HAR, 42_Micro_AR}. Jest to zapewne częściowo spowodowane wspomnianą już łatwością uzyskania efektów przy wybraniu tej popularnej kombinacji sensorów i modalności. Ograniczenia w ilości materiału do przeglądu literatury oraz niedoskonałości w technice selekcji publikacji dodatkowo wpłynęły na powstały brak równowagi otrzymanych wyników. 
+\subsection{Równowaga tematów}
+\label{sec:article_balance}
+Użycie akcelerometru do przeprowadzenia analizy zachowania poprzez wykrycie aktywności ruchowych jest podejściem które pojawia się w przeważającej części przeglądanej literatury, m.in. \cite{59_Air_Pressure_HAR, 33_Inertial_Study, 29_Daily_Sport_HAR, 30_Context_Awareness, 32_Accel_Phone_HAR, 42_Micro_AR}. Jest to z pewnością częściowo spowodowane wspomnianą już łatwością uzyskania efektów przy wybraniu tej popularnej kombinacji sensorów i modalności. Wiadomym jest że łatwiej budować na wcześniejszych osiągnięciach w danej dziedzienie niż być innowatorem stawiającym w niej pierwsze kroki. 
 
-\subsection{Kompletność informacji}
-Część opublikowanych opisów eksperymentów skupiała się nieinteresujących z punktu wiedzenia tego przeglądu aspektach wykrywania aktywności, takich jak używanych klasyfikatorach i algorytmach uczenia maszynowego. Równocześnie 34\% z przeglądanych artykułów pomija zupełnie temat metryk nie wymieniając żadnych.
+\subsection{Różnorodność podejść}
+Biorąc pod uwagę niską liczbę publikacji poruszającą problemy związane z wykrywaniem aktywności wyższego poziomu (\ref{sec:modality_levels}) oraz wysoki odsetek nakładających się lub identycznych tematów pośród pozostałych artykułów (\ref{sec:article_balance}) należy zwrócić uwagę na brak różnorodności wśród wyselekcjowanej grupy publikacji. Zostało zidentyfikowane parę czynnikiów mogących mieć na to wpływ. 
+
+Ograniczenia w ilości publikacji wybranych do przeprowadzenia przeglądu zwiększyły ilość potencjalnie interesujących artykułów które zostały odrzucone. Sama selekcja wyników wyszukiwania musiała zostać przeprowadzona przed zapoznaniem się z ich zawartością co prowadzi do paradoksu w którym niemożliwe jest wybranie najlepszych publikacji bazując na szczątkowych informacjach o ich wartości. W wyniku artykuły o wartościowej treści mogły zostać odrzucone na podstawie niereprezentatywnego tytułu lub abstraktu. Dodatkowym czynnikiem związanym z selekcją wykonywaną w wiekszości przez jedną osobę jest ryzyko stronniczości i zwiększony wpływ subiektywizmu. Wreszcie nie należy wykluczać ewentualności że uzyskany zbiór jest mniej lub bardziej reprezentatywny i przedstawione tu wnioski odnoszą się w miarę dobrze do całości literatury naukowej poświęconej zagadnieniu rozpoznawania aktywności u ludzi.
