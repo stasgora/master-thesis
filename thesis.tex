@@ -43,14 +43,9 @@
 \cleardoublepage
 \phantomsection
 \bibliographystyle{unsrt}
+\renewcommand\bibname{Wykaz literatury}
 \bibliography{meta/bibliography}
-\addcontentsline{toc}{chapter}{Wykaz literatury}
-
-\cleardoublepage
-\phantomsection
-\renewcommand{\baselinestretch}{1.0}\normalsize
-\addcontentsline{toc}{chapter}{\listfigurename}
-\listoffigures
+\addcontentsline{toc}{chapter}{WYKAZ LITERATURY}
 
 \cleardoublepage
 \phantomsection
@@ -60,8 +55,10 @@
 
 \cleardoublepage
 \phantomsection
-\renewcommand\lstlistlistingname{Spis listingów}
-\addcontentsline{toc}{chapter}{\lstlistlistingname}
-\lstlistoflistings
+\renewcommand{\baselinestretch}{1.0}\normalsize
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+
+\input{annexes/tool_requirements.tex}
 
 \end{document}

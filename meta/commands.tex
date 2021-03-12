@@ -37,3 +37,14 @@
     \thispagestyle{empty}%
     \addtocounter{page}{-1}%
     \newpage}
+
+\newcounter{appendices}
+\setcounter{appendices}{1}
+
+\newcommand\annex[1]{
+	\cleardoublepage
+	\phantomsection
+	\addcontentsline{toc}{chapter}{Załącznik nr \theappendices: #1}
+	\section*{Załącznik nr \theappendices: #1}
+	\refstepcounter{appendices}
+}
