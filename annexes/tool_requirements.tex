@@ -1,1 +1,30 @@
-\annex{Wymagania} 
+\annex{Wymagania narzędzia do analizy interakcji z aplikacją}
+(dwa akapity do ew. przeniesienia do tekstu pracy)
+\section*{Opis}
+Tworzone narzędzie ma na celu umożliwienie wygodnej analizy wzorców interakcji użytkowników z aplikacją mobilną poprzez ich rejestrację, przetworzenie i wysłanie do centralnej lokalizacji. Ten mechanizm umożliwia twórcom łatwe przeglądanie i analizę zapisanych interakcji pod kątem identyfikacji problemów z interfejsem użytkownika. W szczególności narzędzie będzie tworzyło mapę cieplną dotknięć ekranu na danym ekranie aplikacji nałożoną na obraz tego ekranu. 
+
+\section*{Korzyści}
+Narzędzie pozwala na automatyczne zbieranie cennych danych których pozyskanie w innym przypadku wymagałyby zorganizowania czasochłonnych testów. Dzięki intuicyjnej, graficznej reprezentacji interakcji połączonej z dobrą znajomością interfejsu jego twórca jest w stanie znacznie szybciej diagnozować problemy które mają użytkownicy w trakcie używania aplikacji. Dla porównania dane zebrane z testów (zwykle nagrania telefonu) są zazwyczaj cięższe w analizie z powodu częściowego zasłonięcia ekranu ręką i konieczności domyślania się dokładnych miejsc dotknięć ekranu. 
+
+\section*{Wymagania funkcjonalne}
+\newcommand\tabreq[3]{\ref{req:#1} & #2 & #3 \\\hline}
+\newcommand\reqheader[2]{\item \label{req:#1} {\it #2}:}
+
+\centertable{
+	\hline \textbf{ID} & \textbf{Nazwa} & \textbf{Priorytet} \\\hline 
+	\tabreq{heat_map}{Tworzenie mapy cieplnej dotknięć ekranu}{x}
+	\tabreq{numer_data}{Eksport nieprzetworzonych danych}{x}
+	\tabreq{session_config}{Konfiguracja parametrów zbieranych danych}{x}
+	\tabreq{dynamic_config}{Możliwość zmiany konfiguracji w trakcie działania}{x}
+	\tabreq{store_config}{Wybór sposobu składowania danych}{x}
+	\tabreq{on_off}{Możliwość wyłączenia działania}{x}
+}{| c | l | c|}{Wykaz wymagań funkcjonalnych narzędzia}{tool_requirements}
+
+\begin{enumerate}[label=\textbf{F.\arabic*}]
+	\reqheader{heat_map}{Tworzenie mapy cieplnej dotknięć ekranu} opis
+	\reqheader{numer_data}{Eksport nieprzetworzonych danych} opis
+	\reqheader{session_config}{Konfiguracja parametrów zbieranych danych} opis
+	\reqheader{dynamic_config}{Możliwość zmiany konfiguracji w trakcie działania} opis
+	\reqheader{store_config}{Wybór sposobu składowania danych} opis
+	\reqheader{on_off}{Możliwość wyłączenia działania} opis
+\end{enumerate}
