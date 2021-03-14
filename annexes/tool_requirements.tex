@@ -21,10 +21,10 @@ Narzędzie pozwala na automatyczne zbieranie cennych danych których pozyskanie 
 }{| c | l | c|}{Wykaz wymagań funkcjonalnych narzędzia}{tool_requirements}
 
 \begin{enumerate}[label=\textbf{F.\arabic*}]
-	\reqheader{heat_map}{Tworzenie mapy cieplnej dotknięć ekranu} opis
-	\reqheader{numer_data}{Eksport nieprzetworzonych danych} opis
-	\reqheader{session_config}{Konfiguracja parametrów zbieranych danych} opis
-	\reqheader{dynamic_config}{Możliwość zmiany konfiguracji w trakcie działania} opis
-	\reqheader{store_config}{Wybór sposobu składowania danych} opis
-	\reqheader{on_off}{Możliwość wyłączenia działania} opis
+	\reqheader{heat_map}{Tworzenie mapy cieplnej dotknięć ekranu} Głównym celem narzędzia jest przetwarzanie interakcji użytkownika z aplikacją na ich graficzną reprezentację w formie mapy cieplnej dotknięć ekranu. Powinna być ona nałożona na zdjęcie ekranu aplikacji którego dotyczy w celu łatwej identyfikacji elementów interfejsu z którymi zachodzi interakcja.
+	\reqheader{numer_data}{Eksport nieprzetworzonych danych} Oprócz reprezentacji graficznej narzędzie powinno oferować możliwość zapisywania surowych danych o współrzędnych i czasie pojedynczych dotknięć ekranu. Pozwoli to na ich swobodne przetworzenie według potrzeby twórcy aplikacji używającego narzędzia.
+	\reqheader{session_config}{Konfiguracja parametrów zbieranych danych} Parametry umożliwiające skonfigurowanie procesu zbierania danych takie jak minimalna ilość wykonanych dotknięć ekranu oraz maksymalna długość bezczynności przed zakończeniem nagrywania.
+	\reqheader{dynamic_config}{Możliwość zmiany konfiguracji w trakcie działania} W środowisku produkcyjnym aplikacje często działają w tle przez długi czas. Z tego powodu ważne jest zapewnienie możliwości zmiany konfiguracji podczas jego działania.
+	\reqheader{store_config}{Wybór sposobu składowania danych} Aby dane zbierane przez narzędzie mogły być przeanalizowane muszą zostać wysłane i zapisane. Narzędzie musi oferować mechanizm przekazywania przetworzonych przez siebie danych w celu ich zapisania.
+	\reqheader{on_off}{Możliwość wyłączenia działania} Narzędzie służy do testów jednak działać będzie w środowisku docelowym. Pojawia się zatem potrzeba możliwości włączenia i wyłączenia jego działania.
 \end{enumerate}
