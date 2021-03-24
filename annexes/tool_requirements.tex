@@ -10,21 +10,33 @@ Narzędzie pozwala na automatyczne zbieranie cennych danych których pozyskanie 
 \newcommand\tabreq[3]{\ref{req:#1} & #2 & #3 \\\hline}
 \newcommand\reqheader[2]{\item \label{req:#1} {\it #2}:}
 
+Poniżej znajduje się spis zidentyfikowanych dla tworzonego narzędzia wymagań funkcjonalnych. Priorytety zostały wyrażone w następującej skali: {\bf 3} - {\it największy} do {\bf 1} - {\it najmniejszy}.
+
 \centertable{
 	\hline \textbf{ID} & \textbf{Nazwa} & \textbf{Priorytet} \\\hline 
-	\tabreq{heat_map}{Tworzenie mapy cieplnej dotknięć ekranu}{x}
-	\tabreq{numer_data}{Eksport nieprzetworzonych danych}{x}
-	\tabreq{session_config}{Konfiguracja parametrów zbieranych danych}{x}
-	\tabreq{dynamic_config}{Możliwość zmiany konfiguracji w trakcie działania}{x}
-	\tabreq{store_config}{Wybór sposobu składowania danych}{x}
-	\tabreq{on_off}{Możliwość wyłączenia działania}{x}
+	\tabreq{screen_touch}{Rejestrowanie dotknięć ekranu}{3}
+	\tabreq{heat_map}{Tworzenie mapy cieplnej}{3}
+	\tabreq{per_screen}{Podział danych na ekrany aplikacji}{3}
+	\tabreq{scrolling}{Wsparcie dla przewijanej treści}{3}
+	\tabreq{numer_data}{Eksport nieprzetworzonych danych}{2}
+	\tabreq{session_config}{Konfiguracja parametrów zbieranych danych}{2}
+	\tabreq{store_config}{Wybór sposobu składowania danych}{2}
+	\tabreq{event_grouping}{Grupowanie interakcji ze względu na współrzędne}{2}
+	\tabreq{on_off}{Możliwość wyłączenia działania}{1}
+	\tabreq{dynamic_config}{Możliwość zmiany konfiguracji w trakcie działania}{1}
+	\tabreq{ui_size}{Możliwość dostosowania rozmiaru interfejsu}{1}
 }{| c | l | c|}{Wykaz wymagań funkcjonalnych narzędzia}{tool_requirements}
 
 \begin{enumerate}[label=\textbf{F.\arabic*}]
-	\reqheader{heat_map}{Tworzenie mapy cieplnej dotknięć ekranu} Głównym celem narzędzia jest przetwarzanie interakcji użytkownika z aplikacją na ich graficzną reprezentację w formie mapy cieplnej dotknięć ekranu. Powinna być ona nałożona na zdjęcie ekranu aplikacji którego dotyczy w celu łatwej identyfikacji elementów interfejsu z którymi zachodzi interakcja.
-	\reqheader{numer_data}{Eksport nieprzetworzonych danych} Oprócz reprezentacji graficznej narzędzie powinno oferować możliwość zapisywania surowych danych o współrzędnych i czasie pojedynczych dotknięć ekranu. Pozwoli to na ich swobodne przetworzenie według potrzeby twórcy aplikacji używającego narzędzia.
-	\reqheader{session_config}{Konfiguracja parametrów zbieranych danych} Parametry umożliwiające skonfigurowanie procesu zbierania danych takie jak minimalna ilość wykonanych dotknięć ekranu oraz maksymalna długość bezczynności przed zakończeniem nagrywania.
-	\reqheader{dynamic_config}{Możliwość zmiany konfiguracji w trakcie działania} W środowisku produkcyjnym aplikacje często działają w tle przez długi czas. Z tego powodu ważne jest zapewnienie możliwości zmiany konfiguracji podczas jego działania.
+	\reqheader{screen_touch}{Rejestrowanie dotknięć ekranu} Jako postawowa forma interakcji z urządzeniem mobilnym dotknięcia ekranu stanowią główne źródło danych do przetwarzania przez narzędzie.
+	\reqheader{heat_map}{Tworzenie mapy cieplnej} Podstawowym celem narzędzia jest przetwarzanie interakcji użytkownika z aplikacją na ich graficzną reprezentację w formie mapy cieplnej. 
+	\reqheader{per_screen}{Podział danych na ekrany aplikacji} Interakcje dotyczą konkretnego elementu interfejsu. Zbierane dane muszą być przetwarzane w kontekście ekranu aplikacji którego dotyczą. Mapy cieplne \ref{req:heat_map} powinny być nałożona na zdjęcie odpowiedniego ekranu w celu łatwej identyfikacji elementów interfejsu z którymi zachodzi interakcja.
+	\reqheader{scrolling}{Wsparcie dla przewijanej treści} Narzędzie powinno identyfikować obszary interfejsu które mogą być przewijane i brać je pod uwagę przy przetwarzaniu danych. W przeciwnym przypadku interakcje dotyczące przewijanych elementów będą wizualizowane w nieprawidłowych miejscach.
+	\reqheader{numer_data}{Eksport nieprzetworzonych danych} Oprócz reprezentacji graficznej narzędzie powinno oferować możliwość zapisywania surowych danych o współrzędnych i czasie pojedynczych interakcji. Pozwoli to na ich swobodne przetworzenie według potrzeby twórcy aplikacji używającego narzędzia.
+	\reqheader{session_config}{Konfiguracja parametrów zbieranych danych} Parametry umożliwiające skonfigurowanie procesu zbierania danych takie jak minimalna ilość wykonanych dotknięć ekranu oraz maksymalna długość bezczynności przed zakończeniem rejestrowania interakcji.
 	\reqheader{store_config}{Wybór sposobu składowania danych} Aby dane zbierane przez narzędzie mogły być przeanalizowane muszą zostać wysłane i zapisane. Narzędzie musi oferować mechanizm przekazywania przetworzonych przez siebie danych w celu ich zapisania.
-	\reqheader{on_off}{Możliwość wyłączenia działania} Narzędzie służy do testów jednak działać będzie w środowisku docelowym. Pojawia się zatem potrzeba możliwości włączenia i wyłączenia jego działania.
+	\reqheader{event_grouping}{Grupowanie interakcji ze względu na współrzędne} Blisko położone siebie dotknięcia ekranu najczęściej dotyczą tej samej akcji. Narzędzie powinno grupować takie interakcje zaznaczając ich intensywność aby niepotrzebnie nie zaszumiać przekazu graficznego.
+	\reqheader{on_off}{Możliwość wyłączenia działania} Pomimo że narzędzie służy do testów będzie działać w środowisku docelowym. Pojawia się zatem potrzeba możliwości łatwego włączenia i wyłączenia jego działania.
+	\reqheader{dynamic_config}{Możliwość zmiany konfiguracji w trakcie działania} W środowisku produkcyjnym aplikacje często działają w tle przez długi czas. Z tego powodu ważne jest zapewnienie możliwości zmiany konfiguracji podczas jego działania.
+	\reqheader{ui_size}{Możliwość dostosowania rozmiaru interfejsu} Zależnie od używanej przez aplikację wielkości elementów interfejsu rozmiar tworzonej mapy cieplnej \ref{req:heat_map} oraz grupowany obszar interakcji \ref{req:event_grouping} powinno dać się dostosować. 
 \end{enumerate}
