@@ -15,6 +15,7 @@ jobs:
         with:
           root_file: thesis.tex 
           latexmk_use_xelatex: true
+          args: -shell-escape
       - uses: actions/upload-artifact@v2
         with:
           name: PDF
