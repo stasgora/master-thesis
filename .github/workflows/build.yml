@@ -7,10 +7,9 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v2
       - name: Compile PRISMA Flow Diagram
-        working-directory: ./chapters/SLR
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: prisma_diagram.tex
+          root_file: chapters/SLR/prisma_diagram.tex
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
