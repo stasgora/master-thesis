@@ -7,13 +7,13 @@ Tworzone narzędzie ma na celu umożliwienie wygodnej analizy wzorców interakcj
 Narzędzie pozwala na automatyczne zbieranie cennych danych których pozyskanie w innym przypadku wymagałyby zorganizowania czasochłonnych testów. Dzięki intuicyjnej, graficznej reprezentacji interakcji połączonej z dobrą znajomością interfejsu jego twórca jest w stanie znacznie szybciej diagnozować problemy które mają użytkownicy w trakcie używania aplikacji. Dla porównania dane zebrane z testów (zwykle nagrania telefonu) są zazwyczaj cięższe w analizie z powodu częściowego zasłonięcia ekranu ręką i konieczności domyślania się dokładnych miejsc dotknięć ekranu. 
 
 \section*{Wymagania funkcjonalne}
-\newcommand\tabreq[3]{\ref{req:#1} & #2 & #3 \\\hline}
+\newcommand\tabreq[3]{\ref{req:#1} & #2 & #3 \\\midrule}
 \newcommand\reqheader[2]{\item \label{req:#1} {\it #2}:}
 
 Poniżej znajduje się spis zidentyfikowanych dla tworzonego narzędzia wymagań funkcjonalnych. Priorytety zostały wyrażone w następującej skali: {\bf 3} - {\it największy} do {\bf 1} - {\it najmniejszy}.
 
-\centertable{
-	\hline \textbf{ID} & \textbf{Nazwa} & \textbf{Priorytet} \\\hline 
+\centertable{\toprule
+	\textbf{ID} & \textbf{Nazwa} & \textbf{Priorytet} \\\toprule 
 	\tabreq{screen_touch}{Rejestrowanie dotknięć ekranu}{3}
 	\tabreq{heat_map}{Tworzenie map cieplnych}{3}
 	\tabreq{per_screen}{Podział danych na ekrany aplikacji}{3}
@@ -27,7 +27,7 @@ Poniżej znajduje się spis zidentyfikowanych dla tworzonego narzędzia wymagań
 	\tabreq{on_off}{Możliwość wyłączenia działania narzędzia}{1}
 	\tabreq{dynamic_config}{Opcja zmiany konfiguracji w trakcie działania}{1}
 	\tabreq{ui_size}{Możliwość dostosowania rozmiaru interfejsu}{1}
-}{| c | l | c|}{Wykaz wymagań funkcjonalnych narzędzia}{tool_requirements}
+}{l l r}{Wykaz wymagań funkcjonalnych narzędzia}{tool_requirements}
 
 \begin{enumerate}[label=\textbf{F.\arabic*}]
 	\reqheader{screen_touch}{Rejestrowanie dotknięć ekranu} Jako postawowa forma interakcji z urządzeniem mobilnym dotknięcia ekranu stanowią główne źródło danych do przetwarzania przez narzędzie.

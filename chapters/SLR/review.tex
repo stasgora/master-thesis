@@ -27,13 +27,12 @@ Zastosowane zaawansowane ustawienia wyszukiwania:
 
 \subsection{Łączenie wyników}
 Każda z używanych wyszukiwarek oferuje poprawnie danych w formie pliku {\it .csv}, jednak zawarte w nim kolumny są różnie ułożone i inaczej podpisane. Z tego powodu został stworzony skrypt łączący wyniki z trzech baz w całość, wybierający tylko potrzebne kolumny (Tytuł, Abstrakt oraz Listę autorów). Dodatkowo sprawdzał on i pomijał duplikaty wyników występujące w przypadku gdy ta sama publikacja została znaleziona przez więcej niż jedną wyszukiwarkę. W wyniku otrzymano 648 artykułów.
-\centertable{
-	\hline \textbf{Wyszukiwarka} & \textbf{Ilość zwróconych wyników} & \textbf{Ilość duplikatów} \\
-	\hline Web of Science & 329 & nd. \\
-	\hline IEEE Explore & 378 & 77 \\
-	\hline PubMed & 114 & 96 \\
-	\hline
-}{|c | c | c|}{Ilość zwróconych wyników}{article_count}
+\centertable{\toprule
+	\textbf{Wyszukiwarka} & \textbf{Ilość zwróconych wyników} & \textbf{Ilość duplikatów} \\\toprule
+	Web of Science & 329 & nd. \\\midrule
+	IEEE Explore & 378 & 77 \\\midrule
+	PubMed & 114 & 96 \\\bottomrule
+}{l c c}{Ilość zwróconych wyników}{article_count}
 
 \subsection{Selekcja artykułów}
 W celu wyodrębnienia najbardziej pasujących artykułów oraz zmniejszenia ich liczby została zastosowana wielostopniowa selekcja. W każdym z etapów przyjęte zostały następujące kryteria oraz skala oceny pozycji:
@@ -43,29 +42,26 @@ W celu wyodrębnienia najbardziej pasujących artykułów oraz zmniejszenia ich 
     \item {\bf 2} - Pozycja porusza oryginalny lub interesujący temat mogący wnieść dużą wartość do przeglądu
 \end{itemize}
 Pierwszym etapem była ocena istotności wyników po ich tytułach:
-\centertable{
-	\hline \textbf{Źródło}& \textbf{Ilość} & \textbf{0} & \textbf{1} & \textbf{2} \\
-	\hline Web of Science & 329 & 98 & 180 & 51 \\
-	\hline IEEE & 302 & 79 & 193 & 30 \\
-	\hline PubMed & 17 & 10 & 5 & 2 \\
-	\hline\hline \textbf{Suma} & 648 & 187 & 378 & 83 \\
-	\hline
-}{|c | c | c | c | c|}{Selekcja po tytułach}{title_tagging}
+\centertable{\toprule
+	\textbf{Źródło}& \textbf{Ilość} & \textbf{0} & \textbf{1} & \textbf{2} \\\toprule
+	Web of Science & 329 & 98 & 180 & 51 \\\midrule
+	IEEE & 302 & 79 & 193 & 30 \\\midrule
+	PubMed & 17 & 10 & 5 & 2 \\\midrule
+	\textbf{Suma} & 648 & 187 & 378 & 83 \\\bottomrule
+}{l c c c r}{Selekcja po tytułach}{title_tagging}
 
 Artykuły zaklasyfikowane jako {\bf0} i {\bf1} zostały odrzucone pozostawiając tylko {\bf2}. Następnie analogiczna selekcja została wykonana na podstawie abstraktów.
-\centertable{
-	\hline \textbf{Ilość} & \textbf{0} & \textbf{1} & \textbf{2} \\
-	\hline 82 & 20 & 45 & 17 \\
-	\hline
-}{|c | c | c | c|}{Selekcja po abstraktach}{abstract_tagging}
+\centertable{\toprule
+	\textbf{Ilość} & \textbf{0} & \textbf{1} & \textbf{2} \\\midrule
+	82 & 20 & 45 & 17 \\\bottomrule
+}{l c c r}{Selekcja po abstraktach}{abstract_tagging}
 
 Analiza jakościowa została przeprowadzona na artykułach sklasyfikowanych jako \textbf{2}. W celu przeprowadzenia analizy ilościowej na większej liczbie próbek przeprowadzono dodatkową selekcję na wynikach oznaczonych jako \textbf{1} w poprzedniej klasyfikacji.
 
-\centertable{
-	\hline \textbf{Ilość} & \textbf{0} & \textbf{1} & \textbf{2} \\
-	\hline 45 & 21 & 9 & 15 \\
-	\hline
-}{|c | c | c | c|}{Dodatkowa selekcja jedynek}{ones_tagging}
+\centertable{\toprule
+	\textbf{Ilość} & \textbf{0} & \textbf{1} & \textbf{2} \\\midrule
+	45 & 21 & 9 & 15 \\\bottomrule
+}{l c c r}{Dodatkowa selekcja jedynek}{ones_tagging}
 
 \subsection{Diagram przepływu PRISMA}
 \begin{figure}[H]

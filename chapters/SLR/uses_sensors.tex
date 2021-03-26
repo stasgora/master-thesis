@@ -5,25 +5,25 @@ Analiza zachowania użytkowników jest tematem większości publikacji zawieraj�
 
 Spośród pozostałych zastosowań wyróżniają się te współtworzące inteligentny dom, jak na przykład sterowanie oświetleniem zależnie od wykrytej aktywności \cite{S36} a także te związane z wykrywaniem aktywności sportowych \cite{S29} które można by zintegrować z istniejącymi platformami takimi jak \textit{Strava}.
 
-\centertable{\hline
-	\textbf{Zastosowanie} & \textbf{Przegląd/Analiza} & \textbf{Eksperyment} & \textbf{Suma} \\\hline
-	\drow{Analiza zachowania} & 8 & 12 & \drow{20} \\\cline{2-3}
-	& \cite{S01,S53,S58,S19,S35,S56,S22,S57} & \cite{S21,S38,S02,S06,S13,S16,S29,S30,S32,S33,S42,S59} & \\\hline
-	\drow{Opieka zdrowotna} & 8 & 4 & \drow{12} \\\cline{2-3}
-	& \cite{S01,S19,S35,S39,S07,S22,S62,S57} & \cite{S04,S50,S21,S54} & \\\hline
-	\drow{Asysta osób starszych} & 7 & 3 & \drow{10} \\\cline{2-3}
-	& \cite{S01,S19,S35,S39,S56,S07,S62} & \cite{S04,S21,S25} & \\\hline
-	\drow{Sport} & 5 & 4 & \drow{9} \\\cline{2-3}
-	& \cite{S53,S58,S19,S39,S07} & \cite{S29,S30,S32,S51} & \\\hline
-	\drow{Bezpieczeństwo} & 7 & \drow{-} & \drow{7} \\\cline{2-2}
-	& \cite{S01,S19,S35,S39,S48,S56,S22} && \\\hline
-	\drow{Monitorowanie pacjentów} & 4 & 2 & \drow{6} \\\cline{2-3}
-	& \cite{S01,S35,S39,S62} & \cite{S50,S54} & \\\hline
-	\drow{Inteligentny dom} & 4 & 2 & \drow{6} \\\cline{2-3}
-	& \cite{S01,S19,S56,S07} & \cite{S36,S51} & \\\hline
-	\drow{Rozrywka} & 3 & \drow{-} & \drow{3} \\\cline{2-2}
-	& \cite{S01,S35,S48} && \\\hline
-}{|l | x{3.5cm} | x{3.5cm} || c|}{Najczęściej pojawiające się zastosowania}{uses_analysis}
+\centertable{\toprule
+	\textbf{Zastosowanie} & \textbf{Przegląd/Analiza} & \textbf{Eksperyment} & \textbf{Suma} \\\toprule
+	\drow{Analiza zachowania} & 8 & 12 & \drow{20} \\
+	& \cite{S01,S53,S58,S19,S35,S56,S22,S57} & \cite{S21,S38,S02,S06,S13,S16,S29,S30,S32,S33,S42,S59} & \\\midrule
+	\drow{Opieka zdrowotna} & 8 & 4 & \drow{12} \\
+	& \cite{S01,S19,S35,S39,S07,S22,S62,S57} & \cite{S04,S50,S21,S54} & \\\midrule
+	\drow{Asysta osób starszych} & 7 & 3 & \drow{10} \\
+	& \cite{S01,S19,S35,S39,S56,S07,S62} & \cite{S04,S21,S25} & \\\midrule
+	\drow{Sport} & 5 & 4 & \drow{9} \\
+	& \cite{S53,S58,S19,S39,S07} & \cite{S29,S30,S32,S51} & \\\midrule
+	\drow{Bezpieczeństwo} & 7 & \drow{-} & \drow{7} \\
+	& \cite{S01,S19,S35,S39,S48,S56,S22} && \\\midrule
+	\drow{Monitorowanie pacjentów} & 4 & 2 & \drow{6} \\
+	& \cite{S01,S35,S39,S62} & \cite{S50,S54} & \\\midrule
+	\drow{Inteligentny dom} & 4 & 2 & \drow{6} \\
+	& \cite{S01,S19,S56,S07} & \cite{S36,S51} & \\\midrule
+	\drow{Rozrywka} & 3 & \drow{-} & \drow{3} \\
+	& \cite{S01,S35,S48} && \\\bottomrule
+}{l x{3.5cm} x{3.5cm} r}{Najczęściej pojawiające się zastosowania}{uses_analysis}
 
 \subsection{Sensory}
 Akcelerometr, magnetometr oraz żyroskop, występujące często razem jako tak zwany \textit{``Inertial measurement unit''} są najpopularniejszym zestawem wybieranym przez autorów artykułów \cite{S30, S32}. Nadają się one dobrze do wykrywania aktywności ruchowych takich jak przemieszczanie się. Pod warunkiem rozmieszczenia wielu sensorów na ciele osoby monitorowanej, jak w \cite{S29} możliwe jest także rozpoznawanie wykonywanych gestów i ruchów ciała.
@@ -31,32 +31,32 @@ Akcelerometr, magnetometr oraz żyroskop, występujące często razem jako tak z
 Mikrofon jest sensorem o szerokim zastosowaniu. Jest używany w środowiskach domowych do zbierania dźwięków z otoczenia i identyfikowania na ich podstawie czynności takich jak chodzenie, stukanie, otwieranie / zamykanie drzwi lub odkurzanie \cite{S46}. Jednym z ciekawszych przykładów jego wykorzystania zaproponowanym w jednej z publikacji jest emitowanie ultradźwiękowych sygnałów i nasłuchiwanie echa mikrofonem \cite{S22}. Ta technika, leżąca u podstawy działania sonaru pozwala na wykrycie położenia i względnego ruchu pobliskich przedmiotów poprzez wykorzystanie efektu Dopplera.
 
 Przykłady wykorzystania pulsometru pojawiają się zarówno w obszarze medyczno-zdrowotnym \cite{S62} przy monitorowaniu parametrów życiowych jak i rekreacyjno-sportowym \cite{S51} przy zapisie aktywności fizycznej użytkownika. Rytm i szybkość bicia serca dostarczają użyteczne i jednocześnie proste w przetwarzaniu i interpretacji dane o aktualnym stanie i poziomowi wysiłku monitorowanej osoby.
-\centertable{\hline
-\textbf{Sensor} & \textbf{Przegląd/Analiza} & \textbf{Eksperyment} & \textbf{Suma} \\\hline
-\drow{Akcelerometr} & 10 & 16 & \drow{26} \\\cline{2-3}
-& \cite{S01,S53,S58,S19,S35,S39,S56,S07,S62,S57} & \cite{S04,S50,S21,S38,S26,S02,S06,S13,S16,S29,S30,S32,S33,S42,S54,S59} & \\\hline
-\drow{Mikrofon} & 8 & 6 & \drow{14} \\\cline{2-3}
-& \cite{S01,S58,S19,S39,S56,S07,S22,S62} & \cite{S38,S02,S06,S36,S46,S51} & \\\hline
-\drow{Magnetometr} & 7 & 7 & \drow{14} \\\cline{2-3}
-& \cite{S01,S53,S19,S56,S07,S62,S57} & \cite{S21,S38,S02,S06,S13,S42,S59} & \\\hline
-\drow{Żyroskop} & 7 & 7 & \drow{14} \\\cline{2-3}
-& \cite{S01,S53,S19,S56,S07,S62,S57} & \cite{S50,S21,S13,S29,S33,S42,S59} & \\\hline
-\drow{Kamera} & 9 & 2 & \drow{11} \\\cline{2-3}
-& \cite{S01,S53,S58,S39,S48,S56,S07,S22,S62} & \cite{S38,S25} & \\\hline
-\drow{GPS} & 6 & 3 & \drow{9} \\\cline{2-3}
-& \cite{S01,S53,S19,S39,S07,S62} & \cite{S26,S06,S54} & \\\hline
-\drow{Pulsometr} & 6 & 2 & \drow{8} \\\cline{2-3}
-& \cite{S53,S58,S35,S39,S62,S57} & \cite{S04,S51} & \\\hline
-\drow{Termometr} & 7 & \drow{-} & \drow{7} \\\cline{2-2}
-& \cite{S01,S58,S35,S39,S56,S07,S57} && \\\hline
-\drow{Radio/RFID} & 6 & 1 & \drow{7} \\\cline{2-3}
-& \cite{S01,S53,S58,S19,S22,S62} & \cite{S38} & \\\hline
-\drow{Czujnik światła} & 6 & \drow{-} & \drow{6} \\\cline{2-2}
-& \cite{S53,S19,S39,S56,S07,S22} && \\\hline
-\drow{WiFi} & 4 & 1 & \drow{5} \\\cline{2-3}
-& \cite{S01,S53,S39,S56} & \cite{S26} & \\\hline
-\drow{Bluetooth} & 4 & 1 & \drow{5} \\\cline{2-3}
-& \cite{S53,S35,S39,S56} & \cite{S38} & \\\hline
-\drow{Barometr} & 4 & 1 & \drow{5} \\\cline{2-3}
-& \cite{S01,S19,S56,S62} & \cite{S59} & \\\hline
-}{|l | x{4cm} | x{4.4cm} || c|}{Najczęściej wykorzystywane sensory}{sensor_analysis}
+\centertable{\toprule
+\textbf{Sensor} & \textbf{Przegląd/Analiza} & \textbf{Eksperyment} & \textbf{Suma} \\\toprule
+\drow{Akcelerometr} & 10 & 16 & \drow{26} \\
+& \cite{S01,S53,S58,S19,S35,S39,S56,S07,S62,S57} & \cite{S04,S50,S21,S38,S26,S02,S06,S13,S16,S29,S30,S32,S33,S42,S54,S59} & \\\midrule
+\drow{Mikrofon} & 8 & 6 & \drow{14} \\
+& \cite{S01,S58,S19,S39,S56,S07,S22,S62} & \cite{S38,S02,S06,S36,S46,S51} & \\\midrule
+\drow{Magnetometr} & 7 & 7 & \drow{14} \\
+& \cite{S01,S53,S19,S56,S07,S62,S57} & \cite{S21,S38,S02,S06,S13,S42,S59} & \\\midrule
+\drow{Żyroskop} & 7 & 7 & \drow{14} \\
+& \cite{S01,S53,S19,S56,S07,S62,S57} & \cite{S50,S21,S13,S29,S33,S42,S59} & \\\midrule
+\drow{Kamera} & 9 & 2 & \drow{11} \\
+& \cite{S01,S53,S58,S39,S48,S56,S07,S22,S62} & \cite{S38,S25} & \\\midrule
+\drow{GPS} & 6 & 3 & \drow{9} \\
+& \cite{S01,S53,S19,S39,S07,S62} & \cite{S26,S06,S54} & \\\midrule
+\drow{Pulsometr} & 6 & 2 & \drow{8} \\
+& \cite{S53,S58,S35,S39,S62,S57} & \cite{S04,S51} & \\\midrule
+\drow{Termometr} & 7 & \drow{-} & \drow{7} \\
+& \cite{S01,S58,S35,S39,S56,S07,S57} && \\\midrule
+\drow{Radio/RFID} & 6 & 1 & \drow{7} \\
+& \cite{S01,S53,S58,S19,S22,S62} & \cite{S38} & \\\midrule
+\drow{Czujnik światła} & 6 & \drow{-} & \drow{6} \\
+& \cite{S53,S19,S39,S56,S07,S22} && \\\midrule
+\drow{WiFi} & 4 & 1 & \drow{5} \\
+& \cite{S01,S53,S39,S56} & \cite{S26} & \\\midrule
+\drow{Bluetooth} & 4 & 1 & \drow{5} \\
+& \cite{S53,S35,S39,S56} & \cite{S38} & \\\midrule
+\drow{Barometr} & 4 & 1 & \drow{5} \\
+& \cite{S01,S19,S56,S62} & \cite{S59} & \\\bottomrule
+}{l x{4cm} x{4.4cm} r}{Najczęściej wykorzystywane sensory}{sensor_analysis}
