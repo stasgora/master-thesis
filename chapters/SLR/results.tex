@@ -20,13 +20,15 @@ Podczas zapoznawania się z wybranymi publikacjami aktywnie szukane i spisywane 
 Z pośród wyselekcjonowanych artykułów 12 zostało sklasyfikowanych jako \textit{Przegląd teoretyczny} lub \textit{Meta-analiza} podczas gdy pozostałe 20 zawierało opis przeprowadzonego przez autorów eksperymentu. 
 
 {\bf Uwaga:} Niektóre z artykułów zostały zaliczone do więcej niż jednej kategorii przez co suma wartości poniższej tabeli \ref{tab:area_clasification} jest wyższa od rzeczywistej liczby analizowanych artykułów. Połowa przeglądów zawierała jednocześnie meta-analizę zbioru opublikowanych eksperymentów.
-\centertable{
-	\hline \textbf{Klasyfikacja} & \textbf{Przegląd teoretyczny} & \textbf{Meta-analiza} & \textbf{Eksperyment} \\
-	\hline {\bf 2} & 12 & 8 & 7 \\
-	\hline {\bf 1} & - & - & 13 \\
-	\hline\hline {\bf Suma} & 12 & 8 & 20 \\
-	\hline
-}{|c | c | c | c|}{Podział na typy artykułów}{area_clasification}
+
+\centertable{\hline
+	\textbf{Klasyfikacja} & \textbf{Przegląd teoretyczny} & \textbf{Meta-analiza} & \textbf{Eksperyment} \\\hline
+	\drow{\bf 2} & 12 & 8 & 7 \\\cline{2-4}
+	& \cite{S01,S53,S58,S35,S39,S56,S07,S22,S62,S57,S38,S06} & \cite{S01,S53,S19,S39,S48,S07,S22,S62} & \cite{S04,S50,S21,S38,S26,S02,S06} \\\hline
+	\drow{\bf 1} & \drow{-} & \drow{-} & 13 \\\cline{4-4}
+	&&& \cite{S13,S16,S25,S29,S30,S32,S33,S36,S42,S46,S51,S54,S59} \\\hline\hline
+	{\bf Suma} & 12 & 8 & 20 \\\hline
+}{|c | x{3cm} | x{2.2cm} | x{4cm}|}{Podział na typy artykułów}{area_clasification}
 
 \input{\chapterPath/uses_sensors.tex}
 \input{\chapterPath/modalities_metrics.tex}
