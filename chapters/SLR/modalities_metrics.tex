@@ -27,7 +27,7 @@ Aktywności te są łatwo wykrywalne za pomocą akcelerometru, czasami połączo
 }{|l | c | c || c|}{Najczęściej obserwowane modalności}{modality_analysis}
 
 \subsection{Metryki}
-Metryki używane w procesie wykrywania aktywności są bardzo liczne. Z powodu już wspomnianej dużej ilości publikacji i eksperymentów używających akcelerometru większość używanych i wymienianych metryk dotyczy właśnie do tego sensora. Oprócz tego paru autorów wymienia wybrane przez siebie metryki odpowiednie dla pulsometru \cite{4_HAR_Features}, mikrofonu \cite{22_HAR_Survey_Ultrasonic, 46_Indor_Audio_Rec} oraz GPS \cite{26_Mobility_Sensing}. Warto zaznaczyć że część z autorów zupełnie pomija temat metryk w swoich publikacjach.
+Metryki używane w procesie wykrywania aktywności są bardzo liczne. Z powodu już wspomnianej dużej ilości publikacji i eksperymentów używających akcelerometru większość używanych i wymienianych metryk dotyczy właśnie do tego sensora. Oprócz tego paru autorów wymienia wybrane przez siebie metryki odpowiednie dla pulsometru \cite{S04}, mikrofonu \cite{S22, S46} oraz GPS \cite{S26}. Warto zaznaczyć że część z autorów zupełnie pomija temat metryk w swoich publikacjach.
 
 \centertable{
 	\hline \textbf{Sensor} & \textbf{Przegląd/Analiza} & \textbf{Eksperyment} & \textbf{Suma} \\
@@ -56,7 +56,7 @@ W przypadku akcelerometru proste metryki, takie jak odchylenie standardowe, śre
 	\hline
 }{|l | c | c || c|}{Najczęściej używane metryki - {\bf Akcelerometr}}{accl_features}
 
-Proces wykrywania aktywności zaproponowany w \cite{4_HAR_Features} wykorzystujący akcelerometr oraz pulsometr przykłada dużą wagę do metryk. Po zebraniu i wstępnym przetworzeniu danych z sensorów następuje faza wyodrębnienia cech, której celem jest wydobycie możliwie wielu informacji z uzyskanych sygnałów. Następnie na ich podstawie następuje selekcja najważniejszych metryk używanych przy uczeniu klasyfikatora aktywności. Pod uwagę wzięte zostały zarówno cechy z dziedziny czasu (np. {\it Mean Absolute Deviation}) jak i częstotliwości (np. {\it Power Spectral Density}) źródłowego sygnału.
+Proces wykrywania aktywności zaproponowany w \cite{S04} wykorzystujący akcelerometr oraz pulsometr przykłada dużą wagę do metryk. Po zebraniu i wstępnym przetworzeniu danych z sensorów następuje faza wyodrębnienia cech, której celem jest wydobycie możliwie wielu informacji z uzyskanych sygnałów. Następnie na ich podstawie następuje selekcja najważniejszych metryk używanych przy uczeniu klasyfikatora aktywności. Pod uwagę wzięte zostały zarówno cechy z dziedziny czasu (np. {\it Mean Absolute Deviation}) jak i częstotliwości (np. {\it Power Spectral Density}) źródłowego sygnału.
 
 \centertable{
 	\hline \textbf{Metryka} & \textbf{Eksperyment} & \textbf{Suma} \\
