@@ -17,7 +17,7 @@ Poniżej znajduje się spis zidentyfikowanych dla tworzonego narzędzia wymagań
 	\tabreq{screen_touch}{Rejestrowanie dotknięć ekranu}{3}
 	\tabreq{heat_map}{Tworzenie map cieplnych}{3}
 	\tabreq{per_screen}{Podział danych na ekrany aplikacji}{3}
-	\tabreq{time_periods}{Podział danych na oresy czasowe}{3}
+	\tabreq{time_periods}{Podział danych na okresy czasowe}{3}
 	\tabreq{scrolling}{Wsparcie dla przewijanej treści}{3}
 	\tabreq{numer_data}{Eksport nieprzetworzonych danych}{2}
 	\tabreq{session_config}{Konfiguracja parametrów zbieranych danych}{2}
@@ -33,7 +33,7 @@ Poniżej znajduje się spis zidentyfikowanych dla tworzonego narzędzia wymagań
 	\reqheader{screen_touch}{Rejestrowanie dotknięć ekranu} Jako postawowa forma interakcji z urządzeniem mobilnym dotknięcia ekranu stanowią główne źródło danych do przetwarzania przez narzędzie.
 	\reqheader{heat_map}{Tworzenie map cieplnych} Podstawowym celem narzędzia jest przetwarzanie interakcji użytkownika z aplikacją na ich graficzną reprezentację w formie mapy cieplnej. 
 	\reqheader{per_screen}{Podział danych na ekrany aplikacji} Interakcje dotyczą konkretnego elementu interfejsu. Zbierane dane muszą być przetwarzane w kontekście ekranu aplikacji którego dotyczą. Mapy cieplne \ref{req:heat_map} powinny być nałożona na zdjęcie odpowiedniego ekranu w celu łatwej identyfikacji elementów interfejsu z którymi zachodzi interakcja.
-	\reqheader{time_periods}{Podział danych na oresy czasowe} Dane zbierane w ramach każdego ekranu muszą zostać podzielone na rozsądne grupy na podstawie których będą tworzone pojedyncze mapy cieplne. Podział ten powinien jednocześnie nie być zbyt drobny, aby zapewnić opymalną liczbę punktów do przetwarzania, oraz w miarę możliwości zgadzać się z sesjami użycia aplikacji rozdzielonymi okresami bezczynności.
+	\reqheader{time_periods}{Podział danych na okresy czasowe} Dane zbierane w ramach każdego ekranu muszą zostać podzielone na rozsądne grupy na podstawie których będą tworzone pojedyncze mapy cieplne. Podział ten powinien jednocześnie nie być zbyt drobny, aby zapewnić optymalną liczbę punktów do przetwarzania, oraz w miarę możliwości zgadzać się z sesjami użycia aplikacji rozdzielonymi okresami bezczynności.
 	\reqheader{scrolling}{Wsparcie dla przewijanej treści} Narzędzie powinno identyfikować obszary interfejsu które mogą być przewijane i brać je pod uwagę przy przetwarzaniu danych. W przeciwnym przypadku interakcje dotyczące przewijanych elementów będą wizualizowane w nieprawidłowych miejscach.
 	\reqheader{numer_data}{Eksport nieprzetworzonych danych} Oprócz reprezentacji graficznej narzędzie powinno oferować możliwość zapisywania surowych danych o współrzędnych i czasie pojedynczych interakcji. Pozwoli to na ich swobodne przetworzenie według potrzeby twórcy aplikacji używającego narzędzia.
 	\reqheader{session_config}{Konfiguracja parametrów zbieranych danych} Parametry umożliwiające skonfigurowanie procesu zbierania danych takie jak minimalna ilość wykonanych dotknięć ekranu oraz maksymalna długość bezczynności przed zakończeniem rejestrowania interakcji.
