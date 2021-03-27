@@ -47,7 +47,24 @@ Metryki używane w procesie wykrywania aktywności są bardzo liczne. Z powodu j
 	{\bf Suma} & 24 & 32 & 43 \\\bottomrule
 }{l c c r}{Ilość rodzajów metryk dotyczących danego sensora}{modality_stats}
 
+Proces wykrywania aktywności zaproponowany w \cite{S04} wykorzystujący akcelerometr oraz pulsometr przykłada dużą wagę do metryk. Po zebraniu i wstępnym przetworzeniu danych z sensorów następuje faza wyodrębnienia cech, której celem jest wydobycie możliwie wielu informacji z uzyskanych sygnałów. Następnie na ich podstawie następuje selekcja najważniejszych metryk używanych przy uczeniu klasyfikatora aktywności. Pod uwagę wzięte zostały zarówno cechy z dziedziny czasu (np. {\it Mean Absolute Deviation}) jak i częstotliwości (np. {\it Power Spectral Density}) źródłowego sygnału.
+
+\centertable{\toprule
+	\textbf{Metryka} & \textbf{Eksperyment} & \textbf{Suma} \\\toprule
+	\drow{Step frequency} & 2 & \drow{2} \\
+	& \cite{S04,S29} & \\\midrule
+	\drow{Power Spectral Density} & 2 & \drow{2} \\
+	& \cite{S04,S13} & \\\midrule
+	\drow{Variance} & 1 & \drow{1} \\
+	& \cite{S04} & \\\midrule
+	\drow{FFT Peaks \& Energy} & 1 & \drow{1} \\
+	& \cite{S04} & \\\midrule
+	\drow{Trunk inclination} & 1 & \drow{1} \\
+	& \cite{S04} & \\\midrule
+}{l x{3cm} r}{Najczęściej używane metryki - {\bf Pulsometr}}{heart_rate_features}
+
 W przypadku akcelerometru proste metryki, takie jak odchylenie standardowe, średnia, mediana oraz wartości minimalne i maksymalne są używane zdecydowanie najczęściej co świadczy o ich uniwersalności. Rzadziej pojawiają się metryki związane z entropią sygnału, rozstępem międzykwartylowym czy średnią kwadratową.
+
 \centertable{\toprule
 	\textbf{Metryka} & \textbf{Przegląd/Analiza} & \textbf{Eksperyment} & \textbf{Suma} \\\toprule
 	\drow{Standard Deviation} & 5 & 10 & \drow{15} \\
@@ -71,19 +88,3 @@ W przypadku akcelerometru proste metryki, takie jak odchylenie standardowe, śre
 	\drow{Root Mean Square} & 2 & 2 & \drow{4} \\
 	& \cite{S58,S39} & \cite{S13,S29} & \\\midrule
 }{l x{3cm} x{4.4cm} r}{Najczęściej używane metryki - {\bf Akcelerometr}}{accl_features}
-
-Proces wykrywania aktywności zaproponowany w \cite{S04} wykorzystujący akcelerometr oraz pulsometr przykłada dużą wagę do metryk. Po zebraniu i wstępnym przetworzeniu danych z sensorów następuje faza wyodrębnienia cech, której celem jest wydobycie możliwie wielu informacji z uzyskanych sygnałów. Następnie na ich podstawie następuje selekcja najważniejszych metryk używanych przy uczeniu klasyfikatora aktywności. Pod uwagę wzięte zostały zarówno cechy z dziedziny czasu (np. {\it Mean Absolute Deviation}) jak i częstotliwości (np. {\it Power Spectral Density}) źródłowego sygnału.
-
-\centertable{\toprule
-	\textbf{Metryka} & \textbf{Eksperyment} & \textbf{Suma} \\\toprule
-	\drow{Step frequency} & 2 & \drow{2} \\
-	& \cite{S04,S29} & \\\midrule
-	\drow{Power Spectral Density} & 2 & \drow{2} \\
-	& \cite{S04,S13} & \\\midrule
-	\drow{Variance} & 1 & \drow{1} \\
-	& \cite{S04} & \\\midrule
-	\drow{FFT Peaks \& Energy} & 1 & \drow{1} \\
-	& \cite{S04} & \\\midrule
-	\drow{Trunk inclination} & 1 & \drow{1} \\
-	& \cite{S04} & \\\midrule
-}{l x{3cm} r}{Najczęściej używane metryki - {\bf Pulsometr}}{heart_rate_features}
