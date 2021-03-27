@@ -12,58 +12,78 @@ Zdecydowanie najpopularniejszymi wśród zebranych publikacji modalnościami są
 
 Aktywności te są łatwo wykrywalne za pomocą akcelerometru, czasami połączonego z żyroskopem i magnetometrem, co wpływa na popularność wykorzystania tych sensorów \ref{tab:sensor_analysis} oraz częstą kategoryzację w grupie zastosowań ``Analiza zachowania'' \ref{tab:uses_analysis}. 
 
-\centertable{
-	\hline \textbf{Modalność} & \textbf{Przegląd/Analiza} & \textbf{Eksperyment} & \textbf{Suma} \\
-	\hline Aktywność ruchowa & 11 & 16 & 27 \\
-	\hline Ruch ciała & 7 & 11 & 18 \\
-	\hline Poza ciała & 9 & 4 & 13 \\
-	\hline Wykonywane gesty & 4 & 2 & 6 \\
-	\hline Podnoszenie przedmiotów & 2 & 2 & 4 \\
-	\hline Bicie serca & 1 & 3 & 4 \\
-	\hline Jedzenie & 1 & 3 & 4 \\
-	\hline Picie & 2 & 2 & 4 \\
-	\hline Ruch rąk / ramion & 2 & 2 & 4 \\
-	\hline
-}{|l | c | c || c|}{Najczęściej obserwowane modalności}{modality_analysis}
+\centertable{\toprule
+	\textbf{Modalność} & \textbf{Przegląd/Analiza} & \textbf{Eksperyment} & \textbf{Suma} \\\toprule
+	\drow{Aktywność ruchowa} & 11 & 16 & \drow{27} \\
+	& \cite{S01,S53,S58,S19,S39,S48,S56,S07,S22,S62,S57} & \cite{S04,S50,S21,S38,S26,S02,S06,S13,S16,S29,S30,S32,S33,S42,S54,S59} & \\\midrule
+	\drow{Ruch ciała} & 7 & 11 & \drow{18} \\
+	& \cite{S53,S58,S19,S35,S48,S07,S62} & \cite{S04,S50,S38,S02,S06,S29,S30,S32,S33,S42,S51} & \\\midrule
+	\drow{Poza ciała} & 9 & 4 & \drow{13} \\
+	& \cite{S53,S58,S19,S35,S39,S48,S56,S07,S62} & \cite{S04,S38,S02,S42} & \\\midrule
+	\drow{Wykonywane gesty} & 4 & 2 & \drow{6} \\
+	& \cite{S01,S58,S35,S22} & \cite{S50,S38} & \\\midrule
+	\drow{Podnoszenie przedmiotów} & 2 & 2 & \drow{4} \\
+	& \cite{S01,S62} & \cite{S38,S36} & \\\midrule
+	\drow{Bicie serca} & 1 & 3 & \drow{4} \\
+	& \cite{S22} & \cite{S04,S51,S54} & \\\midrule
+	\drow{Jedzenie} & 1 & 3 & \drow{4} \\
+	& \cite{S62} & \cite{S38,S13,S36} & \\\midrule
+	\drow{Picie} & 2 & 2 & \drow{4} \\
+	& \cite{S62,S57} & \cite{S38,S36} & \\\midrule
+	\drow{Ruch rąk / ramion} & 2 & 2 & \drow{4} \\
+	& \cite{S22,S62} & \cite{S38,S13} & \\\bottomrule
+}{l x{3cm} x{4.4cm} r}{Najczęściej obserwowane modalności}{modality_analysis}
 
 \subsection{Metryki}
 Metryki używane w procesie wykrywania aktywności są bardzo liczne. Z powodu już wspomnianej dużej ilości publikacji i eksperymentów używających akcelerometru większość używanych i wymienianych metryk dotyczy właśnie do tego sensora. Oprócz tego paru autorów wymienia wybrane przez siebie metryki odpowiednie dla pulsometru \cite{S04}, mikrofonu \cite{S22, S46} oraz GPS \cite{S26}. Warto zaznaczyć że część z autorów zupełnie pomija temat metryk w swoich publikacjach.
 
-\centertable{
-	\hline \textbf{Sensor} & \textbf{Przegląd/Analiza} & \textbf{Eksperyment} & \textbf{Suma} \\
-	\hline Akcelerometr & 20 & 20 & 27 \\
-	\hline Pulsometr & 0 & 5 & 5 \\
-	\hline Mikrofon & 3 & 3 & 6 \\
-	\hline GPS & 0 & 4 & 4 \\
-	\hline Żyroskop & 1 & 0 & 1 \\
-	\hline\hline {\bf Suma} & 24 & 32 & 43 \\
-	\hline
-}{|l | c | c || c|}{Ilość rodzajów metryk dotyczących danego sensora}{modality_stats}
+\centertable{\toprule
+	\textbf{Sensor} & \textbf{Przegląd/Analiza} & \textbf{Eksperyment} & \textbf{Suma} \\\toprule
+	Akcelerometr & 20 & 20 & 27 \\\midrule
+	Pulsometr & 0 & 5 & 5 \\\midrule
+	Mikrofon & 3 & 3 & 6 \\\midrule
+	GPS & 0 & 4 & 4 \\\midrule
+	Żyroskop & 1 & 0 & 1 \\\bottomrule
+	{\bf Suma} & 24 & 32 & 43 \\\bottomrule
+}{l c c r}{Ilość rodzajów metryk dotyczących danego sensora}{modality_stats}
 
 W przypadku akcelerometru proste metryki, takie jak odchylenie standardowe, średnia, mediana oraz wartości minimalne i maksymalne są używane zdecydowanie najczęściej co świadczy o ich uniwersalności. Rzadziej pojawiają się metryki związane z entropią sygnału, rozstępem międzykwartylowym czy średnią kwadratową.
-\centertable{
-	\hline \textbf{Metryka} & \textbf{Przegląd/Analiza} & \textbf{Eksperyment} & \textbf{Suma} \\
-	\hline Standard Deviation & 5 & 10 & 15 \\
-	\hline Min, Max & 4 & 7 & 11 \\
-	\hline Mean, Median & 3 & 8 & 11 \\
-	\hline Signal Magnitude Area & 2 & 5 & 7 \\
-	\hline Mean Absolute Deviation & 3 & 3 & 6 \\
-	\hline Variance & 2 & 3 & 5 \\
-	\hline Correlation Coefficients & 2 & 3 & 5 \\
-	\hline Interquartile Range & 2 & 3 & 5 \\
-	\hline Signal Entropy & 2 & 3 & 5 \\
-	\hline Root Mean Square & 2 & 2 & 4 \\
-	\hline
-}{|l | c | c || c|}{Najczęściej używane metryki - {\bf Akcelerometr}}{accl_features}
+\centertable{\toprule
+	\textbf{Metryka} & \textbf{Przegląd/Analiza} & \textbf{Eksperyment} & \textbf{Suma} \\\toprule
+	\drow{Standard Deviation} & 5 & 10 & \drow{15} \\
+	& \cite{S58,S19,S39,S56,S62} & \cite{S50,S21,S02,S13,S16,S29,S30,S33,S42,S54} & \\\midrule
+	\drow{Min, Max} & 4 & 7 & \drow{11} \\
+	& \cite{S58,S19,S56,S62} & \cite{S50,S02,S16,S29,S30,S33,S54} & \\\midrule
+	\drow{Mean, Median} & 3 & 8 & \drow{11} \\
+	& \cite{S39,S56,S62} & \cite{S50,S13,S16,S29,S30,S33,S42,S54} & \\\midrule
+	\drow{Signal Magnitude Area} & 2 & 5 & \drow{7} \\
+	& \cite{S56,S62} & \cite{S04,S50,S30,S32,S33} & \\\midrule
+	\drow{Mean Absolute Deviation} & 3 & 3 & \drow{6} \\
+	& \cite{S19,S39,S56} & \cite{S04,S29,S33} & \\\midrule
+	\drow{Variance} & 2 & 3 & \drow{5} \\
+	& \cite{S39,S62} & \cite{S50,S16,S29} & \\\midrule
+	\drow{Correlation Coefficients} & 2 & 3 & \drow{5} \\
+	& \cite{S19,S62} & \cite{S04,S50,S54} & \\\midrule
+	\drow{Interquartile Range} & 2 & 3 & \drow{5} \\
+	& \cite{S39,S56} & \cite{S29,S30,S33} & \\\midrule
+	\drow{Signal Entropy} & 2 & 3 & \drow{5} \\
+	& \cite{S56,S62} & \cite{S50,S06,S33} & \\\midrule
+	\drow{Root Mean Square} & 2 & 2 & \drow{4} \\
+	& \cite{S58,S39} & \cite{S13,S29} & \\\midrule
+}{l x{3cm} x{4.4cm} r}{Najczęściej używane metryki - {\bf Akcelerometr}}{accl_features}
 
 Proces wykrywania aktywności zaproponowany w \cite{S04} wykorzystujący akcelerometr oraz pulsometr przykłada dużą wagę do metryk. Po zebraniu i wstępnym przetworzeniu danych z sensorów następuje faza wyodrębnienia cech, której celem jest wydobycie możliwie wielu informacji z uzyskanych sygnałów. Następnie na ich podstawie następuje selekcja najważniejszych metryk używanych przy uczeniu klasyfikatora aktywności. Pod uwagę wzięte zostały zarówno cechy z dziedziny czasu (np. {\it Mean Absolute Deviation}) jak i częstotliwości (np. {\it Power Spectral Density}) źródłowego sygnału.
 
-\centertable{
-	\hline \textbf{Metryka} & \textbf{Eksperyment} & \textbf{Suma} \\
-	\hline Step frequency & 2 & 2 \\
-	\hline Power Spectral Density & 2 & 2 \\
-	\hline Variance & 1 & 1 \\
-	\hline FFT Peaks \& Energy & 1 & 1 \\
-	\hline Trunk inclination & 1 & 1 \\
-	\hline
-}{|l | c || c|}{Najczęściej używane metryki - {\bf Pulsometr}}{heart_rate_features}
+\centertable{\toprule
+	\textbf{Metryka} & \textbf{Eksperyment} & \textbf{Suma} \\\toprule
+	\drow{Step frequency} & 2 & \drow{2} \\
+	& \cite{S04,S29} & \\\midrule
+	\drow{Power Spectral Density} & 2 & \drow{2} \\
+	& \cite{S04,S13} & \\\midrule
+	\drow{Variance} & 1 & \drow{1} \\
+	& \cite{S04} & \\\midrule
+	\drow{FFT Peaks \& Energy} & 1 & \drow{1} \\
+	& \cite{S04} & \\\midrule
+	\drow{Trunk inclination} & 1 & \drow{1} \\
+	& \cite{S04} & \\\midrule
+}{l x{3cm} r}{Najczęściej używane metryki - {\bf Pulsometr}}{heart_rate_features}
