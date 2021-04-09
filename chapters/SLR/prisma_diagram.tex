@@ -10,47 +10,53 @@
 	node distance=15mm and 10mm,
 	start chain=going below,
 	mynode/.style = {
-		draw, rectangle, align=center, text width=5cm,
-		font=\small, inner sep=3ex, outer sep=0pt,
-		on chain},
+		draw, rectangle, align=center, text width=4cm,
+		font=\small, inner ysep=3ex, inner xsep=2ex, 
+		outer sep=0pt, on chain},
+	smallnode/.style = {
+		mynode, text width=3.7cm
+	},
 	mylabel/.style = {
 		draw, rectangle, align=center, rounded corners, 
 		font=\small\bfseries, inner sep=2ex, outer sep=0pt,
 		fill=cyan!30, minimum height=38mm,
 		on chain},
 	every join/.style = arrow,
-	arrow/.style = {very thick,-stealth}
+	arrow/.style = {very thick, -stealth, rounded corners}
 ]
 \coordinate (tc);
 
 %\node[above=of tc,font=\bfseries] {PRISMA 2009 Flow Diagram};
 
-\node (n1a) [mynode, left=of tc]    {Records identified through 
-                                     database searching: {\bf 821}};
-\node (n1b) [mynode,right=of tc]    {Additional records indentified\\
-                                     through other sources: {\bf 0}};
+\node (n1a) [smallnode, left=of tc]    {{\it Web of Science} records identified: {\bf 329}};
+\node (n1b) [smallnode,right=of n1a]    {{\it IEEE Explore} records\\ identified: {\bf 378 }};
+\node (n1c) [smallnode,right=of n1b]    {{\it PubMed} records\\ identified: {\bf 114 }};
 
-\node (n2)  [mynode, below=of tc]   {Records after duplicates\\
+\node (n2)  [mynode, below=of n1b]   {Records after duplicates\\
                                      removed: {\bf 648}};
-\node (n3)  [mynode,join]   {Records screened: {\bf 648}};
-\node (n4)  [mynode,join]   {Full-text articles accessed\\ 
-                             for eligibility: {\bf 32}};
-\node (n5)  [mynode,join]   {Studies included in \\
+\node (n3a)  [mynode,join]   {Records screened\\ by title: {\bf 648}};
+\node (n3b)  [mynode,join]   {Records screened\\ by abstract: {\bf 83}};
+\node (n3c)  [mynode,join]   {Records screened\\ by abstract: {\bf 45}};
+\node (n4)  [smallnode] at (n1a |- n3b.south)  {Full-text articles accessed 
+                             for eligibility: {\bf 17}};
+\node (n6)  [smallnode,join]   {Studies included in
                              qualitative synthesis: {\bf 17}};
-\node (n6)  [mynode,join]   {Studies included in \\
-                             quantitative sysntesis\\
-                                (meta-analysis): {\bf 32}};
+\node (n5)  [mynode, below=of n3c]   {Studies included in
+                             quantitative sysntesis: {\bf 32}};
 
-\node (n3r) [mynode,right=of n3]    {Records excluded: {\bf 616}};
-\node (n4r) [mynode,right=of n4]    {Full-text articles excluded,\\
-                                        with reasons: {\bf 0}};
+\node (n3ar) [mynode,right=of n3a]    {Records excluded: {\bf 565}};
+\node (n3br) [mynode,right=of n3b]    {Records excluded: {\bf 21}};
+\node (n3cr) [mynode,right=of n3c]    {Records excluded: {\bf 30}};
                                     
-\draw[arrow] ([xshift=+22mm] n1a.south) coordinate (a)
-                                       -- (a |- n2.north);
-\draw[arrow] ([xshift=-22mm] n1b.south) coordinate (b)
-                                       -- (b |- n2.north);
-\draw[arrow] (n3) -- (n3r);
-\draw[arrow] (n4) -- (n4r);
+\draw[arrow] (n1a.south) coordinate (b) -- (b |- n2.west) -- (n2.west);
+\draw[arrow] (n1b.south) coordinate (b) -- (b |- n2.north);
+\draw[arrow] (n1c.south) coordinate (b) -- (b |- n2.east) -- (n2.east);
+\draw[arrow] (n3b.west) -- (n4 |- n3b) -- (n4.north);
+\draw[arrow] (n3a) -- (n3ar);
+\draw[arrow] (n3b) -- (n3br);
+\draw[arrow] (n3c) -- (n3cr);
+\draw[arrow] (n3c) -- (n5);
+\draw[arrow] (n6) -- (n5);
 
 	\begin{scope}[node distance=7mm]
 		\node[mylabel,below left=-3mm and 11mm of n1a.north west]
