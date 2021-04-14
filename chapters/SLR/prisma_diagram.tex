@@ -29,7 +29,7 @@
 %\node[above=of tc,font=\bfseries] {PRISMA 2009 Flow Diagram};
 
 \node (n1a) [smallnode, left=of tc]    {{\it Web of Science} records identified: {\bf 329}};
-\node (n1b) [smallnode,right=of n1a]    {{\it IEEE Explore} records\\ identified: {\bf 378 }};
+\node (n1b) [mynode,right=of n1a]    {{\it IEEE Explore} records\\ identified: {\bf 378 }};
 \node (n1c) [smallnode,right=of n1b]    {{\it PubMed} records\\ identified: {\bf 114 }};
 
 \node (n2)  [mynode, below=of n1b]   {Records after duplicates\\
@@ -44,9 +44,9 @@
 \node (n5)  [mynode, below=of n3c]   {Studies included in
                              quantitative synthesis: {\bf 32}};
 
-\node (n3ar) [mynode,right=of n3a]    {Records excluded: {\bf 565}};
-\node (n3br) [mynode,right=of n3b]    {Records excluded: {\bf 21}};
-\node (n3cr) [mynode,right=of n3c]    {Records excluded: {\bf 30}};
+\node (n3ar) [smallnode,right=of n3a]    {Records excluded: {\bf 565}};
+\node (n3br) [smallnode,right=of n3b]    {Records excluded: {\bf 21}};
+\node (n3cr) [smallnode,right=of n3c]    {Records excluded: {\bf 30}};
                                     
 \draw[arrow] (n1a.south) coordinate (b) -- (b |- n2.west) -- (n2.west);
 \draw[arrow] (n1b.south) coordinate (b) -- (b |- n2.north);
