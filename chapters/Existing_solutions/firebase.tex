@@ -1,13 +1,9 @@
-\section{Platformy monitorujące dla aplikacji}
-
-\input{\chapterPath/analytics.tex}
-
 \subsection{Firebase}
 \label{sec:firebase}
 Firebase jest platformą firmy Google oferującą szereg usług skierowanych do twórców aplikacji mobilnych i webowych. Początkowo oferowała uwierzytelnianie użytkowników oraz hosting, jednak od tego czasu została rozszerzona o szereg innych usług z których część jest związana z monitorowaniem aplikacji i urządzeń. \nameref{sec:ga}, które zostało opisane w osobnym podrozdziale, jest zintegrowane i stanowi część pakietu usług oferowanego w ramach Firebase.
 
 \paragraph{Crashlytics}
-Usługa wykrywająca błędy natury programistycznej występujące w aplikacji jako następstwo akcji wykonanych przez użytkownika. Zebrane informacje związane z błędami są wysyłane i przetwarzane do użytecznej dla twórcy formy. Narzędzie oferuje możliwość powiadomienia twórców o pojawieniu się nowego błędu oraz statystyki ilości dotkniętych nim użytkowników.
+Usługa wykrywająca błędy natury programistycznej występujące w aplikacji jako następstwo akcji wykonanych przez użytkownika. Zebrane informacje związane z błędami są wysyłane i przetwarzane do użytecznej dla twórcy formy. Narzędzie oferuje możliwość powiadomienia twórców o pojawieniu się nowego błędu oraz statystyki ilości dotkniętych nim użytkowników \cite{Fb_Crashlytics}.
 
 Powtarzające się błędy są grupowane a ich wystąpienia zostają oznaczone na osi czasu. Do każdego dołączony jest zrzut stosu zawierający kolejne wykonywane w kodzie funkcje ułatwiający znalezienie przyczyny błędu. Kolejna oś czasu zawiera {\it \nameref{par:ga-events}} które miały miejsce przed wystąpieniem błędu. Pokazuje ona otwierane strony i wykonywane akcje w kolejności występowania i daje intuicyjny pogląd tego czym w momencie błędu zajmował się użytkownik. 
 
@@ -23,6 +19,7 @@ Narzędzie automatyczne zbiera metryki dotyczące wydajności działania aplikac
 \end{itemize}
 \bigskip
 
-Istnieje możliwość mierzenia dodatkowych zadań wykonywanych przez aplikację, zdefiniowanych przez jej twórcę. Domyślną metryką jest czas, można też jednak dodawać własne według swoich potrzeb. Do wszystkich pomiarów dodawane są atrybuty dotyczące urządzenia i systemu na którym były wykonywane, używanej wersji aplikacji oraz przybliżonej lokalizacji geograficznej. Możliwe jest też dodawanie własnych parametrów. Wszystkie zebrane metadane służą do kategoryzacji zebranych pomiarów umożliwiając ich  filtrowanie i ułatwiając identyfikację źródła problemu z wydajnością.
+Istnieje możliwość mierzenia dodatkowych zadań wykonywanych przez aplikację, zdefiniowanych przez jej twórcę. Domyślną metryką jest czas, można też jednak dodawać własne według swoich potrzeb. Do wszystkich pomiarów dodawane są atrybuty dotyczące urządzenia i systemu na którym były wykonywane, używanej wersji aplikacji oraz przybliżonej lokalizacji geograficznej. Możliwe jest też dodawanie własnych parametrów. Wszystkie zebrane metadane służą do kategoryzacji zebranych pomiarów umożliwiając ich  filtrowanie i ułatwiając identyfikację źródła problemu z wydajnością \cite{Fb_Pref_Monitor}.
 
-\subsection{Matomo}
+\paragraph{Testy A/B}
+\cite{Fb_AB_Testing}
