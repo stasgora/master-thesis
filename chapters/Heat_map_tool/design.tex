@@ -1,12 +1,13 @@
 \section{Decyzje projektowe}
-załącznik z wymaganiami
 
-\subsection{Flutter}
-Nowe, przyszłościowe
-brak tego typu otwartego rozwiązania
-Fokus
+\paragraph{Wymagania} Przed rozpoczęciem implementacji został zdefiniowany zestaw wymagań projektowych dostępny w \annexref[u]{tool_requirements}. Określają podstawowe charakterystyki działania oraz dostępne opcje konfiguracji.
 
-\paragraph{Licencja}
+\subsection{Platforma}
+Narzędzie zostało zaimplementowane dla nowej, aktywnie rozwijanej platformy Flutter. Została ona wybrana z powodu swojej innowacyjności, oferowanych możliwości oraz rosnącej popularności w śród twórców aplikacji. Dodatkowo, ponieważ platforma jest stosunkowo młoda, do tej pory nie istniało otwarte, darmowe rozwiązanie tego typu. Istniejące narzędzia oferujące podobne możliwości opierają się w dużej większości na platformie webowej.
+
+Ponieważ narzędzie zostało pomyślane jako wtyczka \ang{plugin}, dołączana i integrowana z kodem aplikacji opartej o Flutter, do wstępnych testów i ewaluacji potrzebna była gotowa aplikacja, znajomość jej budowy, dostęp do kodu źródłowego oraz możliwość zbudowania nowej wersji. W ramach projektu grupowego odbywającego się przez pierwsze dwa semestry studiów magisterskich autor tej pracy kierował zespołem tworzącym aplikację Fokus, która stanowiła idealne medium do przeprowadzenia testów i ewaluacji tworzonego narzędzia.
+
+\paragraph{Flutter} Zestaw narzędzi stworzony przez Google, służący do tworzenia aplikacji na wiele platform. Pozwala na zbudowanie aplikacji mobilnych na systemy Android i iOS, programów komputerowych działających na Windowsie, Linuxie i MacOS oraz stron internetowych używając wspólnej bazy kodu \ang{codebase}. Flutter osiąga ten efekt dzięki stworzeniu własnego, niezależnego od platformy mechanizmu budowania drzewa interfejsu definiowanego w języku Dart. Zależnie od specyfiki i możliwości oferowanych przez platformę docelową drzewo interfejsu jest przetwarzane i prezentowane w oknie aplikacji. W przypadku budowania strony internetowej elementy zostaną przetworzone na węzły drzewa w modelu DOM obsługiwanym przez przeglądarki. Pozostałe platformy, dające bezpośredni dostęp do wydajnych technik renderowania grafiki, pozwalają Flutterowi na osiągnięcie wydajności i płynności działania porównywalnej z programami budowanymi bezpośrednio na te platformy.
 
 \subsection{Specyfika platformy}
 Screenshoty, widoki przewijane, wydarzenia

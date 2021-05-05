@@ -41,12 +41,17 @@
     \newpage}
 
 \newcounter{appendices}
-\setcounter{appendices}{1}
+\setcounter{appendices}{0}
 
-\newcommand\annex[1]{
+\newcommand\annex[2]{
 	\cleardoublepage
 	\phantomsection
+	\refstepcounter{appendices}
 	\addcontentsline{toc}{chapter}{Załącznik nr \theappendices: #1}
 	\section*{Załącznik nr \theappendices: #1}
-	\refstepcounter{appendices}
+	\label{anx:#2}
 }
+
+\newcommand\annexref[2][]{\hyperref[anx:#2]{Załącznik#1~nr~\ref{anx:#2}}}
+
+\newcommand\ang[1]{(ang. {\it #1})}
