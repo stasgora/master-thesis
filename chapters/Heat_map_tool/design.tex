@@ -7,10 +7,14 @@ Narzędzie zostało zaimplementowane dla nowej, aktywnie rozwijanej platformy Fl
 
 Ponieważ narzędzie zostało pomyślane jako wtyczka \ang{plugin}, dołączana i integrowana z kodem aplikacji opartej o Flutter, do wstępnych testów i ewaluacji potrzebna była gotowa aplikacja, znajomość jej budowy, dostęp do kodu źródłowego oraz możliwość zbudowania nowej wersji. W ramach projektu grupowego odbywającego się przez pierwsze dwa semestry studiów magisterskich autor tej pracy kierował zespołem tworzącym aplikację Fokus, która stanowiła idealne medium do przeprowadzenia testów i ewaluacji tworzonego narzędzia.
 
-\paragraph{Flutter} Zestaw narzędzi stworzony przez Google, służący do tworzenia aplikacji na wiele platform. Pozwala na zbudowanie aplikacji mobilnych na systemy Android i iOS, programów komputerowych działających na Windowsie, Linuxie i MacOS oraz stron internetowych używając wspólnej bazy kodu \ang{codebase}. Flutter osiąga ten efekt dzięki stworzeniu własnego, niezależnego od platformy mechanizmu budowania drzewa interfejsu definiowanego w języku Dart. Zależnie od specyfiki i możliwości oferowanych przez platformę docelową drzewo interfejsu jest przetwarzane i prezentowane w oknie aplikacji. W przypadku budowania strony internetowej elementy zostaną przetworzone na węzły drzewa w modelu DOM obsługiwanym przez przeglądarki. Pozostałe platformy, dające bezpośredni dostęp do wydajnych technik renderowania grafiki, pozwalają Flutterowi na osiągnięcie wydajności i płynności działania porównywalnej z programami budowanymi bezpośrednio na te platformy.
+\paragraph{Flutter} Zestaw narzędzi stworzony przez Google, służący do tworzenia aplikacji na wiele platform. Pozwala na zbudowanie aplikacji mobilnych na systemy Android i iOS, programów komputerowych działających na Windowsie, Linuxie i MacOS oraz stron internetowych używając wspólnej bazy kodu \ang{codebase}. Flutter osiąga ten efekt dzięki stworzeniu własnego, niezależnego od platformy mechanizmu budowania drzewa interfejsu definiowanego w języku Dart. 
+
+Zależnie od specyfiki i możliwości oferowanych przez platformę docelową drzewo interfejsu jest przetwarzane i prezentowane w oknie aplikacji w inny sposób. W przypadku budowania strony internetowej elementy są rysowane na płótnie (znacznik~\inline{<canvas>}). Pozostałe platformy oferują analogiczne rozwiązania. Dzięki użyciu wspomagania sprzętowego Flutter osiąga wydajność i płynność działania porównywalną z programami budowanymi natywnie. Dodatkowymi zaletami tego podejścia jest danie deweloperowi absolutnej kontroli nad każdym wyświetlanym na ekranie pikselem oraz identyczny wygląd interfejsu niezeleżnie od platformy.
 
 \subsection{Specyfika platformy}
 Screenshoty, widoki przewijane, wydarzenia
 
 \subsection{Architektura}
+\img{\chapterPath/RoundSpot_Architecture.png}{Diagram architektury narzędzia}{round_spot_diagram}{.9}
+
 komponenty, diagram
