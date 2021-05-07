@@ -1,0 +1,27 @@
+\subsection{Architektura}
+\img{\chapterPath/RoundSpot_Architecture.png}{Diagram architektury narzędzia}{round_spot_diagram}{.9}
+
+\paragraph{Aplikacja}
+Twórca aplikacji dokonuje integracji narzędzia poprzez jego inicjalizację, w ramach której podawane są  opcjonalne parametry konfiguracyjne oraz funkcje przyjmujące gotowe mapy cieplne. Ponadto z uwagi na aktualne ograniczenia narzędzia wymagane jest ręczne umieszczenie \hyperref[par:rs_detectors]{Detektorów} w odpowiednich miejscach w interfejsie aplikacji.
+
+\paragraph{Flutter} Platforma będąca podstawą działania aplikacji obsługuje zdarzenia takie jak zmiana ekranu, wyjście z aplikacji a także interakcje użytkownika które są przekazywane odpowiednio do \hyperref[par:rs_observers]{Obserwatorów stanu} oraz \hyperref[par:rs_detectors]{Detektorów}.
+
+\paragraph{Detektory} 
+\label{par:rs_detectors}
+Są odpowiedzialne za zbieranie i wstępne przetwarzanie interakcji użytkownika oraz innych potrzebnych do działania narzędzia danych takich jak przewijanie treści na ekranie. Każdy z detektorów zbiera dane z fragmentu ekranu którego jest przodkiem w hierarchii drzewa elementów interfejsu. Detektory są automatycznie umieszczane na każdej ze stron aplikacji. W celu stworzenia mapy cieplnej obszaru który jest przewijany (jego rozmiar jest większy od widocznej w dowolnej chwili części) twórca aplikacji musi wstawić dodatkowy detektor będący rodzicem przewijalnego elementu interfejsu.
+
+\paragraph{Obserwatory stanu} 
+\label{par:rs_observers}
+Ich zadaniem jest informowanie \hyperref[par:rs_session_manager]{Menedżera sesji} o wydarzeniach takich jak zmiana ekranu lub wyjście z aplikacji.
+
+\paragraph{Menedżer sesji} 
+\label{par:rs_session_manager}
+Centralny komponent narzędzia odpowiedzialny zbieranie danych do aktualnie tworzonych map cieplnych oraz koordynację działania pozostałych komponentów. Decyduje, w oparciu o otrzymaną konfigurację, kiedy każda z sesji powinna się zakończyć i przekazuje zebrane w ramach niej dane do  \hyperref[par:rs_graphical_processor]{Procesora graficznego} w celu przetworzenia na mapę cieplną. Informuje też \hyperref[par:rs_bg_manager]{Menedżera tła} o zachodzących zdarzeniach, takich jak przewijanie ekranu.
+
+\paragraph{Menedżer tła} 
+\label{par:rs_bg_manager}
+Tworzy obrazy interfejsu aplikacji będące tłem dla tworzonych map cieplnych polegając na sygnałach otrzymanych od \hyperref[par:rs_session_manager]{Menedżera sesji}. W przypadku obszaru przewijanego wynikowy obraz jest efektem złączenia wielu  obrazów cząstkowych zbieranych w miarę wyświetlania się na erkanie kolejnych fragmentów interfejsu.
+
+\paragraph{Procesor graficzny} 
+\label{par:rs_graphical_processor}
+Przetwarza interakcje zebrane w ramach sesji do graficznej postaci mapy cieplnej nałożonej na tło ekranu. Interakcje położone blisko siebie są grupowane za pomocą algorytmu DBSCAN a ich ilość i rozłożenie w grupie definiuje jej intensywność i kształt na mapie.
