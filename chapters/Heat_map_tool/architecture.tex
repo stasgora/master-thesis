@@ -8,7 +8,7 @@ Twórca aplikacji dokonuje integracji narzędzia poprzez jego inicjalizację, w 
 
 \paragraph{Detektory} 
 \label{par:rs_detectors}
-Są odpowiedzialne za zbieranie i wstępne przetwarzanie interakcji użytkownika oraz innych potrzebnych do działania narzędzia danych takich jak przewijanie treści na ekranie. Każdy z detektorów zbiera dane z fragmentu ekranu którego jest przodkiem w hierarchii drzewa elementów interfejsu. Detektory są automatycznie umieszczane na każdej ze stron aplikacji. W celu stworzenia mapy cieplnej obszaru który jest przewijany (jego rozmiar jest większy od widocznej w dowolnej chwili części) twórca aplikacji musi wstawić dodatkowy detektor będący rodzicem przewijalnego elementu interfejsu.
+Są odpowiedzialne za zbieranie i wstępne przetwarzanie interakcji użytkownika oraz innych potrzebnych do działania narzędzia danych takich jak przewijanie treści na ekranie. Każdy z detektorów zbiera dane z fragmentu ekranu którego jest przodkiem w hierarchii drzewa elementów interfejsu. Detektory są automatycznie umieszczane na każdej ze stron aplikacji. W celu stworzenia mapy cieplnej obszaru który jest przewijany (jego rozmiar jest większy od widocznej w dowolnej chwili części) twórca aplikacji musi wstawić dodatkowy detektor będący rodzicem przewijanego elementu interfejsu.
 
 \paragraph{Obserwatory stanu} 
 \label{par:rs_observers}
@@ -20,8 +20,8 @@ Centralny komponent narzędzia odpowiedzialny zbieranie danych do aktualnie twor
 
 \paragraph{Menedżer tła} 
 \label{par:rs_bg_manager}
-Tworzy obrazy interfejsu aplikacji będące tłem dla tworzonych map cieplnych polegając na sygnałach otrzymanych od \hyperref[par:rs_session_manager]{Menedżera sesji}. W przypadku obszaru przewijanego wynikowy obraz jest efektem złączenia wielu  obrazów cząstkowych zbieranych w miarę wyświetlania się na erkanie kolejnych fragmentów interfejsu.
+Tworzy obrazy interfejsu aplikacji będące tłem dla tworzonych map cieplnych polegając na sygnałach otrzymanych od \hyperref[par:rs_session_manager]{Menedżera sesji}. W przypadku obszaru przewijanego wynikowy obraz jest efektem złączenia wielu  obrazów cząstkowych zbieranych w miarę wyświetlania się na ekranie kolejnych fragmentów interfejsu.
 
 \paragraph{Procesor graficzny} 
 \label{par:rs_graphical_processor}
-Przetwarza interakcje zebrane w ramach sesji do graficznej postaci mapy cieplnej nałożonej na tło ekranu. Interakcje położone blisko siebie są grupowane za pomocą algorytmu DBSCAN a ich ilość i rozłożenie w grupie definiuje jej intensywność i kształt na mapie.
+Przetwarza interakcje zebrane w ramach sesji do graficznej postaci mapy cieplnej nałożonej na obraz zawartości ekranu. Interakcje położone blisko siebie są grupowane za pomocą algorytmu DBSCAN \cite{DBSCAN_Wiki} a ich ilość i rozłożenie w grupie definiuje jej intensywność i kształt na wynikowej mapie.

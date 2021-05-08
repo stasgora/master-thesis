@@ -1,30 +1,29 @@
 \section{Istniejące rozwiązania}
-ograniczenia, platformy
 
-\subsection{Hotjar}
-Wiodące w branży rozwiązanie oferujące usługi w zakresie analizy doświadczenia użytkownika \ang{user experience} prezentujące interakcje użytkowników w formie map cieplnych oraz nagrań. Firma oferuje też gotowe rozwiązania zbierające opinie użytkowników w formie tekstu, oceny oraz ankiet \cite{Hotjar_website}.
-
-\subsubsection{Funkcje}
+\paragraph{Rodzaje map}
+\label{par:heat_map_types}
+Przeanalizowane rozwiązania oferują tworzenie trzech typów map cieplnych:
 
 \begin{itemize}
 	\item {\bf Mapy kliknięć}: mapa cieplna której intensywność w danym obszarze odpowiada ilości kliknięć myszy w tym miejscu.
 	\item {\bf Mapy przewijania ekranu}: mapa przewijanej strony której intensywność na danej wysokości odpowiada procentowi użytkowników którzy przewinęli stronę do tego miejsca.
 	\item {\bf Mapy ruchu myszy}: mapa cieplna której intensywność w danym miejscu jest proporcjonalna do czasu który użytkownik trzymał w nim kursor myszy.
-	\item {\bf Nagrania sesji}: prezentowane w formie filmu z zaznaczonymi interakcjami użytkownika. Ruchy myszy pozostawiają ślad który jest rysowany na ekranie.
 \end{itemize}
 
-\subsubsection{Ograniczenia} 
+\subsection{Hotjar}
+Wiodące w branży rozwiązanie oferujące usługi w zakresie analizy doświadczenia użytkownika \ang{user experience} prezentujące interakcje użytkowników w formie map cieplnych oraz nagrań. Firma oferuje też gotowe rozwiązania zbierające opinie użytkowników w formie tekstu, oceny oraz ankiet \cite{Hotjar_website}. Oprócz wymienionych wyżej \hyperref[{par:heat_map_types}]{rodzajów map} Hotjar oferuje także nagranie sesji użytkowników prezentowane w formie filmu z zaznaczonymi interakcjami użytkownika. Ruchy myszy pozostawiają ślad rysowany na ekranie jako linia łamana.
 
-\paragraph{Platformy docelowe} 
-Docelowym środowiskiem uruchomieniowym wspieranym przez Hotjar jest przeglądarka internetowa oraz język JavaScript. Usługi firmy są projektowane z myślą o stronach internetowych, jednak działają też na hybrydowych aplikacjach mobilnych opierających się na silniku przeglądarki internetowej. Zależność od stosu webowego znacznie ogranicza grupę klientów zupełnie wykluczając wszystkie aplikacje bazujące na rozwiązaniach natywnych dla ich systemu docelowego.
+\paragraph{Wsparcie platform} 
+Środowiskiem uruchomieniowym wspieranym przez Hotjar jest przeglądarka internetowa oraz język JavaScript. Usługi firmy są projektowane z myślą o stronach internetowych, jednak działają też na hybrydowych aplikacjach mobilnych opierających się na silniku przeglądarki internetowej. Zależność od stosu webowego znacznie ogranicza grupę klientów zupełnie wykluczając wszystkie aplikacje bazujące na rozwiązaniach natywnych dla ich systemu docelowego.
 
-\paragraph{Mapy cieplne}
+\paragraph{Ograniczenia} 
 Hotjar wymienia szereg ograniczeń związanych z tworzonymi przez ich narzędzie mapami cieplnymi \cite{Hotjar_limitations}. Najpoważniejsze z nich dotyczą braku wsparcia dla zawartości przewijanych (z wyłączeniem znacznika \inline{<body>}) oraz  dynamicznych. Przez to części strony które są pokazywane jako reakcja na działanie użytkownika, takie jak rozwijane menu lub okna dialogowe nie będą zawarte w mapie cieplnej.
 
 \subsection{Matomo}
 Otwarte rozwiązanie monitorujące opisane w rozdziale \ref{sec:matomo}. Jedną z oferowanych przez nie funkcji jest tworzenie map cieplnych. Podobnie jak Hotjar oferują trzy rodzaje map: kliknięć, ruchu myszy oraz przewijania ekranu \cite{Matomo_heatmaps}. Pomimo tych podobieństw Matomo szczyci się zapewnianiem ochrony danych użytkowników oraz wskazuje na większy zestaw oferowanych funkcji analitycznych w stosunku do Hotjar \cite{Matomo_hotjar}.
 
-\subsection{Smartlook}
+\paragraph{Wsparcie platform} 
+Główną platformą wspieraną przez Matomo jest środowisko webowe. Oprócz tego oferowane są też zestawy narzędzi obsługujące platformy mobilne Android oraz iOS. Dzięki temu że Matomo jest otwarte i darmowe istnieje też wiele narzędzi stworzonych przez społeczność ułatwiających integrację z wieloma systemami zarządzania treścią, sklepami internetowymi oraz forami.
 
-\subsection{Porównanie}
-tabela funkcji
+\subsection{Smartlook}
+Płatne rozwiązanie monitorujące oferujące podobne do firmy Hotjar rozwiązania w zakresie tworzenia map cieplnych. Wspiera platformy webowe oraz aplikacje mobilne tworzone natywnie oraz przy użyciu narzędzi takich jak React Native, Unity, Flutter, Ionic oraz Xamarin.
