@@ -9,7 +9,43 @@ ekrany, widoki przewijane
 mapy cieplne, surowe dane
 
 \subsection{Konfiguracja}
-spis, json schema
+Narzędzie posiada wiele parametrów konfiguracyjnych pozwalających na dostosowanie jego działania do potrzeb twórcy aplikacji \cite{RoundSpot_Config_Docs}:
+\begin{itemize}
+	\item {\bf enabled}: Określa, czy biblioteka jest aktualnie aktywna i zbiera dane.
+	\item {\bf uiElementSize}: Umożliwia dostosowanie mechanizmu grupowania interakcji i rysowania map cieplnych do średniego rozmiaru elementów interfejsu użytkownika.
+	\item {\bf disabledRoutes}: Zawiera nazwy stron aplikacji, na których nie mają być tworzone mapy cieplne.
+	\item {\bf outputTypes}: Określa rodzaje danych wyjściowych które powinny być generowane. Dostępne typy to {\it mapy cieplne} oraz {\it surowe dane}.
+	\item {\bf maxSessionIdleTime}: Ustawia czas bezczynności aplikacji, po którym wszystkie bieżące sesje zostaną zamknięte.
+	\item {\bf minSessionEventCount}: Ustawia minimalną liczbę zdarzeń potrzebnych do zamknięcia sesji.
+	\item {\bf heatMapStyle}: Określa styl generowanych map cieplnych. Dostępne wartości to {\it gładki} oraz {\it warstwowy}.
+	\item {\bf heatMapTransparency}: Ustawia przezroczystość warstwy mapy cieplnej rysowanej na tle zdjęcia ekranu. 
+	\item {\bf heatMapPixelRatio}: Określa rozdzielczość tworzonych obrazów map cieplnych.
+\end{itemize}
+
+\bigskip
+Aby umożliwić prostą zdalną zmianę konfiguracji, która może być potrzebna w środowisku produkcyjnym, umożliwiony został mechanizm pozwalający na wczytanie konfiguracji z pliku json, który może być łatwo przesłany na urządzenia użytkowników.
+
+\begin{lstlisting}[language=json,caption={Przykładowy plik konfiguracyjny w formacie json},label=lst:rs_config_json]
+{
+  "enabled": true,
+  "uiElementSize": 10,
+  "disabledRoutes": [
+    "some-unimportant-route"
+  ],
+  "outputTypes": [
+    "graphicalRender"
+  ],
+  "session": {
+    "minEventCount": 1,
+    "maxIdleTime": 60
+  },
+  "heatMap": {
+    "style": "smooth",
+    "transparency": 0.6,
+    "pixelRatio": 2
+  }
+}
+\end{lstlisting}
 
 \subsection{Formaty wyjściowe}
 

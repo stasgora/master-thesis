@@ -24,7 +24,8 @@
 \begin{document}
 \selectlanguage{polish}
 \def\UrlBreaks{\do\/\do-}
-\setlist[enumerate]{labelsep=5pt, listparindent=0.9cm, itemsep=4pt} 
+\setlist[enumerate]{labelsep=5pt, listparindent=0.9cm, itemsep=2pt} 
+\setlist[itemize]{labelsep=5pt, listparindent=0.9cm, itemsep=2pt} 
 \input{meta/commands.tex}
 %\lstset{style=java}
  
@@ -66,6 +67,13 @@
 \renewcommand{\baselinestretch}{1.0}\normalsize
 \addcontentsline{toc}{chapter}{\listfigurename}
 \listoffigures
+
+
+\cleardoublepage
+\phantomsection
+\renewcommand\lstlistlistingname{Spis listingów}
+\addcontentsline{toc}{chapter}{\lstlistlistingname}
+\lstlistoflistings
 
 \input{annexes/tool_requirements.tex}
 
