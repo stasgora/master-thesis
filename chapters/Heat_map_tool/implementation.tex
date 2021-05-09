@@ -1,12 +1,4 @@
-\section{Implementacja narzędzia}
-
-\subsection{Funkcje}
-
-Narzędzie tworzy mapy cieplne dotknięć ekranu na stronach aplikacji nałożone na zrzuty ekranów. 
-
-ekrany, widoki przewijane
-
-mapy cieplne, surowe dane
+\section{Specyfika działania}
 
 \subsection{Konfiguracja}
 Narzędzie posiada wiele parametrów konfiguracyjnych pozwalających na dostosowanie jego działania do potrzeb twórcy aplikacji \cite{RoundSpot_Config_Docs}:
@@ -22,8 +14,7 @@ Narzędzie posiada wiele parametrów konfiguracyjnych pozwalających na dostosow
 	\item {\bf heatMapPixelRatio}: Określa rozdzielczość tworzonych obrazów map cieplnych.
 \end{itemize}
 
-\bigskip
-Aby umożliwić prostą zdalną zmianę konfiguracji, która może być potrzebna w środowisku produkcyjnym, umożliwiony został mechanizm pozwalający na wczytanie konfiguracji z pliku json, który może być łatwo przesłany na urządzenia użytkowników.
+Aby umożliwić prostą zdalną zmianę konfiguracji, która może być potrzebna w środowisku produkcyjnym, umożliwiony został mechanizm pozwalający na wczytanie konfiguracji z pliku json, który może być łatwo przesłany na urządzenia użytkowników. Stworzony został także schemat pliku konfiguracyjnego \ang{JSON Schema} pozwalający zweryfikować jego poprawność \cite{RoundSpot_Config_Schema}.
 
 \begin{lstlisting}[language=json,caption={Przykładowy plik konfiguracyjny w formacie json},label=lst:rs_config_json]
 {
@@ -47,9 +38,22 @@ Aby umożliwić prostą zdalną zmianę konfiguracji, która może być potrzebn
 }
 \end{lstlisting}
 
-\subsection{Formaty wyjściowe}
+\subsection{Typy sesji i sposoby ich kontroli}
+Każdy \hyperref[par:rs_detectors]{detektor} umieszczony w interfejsie aplikacji odpowiada jednemu obszarowi z którego zbiera dane. Są one dzielone na okresy czasowe tworząc \hyperref[par:rs_session]{sesje} z których powstają, po ich zakończeniu, pojedyncze mapy cieplne. Istnieją trzy typy \hyperref[par:rs_session]{sesji}. Domyślnie, bez umieszczania dodatkowych \hyperref[par:rs_detectors]{detektorów}, każdy ekran aplikacji który nie został wskazany w konfiguracji jako ignorowany, jest nagrywany w celu tworzenia map cieplnych.
 
-\section{Widoki przewijane}
+ekrany, przewijane, globalne
+
+wyjście, bezczynność, wyłączenie działania
+
+\subsection{Tworzenie map cieplnych}
+dbscan, paths, gradients
+
+\subsection{Formaty wyjściowe}
+mapy - wariacje, raw
+
+bajty + info
+
+\section{Problemy implementacyjne}
 W celu optymalizacji i przyspieszenia działania Flutter obsługuje mechanizm rysujący tylko fragmenty interfejsu które w danym momencie są wyświetlane na ekranie.
 
 \subsection{Podejście pierwsze}
