@@ -2,9 +2,9 @@
 \img{\chapterPath/RoundSpot_Architecture.png}{Diagram architektury narzędzia}{round_spot_diagram}{.9}
 
 \paragraph{Aplikacja}
-Twórca aplikacji dokonuje integracji narzędzia poprzez jego inicjalizację, w ramach której podawane są  opcjonalne parametry konfiguracyjne oraz funkcje przyjmujące gotowe mapy cieplne. Ponadto z uwagi na aktualne ograniczenia narzędzia wymagane jest ręczne umieszczenie \hyperref[par:rs_detectors]{Detektorów} w odpowiednich miejscach w interfejsie aplikacji.
+Twórca aplikacji dokonuje integracji narzędzia poprzez jego inicjalizację, w ramach której podawane są  opcjonalne parametry konfiguracyjne oraz funkcje przyjmujące gotowe mapy cieplne. Ponadto z uwagi na aktualne ograniczenia narzędzia wymagane jest ręczne umieszczenie \detector[ów] w odpowiednich miejscach w interfejsie aplikacji.
 
-\paragraph{Flutter} Platforma będąca podstawą działania aplikacji obsługuje zdarzenia takie jak zmiana ekranu, wyjście z aplikacji a także interakcje użytkownika które są przekazywane odpowiednio do \hyperref[par:rs_observers]{Obserwatorów stanu} oraz \hyperref[par:rs_detectors]{Detektorów}.
+\paragraph{Flutter} Platforma będąca podstawą działania aplikacji obsługuje zdarzenia takie jak zmiana ekranu, wyjście z aplikacji a także interakcje użytkownika które są przekazywane odpowiednio do \hyperref[par:rs_observers]{obserwatorów stanu} oraz \detector[ów].
 
 \paragraph{Detektory} 
 \label{par:rs_detectors}
@@ -20,7 +20,7 @@ Ograniczony czasowo zbiór danych, odpowiadający konkretnemu obszarowi interfej
 
 \paragraph{Menedżer sesji} 
 \label{par:rs_session_manager}
-Centralny komponent narzędzia odpowiedzialny zbieranie danych do aktualnie tworzonych map cieplnych oraz koordynację działania pozostałych komponentów. Decyduje, w oparciu o otrzymaną konfigurację, kiedy każda z \hyperref[par:rs_session]{sesji} powinna się zakończyć i przekazuje zebrane w ramach niej dane do  \hyperref[par:rs_graphical_processor]{procesora graficznego} w celu przetworzenia na mapę cieplną. Informuje też \hyperref[par:rs_bg_manager]{menedżera tła} o zachodzących zdarzeniach, takich jak przewijanie ekranu.
+Centralny komponent narzędzia odpowiedzialny zbieranie danych do aktualnie tworzonych map cieplnych oraz koordynację działania pozostałych komponentów. Decyduje, w oparciu o otrzymaną konfigurację, kiedy każda z \session[i] powinna się zakończyć i przekazuje zebrane w ramach niej dane do  \hyperref[par:rs_graphical_processor]{procesora graficznego} w celu przetworzenia na mapę cieplną. Informuje też \hyperref[par:rs_bg_manager]{menedżera tła} o zachodzących zdarzeniach, takich jak przewijanie ekranu.
 
 \paragraph{Menedżer tła} 
 \label{par:rs_bg_manager}

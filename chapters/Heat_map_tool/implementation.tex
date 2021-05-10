@@ -38,10 +38,14 @@ Aby umożliwić prostą zdalną zmianę konfiguracji, która może być potrzebn
 }
 \end{lstlisting}
 
-\subsection{Typy sesji i sposoby ich kontroli}
-Każdy \hyperref[par:rs_detectors]{detektor} umieszczony w interfejsie aplikacji odpowiada jednemu obszarowi z którego zbiera dane. Są one dzielone na okresy czasowe tworząc \hyperref[par:rs_session]{sesje} z których powstają, po ich zakończeniu, pojedyncze mapy cieplne. Istnieją trzy typy \hyperref[par:rs_session]{sesji}. Domyślnie, bez umieszczania dodatkowych \hyperref[par:rs_detectors]{detektorów}, każdy ekran aplikacji który nie został wskazany w konfiguracji jako ignorowany, jest nagrywany w celu tworzenia map cieplnych.
+\subsection{Typy sesji}
+\paragraph{Mapy ekranów} Każdy detektor umieszczony w interfejsie aplikacji odpowiada jednemu obszarowi z którego zbiera dane. Są one dzielone na okresy czasowe tworząc sesji z których powstają, po ich zakończeniu, pojedyncze mapy cieplne. Istnieją trzy typy sesji. Domyślnie, bez umieszczania dodatkowych detektorów, każdy ekran aplikacji który nie został wskazany w konfiguracji jako ignorowany jest nagrywany w celu tworzenia map cieplnych.
 
-ekrany, przewijane, globalne
+\paragraph{Mapy obszarów} Dodatkowo używający biblioteki twórca aplikacji może dodawać detektory monitorujące wybrane części ekranów w celu izolacji zachodzących na nich interakcji i umieszczenia ich na osobnej mapie cieplnej. Przypadkiem w którym jest to niezbędne do otrzymania poprawnego, zgodnego z rzeczywistością zapisu działań użytkownika są przewijane części interfejsu. Bez dodatkowego detektora dotknięcia zarejestrowane na przewijanym fragmencie zostałyby narysowane na mapie cieplnej obejmującej cały ekran. Ponieważ na statycznym, dwuwymiarowym obrazie nie jest możliwe przestawienie niemieszczącej się na ekranie zawartości bez zasłonienia jego części, względne odległości tych interakcji i ich pozycja względem tła byłaby nieprawidłowa. Osobna mapa cieplna obejmująca tylko i wyłącznie obszar przewijany może objąć całą jego powierzchnię i poprawnie narysować wszystkie interakcje użytkownika.
+
+\paragraph{Mapy globalne} Trzeci typ map cieplnych może zawierać interakcje z więcej niż jednego ekranu aplikacji. Jest on użyteczny w sytuacjach, w których celem jest przeanalizowanie skumulowanego użycia elementu interfejsu występującego w tej samej postaci na wielu stronach aplikacji, takiego jak pasek nawigacji lub menu. Dzięki tej możliwości oprócz rozbitych na ekrany interakcji dotyczących wspólnego elementu stworzona zostanie dodatkowa mapa cieplna zbierająca je wszystkie.
+
+\subsection{Kontrola sesji}
 
 wyjście, bezczynność, wyłączenie działania
 
