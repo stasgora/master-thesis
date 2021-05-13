@@ -1,7 +1,7 @@
 \section{Specyfika działania}
 
 \subsection{Konfiguracja}
-Narzędzie posiada wiele parametrów konfiguracyjnych pozwalających na dostosowanie jego działania do potrzeb twórcy aplikacji \cite{RoundSpot_Config_Docs}:
+Round Spot posiada wiele parametrów konfiguracyjnych pozwalających na dostosowanie jego działania do potrzeb twórcy aplikacji \cite{RoundSpot_Config_Docs}:
 \begin{itemize}
 	\item {\bf enabled}: Określa, czy biblioteka jest aktualnie aktywna i zbiera dane.
 	\item {\bf uiElementSize}: Umożliwia dostosowanie mechanizmu grupowania interakcji i rysowania map cieplnych do średniego rozmiaru elementów interfejsu użytkownika.
@@ -42,12 +42,18 @@ Aby umożliwić prostą zdalną zmianę konfiguracji, która może być potrzebn
 
 \paragraph{Mapy ekranów} Każdy detektor umieszczony w interfejsie aplikacji odpowiada jednemu obszarowi z którego zbiera dane. Są one dzielone na okresy czasowe tworząc sesji z których powstają, po ich zakończeniu, pojedyncze mapy cieplne. Istnieją trzy typy sesji. Domyślnie, bez umieszczania dodatkowych detektorów, każdy ekran aplikacji który nie został wskazany w konfiguracji jako ignorowany jest nagrywany w celu tworzenia map cieplnych.
 
+\img{\chapterPath/screen-map.png}{Mapa cieplna ekranu aplikacji}{rs_screen_map}{.35}
+
 \paragraph{Mapy obszarów} Dodatkowo używający biblioteki twórca aplikacji może dodawać detektory monitorujące wybrane części ekranów w celu izolacji zachodzących na nich interakcji i umieszczenia ich na osobnej mapie cieplnej. Przypadkiem w którym jest to niezbędne do otrzymania poprawnego, zgodnego z rzeczywistością zapisu działań użytkownika są przewijane części interfejsu. Bez dodatkowego detektora dotknięcia zarejestrowane na przewijanym fragmencie zostałyby narysowane na mapie cieplnej obejmującej cały ekran. Ponieważ na statycznym, dwuwymiarowym obrazie nie jest możliwe przestawienie niemieszczącej się na ekranie zawartości bez zasłonienia jego części, względne odległości tych interakcji i ich pozycja względem tła byłaby nieprawidłowa. Osobna mapa cieplna obejmująca tylko i wyłącznie obszar przewijany może objąć całą jego powierzchnię i poprawnie narysować wszystkie interakcje użytkownika.
+
+\img{\chapterPath/area-map.png}{Mapa cieplna przewijanych kart}{rs_area_map}{.95}
 
 \paragraph{Mapy globalne} Trzeci typ map cieplnych może zawierać interakcje z więcej niż jednego ekranu aplikacji. Jest on użyteczny w sytuacjach, w których celem jest przeanalizowanie skumulowanego użycia elementu interfejsu występującego w tej samej postaci na wielu stronach aplikacji, takiego jak pasek nawigacji lub menu. Dzięki tej możliwości oprócz rozbitych na ekrany interakcji dotyczących wspólnego elementu stworzona zostanie dodatkowa mapa cieplna zbierająca je wszystkie.
 
+\img{\chapterPath/global-map.png}{Mapa cieplna paska nawigacji aplikacji}{rs_global_map}{.7}
+
 \paragraph{Kontrola sesji}
-Istnieją trzy mechanizmy powodujące zakończenie sesji i wygenerowanie z nich map cieplnych. Są to wyjście z aplikacji, czas bezczynności oraz bezpośrednie wyłączenia działania narzędzia. Pierwsze dwa z nich tworzą naturalne przerwy między kolejnymi okresami użycia aplikacji przez użytkowników co czyni je dobrym kryterium podziału interakcji na grupy znajdujące się na pojedynczej mapie cieplnej.
+Istnieją trzy mechanizmy powodujące zakończenie sesji i wygenerowanie z nich map cieplnych. Są to wyjście z aplikacji, przekroczenie wyznaczonego czasu bezczynności oraz bezpośrednie całkowite wyłączenia działania. Pierwsze dwa z nich tworzą naturalne przerwy między kolejnymi okresami użycia aplikacji przez użytkowników co czyni je dobrym kryterium podziału interakcji na grupy znajdujące się na pojedynczej mapie cieplnej.
 
 \subsection{Tworzenie map cieplnych}
 dbscan, paths, gradients
