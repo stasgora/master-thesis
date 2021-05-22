@@ -1,13 +1,23 @@
 \section{Aplikacje przetwarzające dane z czujników}
 
 \subsection{Strava}
-Popularna usługa pozwalająca na śledzenie aktywności fizycznej. Działa na podstawie modułu GPS, dzięki któremu zapisuje trasę przebytą przez użytkownika. Biorąc pod uwagę typ aktywności wybrany przez użytkownika, jego wagę, szybkość przemieszczania oraz różnicę elewacji aplikacja szacuje ilość spalonych podczas treningu kalorii. Strava posiada wersję na inteligente zegarki, które dzięki wyposażeniu w dodatkowe czujniki dostarczają aplikacji dodatkowych metryk takich jak tętno. 
+\label{sec:strava}
+Popularna usługa pozwalająca na śledzenie aktywności fizycznej. Działa na podstawie modułu GPS, dzięki któremu zapisuje trasę przebytą przez użytkownika. Biorąc pod uwagę typ aktywności wybrany przez użytkownika, jego wagę, szybkość przemieszczania oraz różnicę elewacji aplikacja szacuje ilość spalonych podczas treningu kalorii. Strava posiada wersję na inteligentne zegarki, które dzięki wyposażeniu w dodatkowe czujniki dostarczają aplikacji dodatkowych metryk takich jak tętno. 
 
 Historia przebytych tras jest zapisywana i może być udostępniana innym użytkownikom. Publiczne aktywności są automatycznie grupowane ze względu na lokalizację, typ i czas. W 2017 roku została udostępniona globalna mapa cieplna zawierająca publicznie udostępnione dane użytkowników z dwóch poprzednich lat \cite{Strava_Heatmap}. Według autorów to największy tego typu zbiór danych, zawierający 700 milionów zapisanych aktywności o całkowitej długości 16 miliardów kilometrów.
 
 \img{\chapterPath/strava-heatmap.jpeg}{Strava - Mapa cieplna zarejestrowanych aktywności fizycznych w Moskwie}{strava-heatmap}{.9}
 
 \subsection{Samsung Health}
+Aplikacja firmy Samsung towarzysząca produktom takim jak zegarek Galaxy Watch oraz opaska Galaxy Fit. Przetwarza i magazynuje dane zbierane przez zawarte w nich czujniki. Podobnie jak \nameref{sec:strava} pozwala na zapisywanie przebytych tras i aktywności sportowych. Z powodu kontroli nad urządzeniami na których działa aplikacja Samsung był w stanie dodać do aplikacji szereg innowacyjnych funkcji:
+
+\paragraph{Puls} Obecność pulsometra w nowszych modelach linii Galaxy umożliwia mierzenie pulsu, pulsoksymetrii (wysycenia krwi tlenem) oraz poziomu stresu. 
+
+\paragraph{Kroki} Wbudowany w smartfon lub opaskę pedometr pozwala na mierzenie ilości kroków wykonanych każdego dnia porównując ją do ustawionego celu (domyślnie 10~000 kroków). Na podstawie liczby kroków obliczany jest także przebyty dystans oraz ilość spalonych kalorii. Dane historyczne są widoczne na grafie.
+
+\paragraph{Sen} Jeśli użytkownik nie zdejmuje zegarka lub opaski na noc aplikacja może monitorować jego jakość następujące po sobie fazy snu na podstawie wykonywanych ruchów. Zebrane dane pomagają dostosować harmonogram snu w celu lepszego wypoczęcia.
+
+\paragraph{Inne} Oprócz danych automatycznie zbieranych z czujników aplikacja służy jako dziennik poprzez umożliwienie ręcznego wprowadzania danych. Monitorowanie diety wymaga wpisywania spożytych kalorii i składników odżywczych. Możliwe jest też wprowadzanie aktualnej wagi oraz ilości wypitej wody. 
 
 \subsection{Google Fit}
 
