@@ -1,10 +1,10 @@
-\newcommand\img[4]{
+\newcommand\img[5][]{
 	\begin{figure}[H]
 		\begin{center}
-			\includegraphics[width=#4\textwidth]{#1}
+			\includegraphics[width=#5\textwidth]{#2}
 			\bigskip
-			\caption{#2}
-			\label{fig:#3}
+			\caption[#3]{#3 #1}
+			\label{fig:#4}
 		\end{center}
 	\end{figure}
 } 
