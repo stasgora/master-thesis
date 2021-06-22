@@ -65,8 +65,10 @@ Mapy cieplne są tworzone ze zbioru dwuwymiarowych punktów znajdujących się w
 \section{Tryby przetwarzania danych}
 
 \subsection{Przetwarzanie lokalne}
+Pierwszy zaimplementowany system wykonywał całe przetwarzanie zebranych danych na mapy cieplne na telefonie użytkownika. Gotowe obrazki były wysyłane i składowane w chmurze. To podejście zostało wybrane ze względu na swoją prostotę, jednak szybko okazało się błędne. Podczas jednej wizyty w aplikacji  użytkownik odwiedza średnio parę stron, na każdej wykonując parę (często tylko jedną) interakcję. Z każdej wizyty tworzone by więc było parę prawie pustych map cieplnych. Podczas pierwszych testów stało się jasne że to podejście charakteryzuje się stanowczo zbyt dużym rozdrobnieniem danych. Przeprowadzenie ewaluacji używając przetwarzania lokalnego spowodowałoby powstanie setek mało interesujących obrazków których nie sposób byłoby przeanalizować.
 
 \subsection{Przetwarzanie zdalne}
+Rozwiązaniem tego problemu było oddzielenie części pretwarzającej dane na mapy cieplne (procesora graficznego) do osobnego programu tworząc aktualną architekturę narzędzia \ref{fig:round_spot_diagram}. Zamiast gotowych obrazków do chmury są wysyłane zserializowane surowe dane o ekranie i działaniach użytkownika. Dzięki temu wszystkie interakcje na danym erkanie zebrane podczas ewaluacji mogą być umieszczone na pojedynczej mapie cieplnej. Takie podejście daje też dużo większą swobodę i kontrolę nad postacią danych wyjściowych. Mogą one zostać dowolnie grupowane i dzielone w celu uzyskania jak największej ilości informacji i wniosków.
 
 \section{Problemy implementacyjne}
 W celu optymalizacji i przyspieszenia działania Flutter obsługuje mechanizm rysujący tylko fragmenty interfejsu które w danym momencie są wyświetlane na ekranie.
