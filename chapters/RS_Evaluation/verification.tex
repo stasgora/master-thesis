@@ -1,13 +1,13 @@
 \section{Weryfikacja}
 
-\paragraph{Wskazanie popularności elementów}
+\subsection{Wskazanie popularności elementów}
 Przegląd map cieplnych pozwala na łatwą identyfikację częściej i rzadziej używanych funkcji, ekranów i elementów interfejsu. Szczególnie dobrze nadają się do tego celu mapy kumulacyjne elementów nawigacji. Testowana aplikacja posiada dolny pasek nawigacji dzielący ją na trzy obszary: Panel, Plany oraz Nagrody. Na poniższej mapie można łatwo zauważyć że pierwsza zakładka jest używana najczęściej a pozostałe dwie są wybierane w przybliżeniu tak samo często.
 
 \bigskip
 \img{\chapterPath/[bottom-nav-bar].png}{Pasek nawigacji testowanej aplikacji}{rs_bottom_nav_bar}{.7}
 
-\paragraph{Ekrany i obszary przewijane}
-Ekrany posiadające potencjalnie przewijane obszary muszą być rozdzielone na mapę interakcji ze statycznymi elementami interfejsu oraz z zawartością znajdującą się w przewijanym polu. Na poniższych obrazkach przedstawiony jest przykład takiej sytuacji. Po prawej stronie znajduje się mapa obszaru przewiniętego przez użytkownika. Widać też miejsca w których dotykał on ekranu podczas tej czynności. 
+\subsection{Ekrany i obszary przewijane}
+Ekrany posiadające potencjalnie przewijane obszary muszą być rozdzielone na mapę interakcji ze statycznymi elementami interfejsu oraz z zawartością znajdującą się w przewijanym polu. Na poniższych obrazkach przedstawiony jest przykład takiej sytuacji. Po prawej stronie znajduje się mapa obszaru przewiniętego przez użytkownika. Można też wywnioskować że większość z zaznaczonych dotknięć ekranu służyła właśnie tej czynności. 
 
 \bigskip
 \begin{figure}[H]
@@ -16,7 +16,7 @@ Ekrany posiadające potencjalnie przewijane obszary muszą być rozdzielone na m
 	\centering
 	\includegraphics[width=.9\linewidth]{\chapterPath/caregiver-awards-page.png}
 \end{minipage}
-\begin{minipage}{.35\textwidth}
+\begin{minipage}{.3\textwidth}
 	\centering
 	\includegraphics[width=.9\linewidth]{\chapterPath/[main-scroll-area] caregiver-awards-page.png}
 \end{minipage}
@@ -25,10 +25,26 @@ Ekrany posiadające potencjalnie przewijane obszary muszą być rozdzielone na m
 \label{fig:rs_panel_parts}
 \end{figure}
 
-\paragraph{Niewidoczne elementy}
+\subsection{Niewidoczne elementy}
+W niektórych przypadkach, na przykład kiedy w aplikacji używany jest gotowy komponent, technicznie niemożliwe jest zawarcie pewnych elementów interfejsu na mapie cieplnej. Taki przypadek przedstawiony jest poniżej. Pomimo że w aplikacji użytkownik wybiera ikonę nagrody z wysuwającej się od dołu karty, na mapie cieplnej ta interakcja zostaje pokazana jako dotknięcie pustej przestrzeni.
 
+\bigskip
+\begin{figure}[H]
+\centering
+\begin{minipage}{.3\textwidth}
+	\centering
+	\includegraphics[width=.9\linewidth]{\chapterPath/smart-select-popup.png}
+\end{minipage}
+\begin{minipage}{.3\textwidth}
+	\centering
+	\includegraphics[width=.9\linewidth]{\chapterPath/caregiver-rewards-form-page.png}
+\end{minipage}
+\bigskip
+\caption{Ekran tworzenia nagrody}
+\label{fig:rs_reward_form}
+\end{figure}
 
-\paragraph{Zmienne elementy}
+\subsection{Zmienne elementy}
 W przypadku przewijanych obszarów zawierających animowane (zmieniające wielkość, kształt lub zawartość) elementy, tło stworzonych map może nie być spójne. Wynika to z opisanego już mechanizmu stopniowego tworzenia tła z części wyświetlanych na ekranie w danym momencie. W poniższym przykładzie po lewej stronie widać widok kart na ekranie aplikacji. W trakcie przewijania widok jest animowany powodując powiększenie aktualnie wyświetlanej na środku karty. Po lewej umieszczona została mapa cieplna złożona z trzech kart po ich przewinięciu przez użytkownika. Z powodu połączenia obrazków na których ta sama karta ma różną wielkość obie boczne karty zawierają defekty graficzne. Pomimo tego ograniczenia wynikowe tło mapy cieplnej nadal spełnia swoją funkcję pozwalając na umiejscowienie interakcji użytkowników w stosunku do elementów interfejsu.
 
 \bigskip

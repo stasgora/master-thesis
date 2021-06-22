@@ -44,7 +44,7 @@ Aby umożliwić prostą zdalną zmianę konfiguracji, która może być potrzebn
 
 \paragraph{Mapy ekranów} Każdy detektor umieszczony w interfejsie aplikacji odpowiada jednemu obszarowi z którego zbiera dane. Są one dzielone na okresy czasowe tworząc sesji z których powstają, po ich zakończeniu, pojedyncze mapy cieplne. Istnieją trzy typy sesji. Domyślnie, bez umieszczania dodatkowych detektorów, każdy ekran aplikacji który nie został wskazany w konfiguracji jako ignorowany jest nagrywany w celu tworzenia map cieplnych.
 
-\img{\chapterPath/screen-map.png}{Mapa cieplna ekranu aplikacji}{rs_screen_map}{.35}
+\img{\chapterPath/screen-map.png}{Mapa cieplna ekranu aplikacji}{rs_screen_map}{.3}
 
 \paragraph{Mapy obszarów} Dodatkowo używający biblioteki twórca aplikacji może dodawać detektory monitorujące wybrane części ekranów w celu izolacji zachodzących na nich interakcji i umieszczenia ich na osobnej mapie cieplnej. Przypadkiem w którym jest to niezbędne do otrzymania poprawnego, zgodnego z rzeczywistością zapisu działań użytkownika są przewijane części interfejsu. Bez dodatkowego detektora dotknięcia zarejestrowane na przewijanym fragmencie zostałyby narysowane na mapie cieplnej obejmującej cały ekran. Ponieważ na statycznym, dwuwymiarowym obrazie nie jest możliwe przestawienie niemieszczącej się na ekranie zawartości bez zasłonienia jego części, względne odległości tych interakcji i ich pozycja względem tła byłaby nieprawidłowa. Osobna mapa cieplna obejmująca tylko i wyłącznie obszar przewijany może objąć całą jego powierzchnię i poprawnie narysować wszystkie interakcje użytkownika.
 
@@ -58,22 +58,25 @@ Aby umożliwić prostą zdalną zmianę konfiguracji, która może być potrzebn
 Istnieją trzy mechanizmy powodujące zakończenie sesji i wygenerowanie z nich map cieplnych. Są to wyjście z aplikacji, przekroczenie wyznaczonego czasu bezczynności oraz bezpośrednie całkowite wyłączenia działania. Pierwsze dwa z nich tworzą naturalne przerwy między kolejnymi okresami użycia aplikacji przez użytkowników co czyni je dobrym kryterium podziału interakcji na grupy znajdujące się na pojedynczej mapie cieplnej.
 
 \subsection{Tworzenie map cieplnych}
-dbscan, paths, gradients
+Mapy cieplne są tworzone ze zbioru dwuwymiarowych punktów znajdujących się w układzie współrzędnych ekranu urządzenia. Pierwszą operacją która jest na nich wykonywana jest uruchomienie algorytmu klasteryzacji DBSCAN \cite{DBSCAN_Wiki}. Jego wynikiem są zbiory pogrupowanych w zależności od odległości punktów. Każdy z punktów jest otaczany okręgiem które następnie są łączone w obrębie grup tworząc podstawowy kształt każdego z punktów cieplnych na mapie. Kształty grup są wielokrotnie nakładane na siebie ze zmiennym kolorem, zmniejszanym rozmiarem oraz efektem rozmycia. Liczba powtórzeń kształtu zależy od ilości punktów w jego grupie w stosunku do najliczniejszej grupy. Kolory są wybierane ze spektrum pomiędzy barwą niebieską a czerwoną. 
 
-\subsection{Formaty wyjściowe}
-mapy - wariacje, raw
+\img{\chapterPath/heat_points.png}{Proces tworzenia punktów cieplnych z interakcji użytkowników}{rs_heat_blob}{.7}
 
-bajty + info
+\section{Tryby przetwarzania danych}
+
+\subsection{Przetwarzanie lokalne}
+
+\subsection{Przetwarzanie zdalne}
 
 \section{Problemy implementacyjne}
 W celu optymalizacji i przyspieszenia działania Flutter obsługuje mechanizm rysujący tylko fragmenty interfejsu które w danym momencie są wyświetlane na ekranie.
 
-\subsection{Podejście pierwsze}
+\subsection{Nieudane podejście}
 prostota i ograniczenia
 
 Blokada interakcji podczas przewijania
 
-\subsection{Podejście drugie}
+\subsection{Zastosowane rozwiązanie}
 skomplikowanie i możliwości
 
 Składanie tła, monitorowanie pozycji
