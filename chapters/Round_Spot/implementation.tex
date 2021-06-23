@@ -70,18 +70,4 @@ Pierwszy zaimplementowany system wykonywał całe przetwarzanie zebranych danych
 \subsection{Przetwarzanie zdalne}
 Rozwiązaniem tego problemu było oddzielenie części pretwarzającej dane na mapy cieplne (procesora graficznego) do osobnego programu tworząc aktualną architekturę narzędzia \ref{fig:round_spot_diagram}. Zamiast gotowych obrazków do chmury są wysyłane zserializowane surowe dane o ekranie i działaniach użytkownika. Dzięki temu wszystkie interakcje na danym erkanie zebrane podczas ewaluacji mogą być umieszczone na pojedynczej mapie cieplnej. Takie podejście daje też dużo większą swobodę i kontrolę nad postacią danych wyjściowych. Mogą one zostać dowolnie grupowane i dzielone w celu uzyskania jak największej ilości informacji i wniosków.
 
-\section{Problemy implementacyjne}
-W celu optymalizacji i przyspieszenia działania Flutter obsługuje mechanizm rysujący tylko fragmenty interfejsu które w danym momencie są wyświetlane na ekranie.
 
-\subsection{Nieudane podejście}
-prostota i ograniczenia
-
-Blokada interakcji podczas przewijania
-
-\subsection{Zastosowane rozwiązanie}
-skomplikowanie i możliwości
-
-Składanie tła, monitorowanie pozycji
-Wyścigi przy przewijaniu
-Synchronizacja obrazu z pozycją
-Dostęp do danych o statusie
