@@ -3,7 +3,7 @@ Największa trudność napotkana podczas implementacji dotyczyła zbierania dany
 
 \img{\chapterPath/scroll-diagram.png}{Możliwości zbierania danych o obszarach przewijanych}{rs_scroll_diagram}{.3}
 
-\subsection{Nieudane podejście}
+\subsection{Pierwsze podejście}
 Pierwszym wybranym podczas implementacji podejściem było umieszczenie detektora w środku obszaru przewijanego. Dzięki dostępowi do całej zawartości w każdym momencie stworzenie jej obrazu do późniejszego użycia w mapie cieplnej było tak samo łatwe jak w przypadku nieprzewijanych obszarów. Szybko jednak okazało się że to podejście, chociaż proste, ma swoje wady.
 
 Dotknięcia ekranu nazywane też zdarzeniami \ang{events}, są zaimplemenowane we Flutterze podobnie jak w standardzie DOM używanym przez przeglądarki. Po rejestracji przez urządzenie zdarzenie jest przekazywane od korzenia drzewa elementów interfejsu (całej strony) w głąb do kolejnych dzieci zajmujących obszar zawierający współrzędne dotknięcia. Ten proces jest rekurencyjnie powtarzany do czasu gdy zdarzenie zostanie wykorzystane lub przekazane do liścia drzewa. Wykorzystanie oznacza podjęcie akcji takiej jak na przykład naciśnięcie przycisku.
@@ -15,9 +15,4 @@ Drugim dostępnym podejściem było umieszczenie detektora jako rodzic obszaru p
 
 Z tym podejściem wiąże się jednak duża komplikacja procesu uzyskiwania obrazu tła przewijanego obszaru. Ponieważ detektor ma dostęp tylko i wyłącznie do jego aktualnie wyświetlanej części, podczas przewijania muszą być stale zapisywane kolejne fragmenty ekranu. Te częściowe obrazki wraz z informacją o ich przesunięciu względem górnej krawędzi obszaru są następnie sklejane w jedno spójne tło wykorzystywane przy tworzeniu przewijanych map cieplnych.
 
-skomplikowanie i możliwości
-
-Składanie tła, monitorowanie pozycji
-Wyścigi przy przewijaniu
-Synchronizacja obrazu z pozycją
-Dostęp do danych o statusie
+Implementacja tego mechanizmu stanowiła wyzwanie na wielu płaszczyznach. Rozwiązanie musiało wspierać zarówno przewijanie w pionie jak i w poziomie. Jednym z jego celów było stworzenie nieprzerwanego tła bez względu na szybkość przewijania ekranu. Aby to osiągnąć moment zapisania kolejnego obrazu tła został uzależniony od części widocznego obszaru która została przewinięta od momentu stworzenia poprzedniego obrazu. Ponieważ aktualne przesunięcie ekranu jest udostępniane przez inny komponent niż wyświetlany obraz te dwie informacje musiały zostać zsynchronizowane aby uniknąć przesunięć w złączonym tle. Szybkie przewijanie ekranu powodowało też wyścigi związane z nadpisywaniem informacji które zostały rozwiązane poprzez stworzenie kolejki asynchronicznie przetwarzającej zapisane fragmenty tła i łączące je w całość.
