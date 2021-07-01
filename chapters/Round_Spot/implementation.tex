@@ -57,12 +57,19 @@ Aby umożliwić prostą zdalną zmianę konfiguracji, która może być potrzebn
 \paragraph{Kontrola sesji}
 Istnieją trzy mechanizmy powodujące zakończenie sesji i wygenerowanie z nich map cieplnych. Są to wyjście z aplikacji, przekroczenie wyznaczonego czasu bezczynności oraz bezpośrednie całkowite wyłączenia działania. Pierwsze dwa z nich tworzą naturalne przerwy między kolejnymi okresami użycia aplikacji przez użytkowników co czyni je dobrym kryterium podziału interakcji na grupy znajdujące się na pojedynczej mapie cieplnej.
 
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=1.2pt] (char) {#1};}}
+
 \subsection{Tworzenie map cieplnych}
-Mapy cieplne są tworzone ze zbioru dwuwymiarowych punktów znajdujących się w układzie współrzędnych ekranu urządzenia. Pierwszą operacją która jest na nich wykonywana jest uruchomienie algorytmu klasteryzacji DBSCAN \cite{DBSCAN_Wiki}. Jego wynikiem są zbiory pogrupowanych w zależności od odległości punktów. Każdy z punktów w grupie jest otaczany okręgiem które po połączeniu tworzą podstawowy kształt każdego z punktów cieplnych na mapie. Kształty grup są wielokrotnie nakładane na siebie ze zmiennym kolorem, zmniejszanym rozmiarem oraz efektem rozmycia (przedostatni krok na diagramie poniżej). Liczba powtórzeń kształtu zależy od ilości punktów znajdujących się w jego grupie w stosunku do najliczniejszej grupy. Kolory są wybierane ze spektrum pomiędzy barwą niebieską a czerwoną. 
+\img{\chapterPath/point_steps.png}{Proces tworzenia punktów cieplnych z interakcji użytkowników}{rs_point_steps}{.7}
 
-\img{\chapterPath/heat_points.png}{Proces tworzenia punktów cieplnych z interakcji użytkowników}{rs_heat_blob}{.7}
+Mapy cieplne są tworzone ze zbioru dwuwymiarowych punktów znajdujących się w układzie współrzędnych ekranu urządzenia \circled{1}. Pierwszą operacją która jest na nich wykonywana jest uruchomienie algorytmu klasteryzacji DBSCAN \cite{DBSCAN_Wiki} \circled{2}. Jego wynikiem są zbiory pogrupowanych w zależności od odległości punktów. Każdy z punktów w grupie jest otaczany okręgiem \circled{3} które po połączeniu tworzą podstawowy kształt graficznej reprezentacji grupy \circled{4}. Kształty grup są rysowane wielokrotnie z użyciem zmieniających się parametrów \circled{5} i po nałożeniu na siebie tworzą końcowy wygląd punktów cieplnych umieszczanych na mapie \circled{6}. 
 
-\section{Tryby przetwarzania danych}
+\bigskip
+\img{\chapterPath/point_colors.png}{Spektrum kolorów używane w zależności od liczności grupy}{rs_point_colors}{.7}
+
+Ilość punktów znajdujących się w przetwarzanej grupie w stosunku do najliczniejszej grupy jest głównym parametrem odpowiedzialnym za jej wygląd. Im liczniejsza jest grupa tym więcej razy zostanie powtórzony jej kształt, osiągając coraz większy rozmiar. Kolory kolejnych rysowanych warstw są wybierane ze spektrum pomiędzy barwą czerwoną a niebieską z uwzględnieniem liczności grupy \ref{fig:rs_point_colors}. Dla przykładu jeśli największa grupa ma $6$ punktów będzie używać całego dostępnego spektrum podczas gdy grupa posiadająca $3$ punkty tylko połowy z niego. Dzięki temu na mapach cieplnych oddana jest względna liczność każdego z punktów cieplnych. Wszystkie warstwy są rysowane z efektem rozmycia i nakładane na siebie. 
+
+\section{Wyzwanie trybu przetwarzania danych}
 
 \subsection{Przetwarzanie lokalne}
 Pierwszy zaimplementowany system wykonywał całe przetwarzanie zebranych danych na mapy cieplne na telefonie użytkownika. Gotowe obrazki były wysyłane i składowane w chmurze. To podejście zostało wybrane ze względu na swoją prostotę, jednak po pierwszych testach okazało się nieodpowiednie. Podczas jednej wizyty w aplikacji  użytkownik odwiedza średnio parę stron, na każdej wykonując parę (często tylko jedną) interakcję. Z każdej wizyty tworzone było więc parę prawie pustych map cieplnych. Podczas pierwszych testów stało się jasne że to podejście charakteryzuje się stanowczo zbyt dużym rozdrobnieniem danych. Przeprowadzenie ewaluacji używając przetwarzania lokalnego spowodowałoby powstanie setek mało interesujących obrazków których nie sposób byłoby przeanalizować.
