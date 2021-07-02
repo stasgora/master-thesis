@@ -1,8 +1,21 @@
-\section{Zapewnienie jakości}
+\section{Zapewnianie jakości}
+Twórcy języka Dart, w którym pisane są aplikacje i narzędzia działające na platformie Flutter, opublikowali szereg wytycznych i wskazówek mających podnieść jakość, zwięzłość, czytelność i niezawodność kodu \cite{Effective_Dart}. Stworzyli też narzędzia pomagające deweloperom w trzymaniu się tych wytycznych i automatyzacji niektórych powtarzalnych czynności \cite{Dart_SDK}.
 
-\subsection{Najlepsze praktyki}
+\subsection{Używane narzędzia}
+
 \paragraph{Analiza statyczna}
+Linter jest kolekcją stale rozwijanych reguł języka Dart określających błędy oraz dobre praktyki względem konstrukcji i stylu kodu \cite{Dart_Lints}. Każdy projekt  może dostosować listę reguł które zostaną zaaplikowane do znajdującego się w nim kodu. Narzędzie \codeinline{dart analyze} służy do przeprowadzania statycznej analizy kodu opierając się o wybrane reguły \cite{Dart_Analyze}. Wskazuje ono programiście potencjalne błędy i problemy w kodzie bez uruchamiania go. Duży wybór i różnorodność reguł (aktualnie jest ich prawie 200) pomaga uniknąć części problemów i utrzymać jakość pisanego programu w trakcie jego powstawania.
+
 \paragraph{Formatowanie}
+Narzędzie \codeinline{dart format} zmienia ułożenie znaków białych w plikach programu dostosowując go do wytycznych twórców języka \cite{Dart_Format}. Dzięki określeniu oficjalnego stylu formatowania kodu trzymające się niego projekty pozostają wizualnie spójne rozwiązując problem niejednolitego formatowania części napisanych przez różnych deweloperów.
+
+\subsection{Testy jednostkowe}
+
+
+\paragraph{Pokrycie testami}
+
+\bigskip
+\img{\chapterPath/coverage_sunburst.png}{Wykres pierścieniowy \ang{sunburst} pokrycia projektu Round Spot testami}{rs_coverage}{.45}
 
 \subsection{Ciągła integracja}
-\subsection{Testy} 
+
