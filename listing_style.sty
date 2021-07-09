@@ -12,10 +12,63 @@
 \lstset{basicstyle=\ttfamily\footnotesize, breaklines=true, frame=single, captionpos=b}
 \def\inline{\lstinline[basicstyle=\ttfamily]}
 
-%------------------------------------------------------------
-% Konfiguracja listingów - zdefiniować można także dodatkowe
-% style dla nowych języków, według zapotrzebowania
-%------------------------------------------------------------
+% DART
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0,0.5,0.5}
+\definecolor{backcolour}{rgb}{0.95, 0.95, 0.96}
+
+\lstdefinelanguage{dartcomment}{
+	basicstyle=\ttfamily\footnotesize\color{codegreen},
+	keywordstyle=\color{magenta},
+	stringstyle=\color{codepurple},
+    backgroundcolor=\color{backcolour},
+    numberstyle=\color{black},
+    rulecolor=\color{black},
+    literate=
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1},
+	morestring=[s]{[}{]},
+	morestring=[b]_,
+	breaklines=true,
+	keepspaces=true,
+	numbers=left,
+	showspaces=false,
+	showstringspaces=false,
+}
+
+% JSON
+\colorlet{punct}{red!60!black}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+
+\lstdefinelanguage{json}{
+    numbers=left,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+    backgroundcolor=\color{backcolour},
+    literate=
+     *{0}{{{\color{numb}0}}}{1}
+      {1}{{{\color{numb}1}}}{1}
+      {2}{{{\color{numb}2}}}{1}
+      {3}{{{\color{numb}3}}}{1}
+      {4}{{{\color{numb}4}}}{1}
+      {5}{{{\color{numb}5}}}{1}
+      {6}{{{\color{numb}6}}}{1}
+      {7}{{{\color{numb}7}}}{1}
+      {8}{{{\color{numb}8}}}{1}
+      {9}{{{\color{numb}9}}}{1}
+      {:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
+}
 
 % Definicje kolorów dla listingów
 \definecolor{WhitePG}{RGB}{250, 250, 250}
@@ -112,36 +165,6 @@
   title=\lstname                   % tytuł listingu na podstawie nazwy pliku kodu
 }
 
-\lstdefinestyle{vhdl}{
-backgroundcolor=\color{WhitePG},   % kolor tła dla listingu
-  basicstyle=\linespread{1}\footnotesize,        % rozmiar czcionki dla kodu w listingu
-  breakatwhitespace=false,         % ustawienie białej spacji
-  breaklines=true,                 % automatyczne łamanie linii
-  captionpos=b,                    % opis listingu pod ramką
-  commentstyle=\color{GreenPG},    % ustawienia komentarzy, (kolor)
-  deletekeywords={...},            % usuwane słowa kluczowe z danego języka
-  escapeinside={\%*}{*)},          % znaki pozwalające na zamieszczenie kodu LaTeX w kodzie listingu
-  extendedchars=true,              % używanie znaków non-ASCII
-  firstnumber=1,                   % początkowy numer linii
-  frame=single,	                   % styl ramki wokół kodu
-  keepspaces=true,                 % zachowywanie sformatowania kodu w listingu
-  keywordstyle=\color{BluePG}\bfseries,      % ustawienia dla wyglądu słów kluczowych w kodzie (kolor)
-  language=VHDL,                 % wybór języka kodu w listingu
-  morekeywords={*,...},            % dodatkowe słowa kluczowe dla danego języka
-  numbers=left,                    % umiejscowienie numeracji linii kodu (po lewej, prawie)
-  numbersep=5pt,                   % odległość numeracji linii od ramki
-  numberstyle=\tiny\color{black},  % ustawienia rozmiaru itp, dla numeracji linii
-  rulecolor=\color{black},         % zmiana koloru ramki przy łamaniu wiersza
-  showspaces=false,                % 
-  showstringspaces=false,          % 
-  showtabs=false,                  % 
-  stepnumber=1,                    % odstęp pomiędzy liniami listingu
-  stringstyle=\color{RedPG},       % ustawienie wyglądu na łańcuchów znaków
-  tabsize=2,	                   % ustawienie rozmiaru tabulatora
-  title=\lstname                   % tytuł listingu na podstawie nazwy pliku kodu
-}
-
-
 \lstdefinestyle{python}{
   backgroundcolor=\color{WhitePG},   % kolor tła dla listingu
   basicstyle=\linespread{1}\footnotesize,        % rozmiar czcionki dla kodu w listingu
@@ -169,40 +192,6 @@ backgroundcolor=\color{WhitePG},   % kolor tła dla listingu
   stringstyle=\color{RedPG},       % ustawienie wyglądu na łańcuchów znaków
   tabsize=2,	                   % ustawienie rozmiaru tabulatora
   title=\lstname                   % tytuł listingu na podstawie nazwy pliku kodu
-}
-
-\colorlet{punct}{red!60!black}
-\definecolor{background}{HTML}{EEEEEE}
-\definecolor{delim}{RGB}{20,105,176}
-\colorlet{numb}{magenta!60!black}
-
-\lstdefinelanguage{json}{
-    basicstyle=\normalfont\ttfamily,
-    numbers=left,
-    numberstyle=\scriptsize,
-    stepnumber=1,
-    numbersep=8pt,
-    showstringspaces=false,
-    breaklines=true,
-    frame=lines,
-    backgroundcolor=\color{background},
-    literate=
-     *{0}{{{\color{numb}0}}}{1}
-      {1}{{{\color{numb}1}}}{1}
-      {2}{{{\color{numb}2}}}{1}
-      {3}{{{\color{numb}3}}}{1}
-      {4}{{{\color{numb}4}}}{1}
-      {5}{{{\color{numb}5}}}{1}
-      {6}{{{\color{numb}6}}}{1}
-      {7}{{{\color{numb}7}}}{1}
-      {8}{{{\color{numb}8}}}{1}
-      {9}{{{\color{numb}9}}}{1}
-      {:}{{{\color{punct}{:}}}}{1}
-      {,}{{{\color{punct}{,}}}}{1}
-      {\{}{{{\color{delim}{\{}}}}{1}
-      {\}}{{{\color{delim}{\}}}}}{1}
-      {[}{{{\color{delim}{[}}}}{1}
-      {]}{{{\color{delim}{]}}}}{1},
 }
 
 \endinput

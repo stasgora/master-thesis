@@ -1,7 +1,32 @@
 \section{Przygotowanie do wydania}
 
 \subsection{Dokumentacja}
+Każdy opublikowany pakiet powinien posiadać dokumentację ułatwiającą jego użycie. Twórcy języka Dart udostępnili wytyczne standaryzujące sposób pisania dokumentacji w plikach źródłowych \cite{Dart_Doc_Guidelines}. Komentarze zaczynające się od potrójnego znaku \codeinline{///} zawierają opisy elementów i struktur które poprzedzają. Istnieje też możliwość formatowania ich zawartości (np. \codeinline{_kursywa_}), odwoływania się do innych framentów kodu (\codeinline{[Klasa.pole]}) oraz zamieszczania przykładów (\codeinline{`kod`} oraz \codeinline{```wielolinijkowy fragment kodu```}).
+
+\begin{lstlisting}[language=dartcomment,caption={Fragment dokumentacji zawartej w kodzie źródłowym pakietu},label=lst:rs_docs]
+/// Initializes the _Round Spot_ library.
+///
+/// Takes a [child] widget, an optional [config],
+/// a [loggingLevel] which defaults to [LogLevel.off]
+/// and output callbacks ([localRenderCallback] and [dataCallback]) 
+/// that must be set depending on the [Config.outputType] requested.
+///
+/// Should be invoked in `main()` or otherwise wrap the [MaterialApp] widget:
+/// ```dart
+/// void main() {
+///   runApp(initialize(
+///     child: Application()
+///   ));
+/// }
+/// ```
+\end{lstlisting}
+
+Aby umożliwić korzystanie z dokumentacji w wygodnej i interaktywnej formie stworzone zostało narzędzie \codeinline{dartdoc} przetwarzające komentarze z plików kodu źródłowego projektu do postaci strony internetowej \cite{Dart_Doc}. Przetwarzana treść jest formatowana a w miejsce odwołań są wstawiane linki. Powtarzające się fragmenty mogą zostać wstawione w szablony, podczas przetwarzania ich treść zostanie skopiowana we wskazane miejsca. Podczas publikacji pakietu w repozytorium \href{https://pub.dev/}{pub.dev} strony z dokumentacją są automatycznie tworzone i umieszczane w serwisie zapewniając łatwy dostęp każdemu kto chce użyć pakietu \cite{RS_Documentation}.
+
+\img{\chapterPath/rs_docs.png}{Fragment przetworzonej na stronę internetową dokumentacji}{rs_html_docs}{.8}
+
 \subsection{Przykłady}
+
 \subsection{Repozytorium kodu}
 Kod źródłowy jest publicznie dostępny w serwisie GitHub \cite{RoundSpot_GitHub}
 
