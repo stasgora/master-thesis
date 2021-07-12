@@ -11,19 +11,24 @@ Urządzenia obsługiwane za pomocą myszy prezentują możliwość dostępu do d
 Ekrany przewijane mogą być źródłem dodatkowego rodzaju map cieplnych wizualizujących procent użytkowników którzy przewinęli stronę do danego momentu jako zmianę koloru w tej osi. Ten rodzaj mapy mierzy zmianę zainteresowania treścią w miarę jej przeglądania i jest przydatną metryką na podstawie której można optymalizować atrakcyjność zawartości wizualnej i zyskiwać nowych użytkowników.
 
 \subsection{Platformy}
-Web, Win, Mac, Lin 
+Oprócz aplikacji mobilnych Flutter pozwala też na tworzenie stron internetowych oraz programów na systemy Linux, MacOS oraz Windows. Aby zapewnić wsparcie tych platform wymagane byłoby przeprowadzenie testów kompatybilności, ewentualne wprowadzenie zmian oraz rozszerzenie załączonej dokumentacji i przykładów. W tych środowiskach często używana jest mysz, dlatego w ramach zapewniania ich oficjalnego wsparcia warto byłoby dodać też specyficzne dla tego urządzenia wejścia mapy cieplne.
 
-\subsection{Zawartość}
-Dynamic content
+\subsection{Zawartość dynamiczna}
+Tak jak zostało to już zaznaczone, elementy interfejsu które dynamicznie zmieniają swój rozmiar po załadowniu strony nie są aktualnie wspierane. Miejsca interakcji są rejestrowane jako przesunięcie w odniesieniu do lewego górnego rogu obszaru detektora. W przypadku zmiany wielkości elementu na ekranie zawartość znajdująca się po nim zostanie przesunięta. W efekcie zapisane już interakcje przestaną pokrywać się z elementami których dotyczyły. 
+
+Wsparcie dynamicznej zawartości znacznie rozszerzyłoby możliwości narzędzia jednocześnie eliminując błędy wizualne powstałe z jego braku. Po wykryciu zmiany w drzewie elementów interfejsu zarejestrowane wcześniej interakcje musiałby zostać zaktualizowane dostosowując ich miejsce do aktualnej pozycji odpowiadających im elementów. Alternatywnie pozycje interakcji mogłyby być zapisywane względem elementów interfejsu których dotyczą zamiast obszarów detektorów. W takim przypadku nawet po zmianie ich pozycji dane pozostawałyby prawidłowe.
+
+\paragraph{Niezgodność zawartości}
+Dane do map cieplnych są zbierane z wielu urządzeń. Jeśli ekran zawiera dynamiczną zawartość, każdy z użytkowników może mieć wyświetloną inną ilość tych samych, lub też zupełnie innych elementów. W takim przypadku suma interakcji z różnych urządzeń nie będzie odpowiadała żadnemu pojedynczemu tłu. Ten fakt jest aktualnie akceptowany a tło służy tylko jako przybliżona zawartość mogąca niezupełnie zgadzać się z tym co widzą użytkownicy. W przypadkach w których dokładność tła jest ważniejsza niż ilość interakcji zgromadzonych na jednej mapie cieplnej mogą być one podzielone ze względu na zawartość tak aby lepiej odpowiadały wybranemu tłu.
 
 \subsection{Automatyczna instrumentacja}
 \label{sec:auto_instrumentation}
 
-\subsection{Prywatność}
-Blur
-
-\subsection{Przetwarzanie lokalne}
-serwer, mapy całego ruchu bez podziału na urządzenia
 
 \subsection{Zwiększenie pokrycia testami}
 \label{sec:future_coverage}
+
+\subsection{Prywatność}
+Blur
+
+\subsection{Usługa}
