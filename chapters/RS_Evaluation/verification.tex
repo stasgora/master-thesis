@@ -8,7 +8,7 @@ Przegląd map cieplnych pozwala na łatwą identyfikację częściej i rzadziej 
 \img{\chapterPath/[bottom-nav-bar].png}{Pasek nawigacji testowanej aplikacji}{rs_bottom_nav_bar}{.7}
 
 \subsection{Ekrany i obszary przewijane}
-Ekrany posiadające potencjalnie przewijane obszary muszą być rozdzielone na mapę interakcji ze statycznymi elementami interfejsu oraz z zawartością znajdującą się w przewijanym polu. Na poniższych obrazkach przedstawiony jest przykład takiej sytuacji. Po prawej stronie znajduje się mapa obszaru przewiniętego przez użytkownika. Można też wywnioskować że większość z zarejestrowanych dotknięć ekranu znajdujących się w pionowej osi centralnej ekranu była spowodowana jego przewijaniem. 
+Ekrany posiadające potencjalnie przewijane obszary muszą być rozdzielone na mapę interakcji ze statycznymi elementami interfejsu oraz mapę zawartości znajdującej się w przewijanym polu. Na poniższych obrazkach przedstawiony jest przykład takiej sytuacji. Po prawej stronie znajduje się mapa obszaru przewiniętego przez użytkownika. Można też wywnioskować że większość z zarejestrowanych dotknięć ekranu znajdujących się w pionowej osi centralnej ekranu była spowodowana jego przewijaniem. 
 
 \bigskip
 \begin{figure}[H]
@@ -27,7 +27,7 @@ Ekrany posiadające potencjalnie przewijane obszary muszą być rozdzielone na m
 \end{figure}
 
 \subsection{Niewidoczne elementy}
-W niektórych przypadkach, na przykład kiedy w aplikacji używany jest gotowy komponent, aktualnie niemożliwe jest zawarcie pewnych elementów interfejsu na mapie cieplnej. Taki przypadek przedstawiony jest poniżej. Pomimo że w aplikacji użytkownik wybiera ikonę nagrody z wysuwającej się od dołu karty, na mapie cieplnej karta nie jest widoczna mogąc powodować mylne zakwalifikowanie interakcji jako dotknięcia pustej przestrzeni na ekranie. To aktualne ograniczenie zostało opisane jako jeden punktów w sekcji \nameref{sec:future_work}.
+Aktualnie w niektórych przypadkach, na przykład kiedy w aplikacji używany jest gotowy komponent, niemożliwe może być zawarcie go na mapie cieplnej. Taki przypadek przedstawiony jest poniżej. Pomimo że w aplikacji użytkownik wybiera ikonę nagrody z wysuwającej się od dołu karty, na mapie cieplnej karta nie jest widoczna mogąc powodować mylne zakwalifikowanie interakcji jako dotknięcia pustej przestrzeni na ekranie. To aktualne ograniczenie zostało opisane jako jeden z punktów w sekcji \nameref{sec:future_work}.
 
 \bigskip
 \begin{figure}[H]
@@ -46,7 +46,7 @@ W niektórych przypadkach, na przykład kiedy w aplikacji używany jest gotowy k
 \end{figure}
 
 \subsection{Zmienne elementy}
-W przypadku przewijanych obszarów zawierających animowane (zmieniające wielkość, kształt lub zawartość) elementy, tło stworzonych map może nie być spójne. Wynika to z opisanego już mechanizmu stopniowego tworzenia tła z części wyświetlanych na ekranie w danym momencie. W poniższym przykładzie po lewej stronie widać widok kart na ekranie aplikacji. W trakcie przewijania widok jest animowany powodując powiększenie aktualnie wyświetlanej na środku karty. Po prawej stronie umieszczona została mapa cieplna złożona z trzech kart po ich przewinięciu przez użytkownika. Z powodu połączenia obrazków na których ta sama karta ma różną wielkość obie boczne karty zawierają defekty graficzne. Pomimo tego ograniczenia wynikowe tło mapy cieplnej nadal spełnia swoją funkcję pozwalając na umiejscowienie interakcji użytkowników w stosunku do elementów interfejsu.
+W przypadku przewijanych obszarów zawierających animowane (zmieniające wielkość, kształt lub zawartość) elementy, tło stworzonych map może nie być spójne. Wynika to z opisanego już mechanizmu stopniowego tworzenia tła z części wyświetlanych na ekranie w danym momencie. W poniższym przykładzie po lewej stronie widać widok kart na ekranie aplikacji. W trakcie przewijania widok jest animowany powodując powiększenie aktualnie wyświetlanej na środku karty. Po prawej stronie umieszczona została mapa cieplna złożona z trzech kart po ich przewinięciu przez użytkownika. Z powodu połączenia obrazków na których ta sama karta ma różną wielkość obie boczne karty zawierają defekty graficzne. Pomimo tego ograniczenia wynikowe tło mapy cieplnej nadal spełnia swoją funkcję pozwalając na umiejscowienie interakcji użytkowników na ekranie.
 
 \bigskip
 \begin{figure}[H]

@@ -1,10 +1,10 @@
 \subsection{Architektura}
-Narzędzie składa się z dwóch części. Do aplikacji mobilnej dołączany jest plugin odpowiedzialny za zbieranie i wstępne przetwarzanie danych. Pakiety od poszczególnych użytkowników są serializowane i zapisywane w chmurze. Drugim komponentem jest procesor danych który po pobraniu zebranych danych deserializuje je, grupuje ze względu na ekran którego dotyczą i przetwarza na mapy cieplne.
-
+Narzędzie składa się z dwóch części. Do aplikacji mobilnej dołączana jest wtyczka odpowiedzialna za zbieranie i wstępne przetwarzanie danych. Pakiety od poszczególnych użytkowników są serializowane i zapisywane w chmurze. Drugim komponentem jest procesor danych który po pobraniu zebranych danych deserializuje je, grupuje ze względu na ekran którego dotyczą i przetwarza na mapy cieplne. Diagram architektury został przedstawiony na rysunku \ref{fig:round_spot_diagram}.
+\bigskip
 \img{\chapterPath/RoundSpot_Architecture.png}{Round Spot - Diagram architektury}{round_spot_diagram}{.9}
 
 \paragraph{Aplikacja}
-Twórca aplikacji dokonuje integracji narzędzia poprzez jego inicjalizację, w ramach której podawane są  opcjonalne parametry konfiguracyjne oraz funkcje przyjmujące gotowe mapy cieplne. Ponadto z uwagi na aktualne ograniczenia wymagane jest ręczne umieszczenie detektorów w odpowiednich miejscach w interfejsie aplikacji.
+Twórca aplikacji dokonuje integracji narzędzia poprzez jego inicjalizację, w ramach której podawane są  opcjonalne parametry konfiguracyjne. Ponadto z uwagi na aktualne ograniczenia wymagane jest ręczne umieszczenie detektorów w odpowiednich miejscach w interfejsie aplikacji.
 
 \paragraph{Flutter} Platforma będąca podstawą działania aplikacji obsługuje zdarzenia takie jak zmiana ekranu, wyjście z aplikacji a także interakcje użytkownika które są przekazywane odpowiednio do obserwatorów stanu oraz detektorów.
 
@@ -22,7 +22,7 @@ Ograniczony czasowo zbiór danych, odpowiadający konkretnemu obszarowi interfej
 
 \paragraph{Menedżer sesji} 
 \label{par:rs_session_manager}
-Centralny komponent odpowiedzialny zbieranie danych do aktualnie tworzonych map cieplnych oraz koordynację działania pozostałych komponentów. Decyduje, w oparciu o otrzymaną konfigurację, kiedy każda z sesji powinna się zakończyć i przekazuje zebrane w ramach niej dane do  procesora graficznego w celu przetworzenia na mapę cieplną. Informuje też menedżera tła o zachodzących zdarzeniach, takich jak przewijanie ekranu.
+Centralny komponent odpowiedzialny zbieranie danych do aktualnie tworzonych map cieplnych oraz koordynację działania pozostałych komponentów. Decyduje, w oparciu o otrzymaną konfigurację, kiedy każda z sesji powinna się zakończyć i przekazuje zebrane w ramach niej dane do serializacji. Informuje też menedżera tła o zachodzących zdarzeniach, takich jak przewijanie ekranu.
 
 \paragraph{Menedżer tła} 
 \label{par:rs_bg_manager}

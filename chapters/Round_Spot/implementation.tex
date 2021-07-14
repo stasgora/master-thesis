@@ -7,7 +7,7 @@ Round Spot posiada wiele parametrów konfiguracyjnych pozwalających na dostosow
 	\item {\bf enabled}: Określa, czy biblioteka jest aktualnie aktywna i zbiera dane.
 	\item {\bf uiElementSize}: Umożliwia dostosowanie mechanizmu grupowania interakcji i rysowania map cieplnych do średniego rozmiaru elementów interfejsu użytkownika.
 	\item {\bf disabledRoutes}: Zawiera nazwy stron aplikacji, na których nie mają być tworzone mapy cieplne.
-	\item {\bf outputTypes}: Określa rodzaje danych wyjściowych które powinny być generowane. Dostępne typy to {\it mapy cieplne} oraz {\it surowe dane}.
+	\item {\bf outputType}: Określa rodzaj danych wyjściowych które powinny być generowane. Dostępne typy to {\it przetwarzanie lokalne} oraz {\it zserializowane dane}.
 	\item {\bf maxSessionIdleTime}: Ustawia czas bezczynności aplikacji, po którym wszystkie bieżące sesje zostaną zamknięte.
 	\item {\bf minSessionEventCount}: Ustawia minimalną liczbę zdarzeń potrzebnych do zamknięcia sesji.
 	\item {\bf heatMapStyle}: Określa styl generowanych map cieplnych. Dostępne wartości to {\it gładki} oraz {\it warstwowy}.
@@ -24,9 +24,7 @@ Aby umożliwić prostą zdalną zmianę konfiguracji, która może być potrzebn
   "disabledRoutes": [
     "some-unimportant-route"
   ],
-  "outputTypes": [
-    "graphicalRender"
-  ],
+  "outputType": "localRender",
   "session": {
     "minEventCount": 1,
     "maxIdleTime": 60
@@ -40,10 +38,11 @@ Aby umożliwić prostą zdalną zmianę konfiguracji, która może być potrzebn
 \end{lstlisting}
 
 \subsection{Sesje}
+Obecnie wspierane są trzy rodzaje map cieplnych: mapy ekranów, obszarów przewijanych oraz mapy kumulowane. Rysunek \ref{fig:rs_infographic} przedstawia każdy z nich.
 
 \img{\chapterPath/banner.png}{Infografika przedstawiająca typy tworzonych sesji}{rs_infographic}{.82}
 
-\paragraph{Mapy ekranów} Każdy detektor umieszczony w interfejsie aplikacji odpowiada jednemu obszarowi z którego zbiera dane. Są one dzielone na okresy czasowe tworząc sesji z których powstają, po ich zakończeniu, pojedyncze mapy cieplne. Istnieją trzy typy sesji. Domyślnie, bez umieszczania dodatkowych detektorów, każdy ekran aplikacji który nie został wskazany w konfiguracji jako ignorowany jest nagrywany w celu tworzenia map cieplnych.
+\paragraph{Mapy ekranów} Każdy detektor umieszczony w interfejsie aplikacji odpowiada jednemu obszarowi z którego zbiera dane. Informacją są dzielone na okresy czasowe tworząc sesje z których powstają pojedyncze mapy cieplne. Domyślnie, bez umieszczania dodatkowych detektorów, każdy ekran aplikacji który nie został wskazany w konfiguracji jako ignorowany jest nagrywany w celu tworzenia map cieplnych.
 
 \img{\chapterPath/screen-map.png}{Mapa cieplna ekranu aplikacji}{rs_screen_map}{.3}
 
@@ -56,7 +55,7 @@ Aby umożliwić prostą zdalną zmianę konfiguracji, która może być potrzebn
 \img{\chapterPath/global-map.png}{Mapa cieplna paska nawigacji aplikacji}{rs_global_map}{.7}
 
 \paragraph{Kontrola sesji}
-Istnieją trzy mechanizmy powodujące zakończenie sesji i wygenerowanie z nich map cieplnych. Są to wyjście z aplikacji, przekroczenie wyznaczonego czasu bezczynności oraz bezpośrednie całkowite wyłączenia działania. Pierwsze dwa z nich tworzą naturalne przerwy między kolejnymi okresami użycia aplikacji przez użytkowników co czyni je dobrym kryterium podziału interakcji na grupy znajdujące się na pojedynczej mapie cieplnej.
+Istnieją trzy mechanizmy powodujące zakończenie sesji i wygenerowanie z nich map cieplnych. Są to: wyjście z aplikacji, przekroczenie wyznaczonego czasu bezczynności oraz bezpośrednie całkowite wyłączenia działania. Pierwsze dwa z nich tworzą naturalne przerwy między kolejnymi okresami użycia aplikacji przez użytkowników co czyni je dobrym kryterium podziału interakcji na zapisywane razem paczki danych.
 
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=1.2pt] (char) {#1};}}
 
@@ -65,7 +64,7 @@ Mapy cieplne są tworzone ze zbioru dwuwymiarowych punktów znajdujących się w
 
 \img{\chapterPath/point_steps.png}{Proces tworzenia punktów cieplnych z interakcji użytkowników}{rs_point_steps}{.7}
 
-Ilość punktów znajdujących się w przetwarzanej grupie w stosunku do najliczniejszej grupy jest głównym parametrem odpowiedzialnym za jej wygląd. Im liczniejsza jest grupa tym więcej razy zostanie powtórzony jej kształt, osiągając coraz większy rozmiar. Kolory kolejnych rysowanych warstw są wybierane ze spektrum pomiędzy barwą czerwoną a niebieską z uwzględnieniem liczności grupy. Na przykładzie zamieszczonym na rysunku \ref{fig:rs_point_colors} najliczniejsza grupa ma $6$ punktów i będzie używać całego dostępnego spektrum podczas gdy grupa posiadająca $3$ punkty tylko połowy z niego. Dzięki temu na mapach cieplnych oddana jest względna liczność każdego z punktów cieplnych. Wszystkie warstwy są rysowane z efektem rozmycia i nakładane na siebie. 
+Ilość punktów znajdujących się w przetwarzanej grupie w stosunku do najliczniejszej grupy jest głównym parametrem odpowiedzialnym za jej wygląd. Im liczniejsza jest grupa tym więcej razy zostanie powtórzony jej kształt, osiągając coraz większy rozmiar. Kolory kolejnych rysowanych warstw są wybierane ze spektrum pomiędzy barwą czerwoną a niebieską z uwzględnieniem liczności grupy. Na przykładzie zamieszczonym na rysunku \ref{fig:rs_point_colors} najliczniejsza grupa ma $6$ punktów i będzie używać całego dostępnego spektrum, podczas gdy grupa posiadająca $3$ punkty tylko połowy z niego. Dzięki temu na mapach cieplnych oddana jest względna liczność każdego z punktów cieplnych. Wszystkie warstwy są rysowane z efektem rozmycia i nakładane na siebie. 
 
 \bigskip
 \img{\chapterPath/point_colors.png}{Spektrum kolorów używane w zależności od liczności grupy}{rs_point_colors}{.7}
@@ -76,4 +75,4 @@ Ilość punktów znajdujących się w przetwarzanej grupie w stosunku do najlicz
 Pierwszy zaimplementowany system wykonywał całe przetwarzanie zebranych danych na mapy cieplne na telefonie użytkownika. Gotowe obrazki były wysyłane i składowane w chmurze. To podejście zostało wybrane ze względu na swoją prostotę, jednak po pierwszych testach okazało się nieodpowiednie. Podczas jednej wizyty w aplikacji  użytkownik odwiedza średnio parę stron, na każdej wykonując parę (często tylko jedną) interakcję. Z każdej wizyty tworzone było więc parę prawie pustych map cieplnych. Podczas pierwszych testów stało się jasne że to podejście charakteryzuje się stanowczo zbyt dużym rozdrobnieniem danych. Przeprowadzenie ewaluacji używając przetwarzania lokalnego spowodowałoby powstanie setek mało interesujących obrazków których nie sposób byłoby przeanalizować.
 
 \subsection{Przetwarzanie zdalne}
-Rozwiązaniem tego problemu było oddzielenie części przetwarzającej dane na mapy cieplne (procesora graficznego) do osobnego programu tworząc aktualną architekturę narzędzia \ref{fig:round_spot_diagram}. Zamiast gotowych obrazków do chmury są wysyłane zserializowane surowe dane o ekranie i działaniach użytkownika. Dzięki temu wszystkie interakcje na danym ekranie zebrane podczas ewaluacji mogą być umieszczone na pojedynczej mapie cieplnej. Takie podejście daje też dużo większą swobodę i kontrolę nad postacią danych wyjściowych. Mogą być one dowolnie grupowane i dzielone w celu uzyskania jak największej ilości informacji i wniosków.
+Rozwiązaniem tego problemu było oddzielenie części przetwarzającej dane na mapy cieplne (procesora graficznego) do osobnego programu tworząc aktualną architekturę narzędzia zamieszczoną na rysunku \ref{fig:round_spot_diagram}. Zamiast gotowych obrazków do chmury są wysyłane zserializowane surowe dane o ekranie i działaniach użytkownika. Dzięki temu wszystkie interakcje na danym ekranie zebrane podczas ewaluacji mogą być umieszczone na pojedynczej mapie cieplnej. Takie podejście daje też dużo większą swobodę i kontrolę nad postacią danych wyjściowych. Mogą być one dowolnie grupowane i dzielone w celu uzyskania jak największej ilości informacji i wniosków.
