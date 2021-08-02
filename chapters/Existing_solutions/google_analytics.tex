@@ -1,32 +1,32 @@
 \subsection{Google Analytics}
 \label{sec:ga}
-Google Analytics jest wiodącą usługą z zakresu monitorowania ruchu w aplikacjach i na stronach internetowych. To kompleksowe rozwiązanie oferujące wiele narzędzi wspomagających analizę i wykorzystanie zbieranych danych. Dostarcza wiedzy o wielu aspektach wykorzystania monitorowanego produktu, zaczynając od sposobów w jaki użytkownicy go odkrywają, poprzez charakterystykę grup odbiorców i szczegółów użycia przez nich produktu do analizy zaangażowania i powodów dla których podejmują takie a nie inne decyzje.
+Google Analytics jest wiodącą usługą~z~zakresu monitorowania ruchu~w~aplikacjach~i~na~stronach internetowych. To kompleksowe rozwiązanie oferujące wiele narzędzi wspomagających analizę~i~wykorzystanie zbieranych danych. Dostarcza wiedzy~o~wielu aspektach wykorzystania monitorowanego produktu, zaczynając~od~sposobów~w~jaki użytkownicy~go~odkrywają, poprzez charakterystykę grup odbiorców~i~szczegółów użycia~przez~nich produktu~do~analizy zaangażowania~i~powodów dla których podejmują takie~a~nie~inne decyzje.
 
-Pierwszym środowiskiem które wspierał Google Analytics były strony internetowe. Wsparcie zostało potem rozszerzone o platformy mobilne wraz z wydaniem ``Google Analytics for Mobile Apps''. Oprócz tego Google Analytics jest częścią platformy \nameref{sec:firebase} omówionej w kolejnym podrozdziale.
+Pierwszym środowiskiem które wspierał Google Analytics były strony internetowe. Wsparcie zostało potem rozszerzone~o~platformy mobilne wraz~z~wydaniem ``Google Analytics for Mobile Apps''. Oprócz tego Google Analytics jest częścią platformy \nameref{sec:firebase} omówionej~w~kolejnym podrozdziale.
 
 \img{\chapterPath/analytics-dashboard.png}{Panel główny Google Analytics}{ga-dashboard}{.7}
 
 \paragraph{Wydarzenia}
 \label{par:ga-events}
-Definiowane przez twórcę aplikacji wydarzenia powiązane z konkretnymi akcjami wykonywanymi przez użytkownika. Istnieje możliwość ich kategoryzowania oraz dołączenia do nich prostych atrybutów które dostarczą więcej informacji o kontekście w którym zdarzenie powstało. Przykładami akcji które mogą być warte zaraportowania jako wydarzenia są: założenie konta, logowanie, pobranie oferowanej treści, dokonanie zakupu oraz wypełnienie formularza \cite{GA_Events}.
+Definiowane~przez~twórcę aplikacji wydarzenia powiązane~z~konkretnymi akcjami wykonywanymi~przez~użytkownika. Istnieje możliwość ich kategoryzowania oraz dołączenia~do~nich prostych atrybutów które dostarczą więcej informacji~o~kontekście~w~którym zdarzenie powstało. Przykładami akcji które mogą być warte zaraportowania jako wydarzenia są: założenie konta, logowanie, pobranie oferowanej treści, dokonanie zakupu oraz wypełnienie formularza \cite{GA_Events}.
 
 \paragraph{Wyświetlenia ekranów}
-Szczególnym typem wydarzenia jest przejście na nowy ekran aplikacji. Poprzez dodanie do niego parametrów takich jak sygnatura czasowa oraz identyfikator użytkownika, Google Analytics jest w stanie stworzyć statystyki czasu przebywania na poszczególnych ekranach aplikacji. Umożliwiają one łatwe zidentyfikowanie popularnych i nieużywanych części aplikacji \cite{GA_Pages}.
+Szczególnym typem wydarzenia jest przejście~na~nowy ekran aplikacji. Poprzez dodanie~do~niego parametrów takich jak sygnatura czasowa oraz identyfikator użytkownika, Google Analytics jest~w~stanie stworzyć statystyki czasu przebywania~na~poszczególnych ekranach aplikacji. Umożliwiają one łatwe zidentyfikowanie popularnych~i~nieużywanych części aplikacji \cite{GA_Pages}.
 
 \paragraph{Sesje}
-Grupy interakcji złożone z wyświetleń ekranu, wydarzeń i transakcji wykonanych przez jednego użytkownika w ograniczonym czasie. Sesje są automatycznie kończone po 30 minutach braku aktywności lub o północy. Ilość sesji w kolejnych okresach czasu jest intuicyjną miarą ruchu w aplikacji. Możliwe jest także odniesienie innych metryk do sesji, jak na przykład sprawdzenie średniej ilości stron wyświetlonych w pojedynczej sesji \cite{GA_Sessions}.
+Grupy interakcji złożone~z~wyświetleń ekranu, wydarzeń~i~transakcji wykonanych~przez~jednego użytkownika~w~ograniczonym czasie. Sesje~są~automatycznie kończone~po~30 minutach braku aktywności~lub~o~północy. Ilość sesji~w~kolejnych okresach czasu jest intuicyjną miarą ruchu~w~aplikacji. Możliwe jest także odniesienie innych metryk~do~sesji, jak~na~przykład sprawdzenie średniej ilości stron wyświetlonych~w~pojedynczej sesji \cite{GA_Sessions}.
 
 \paragraph{Odbiorcy}
 \label{par:ga-audiences}
-Sekcja odbiorcy zawiera wszystkie informacje zebrane na temat użytkowników aplikacji. Umożliwia kategoryzowanie odbiorców w grupy docelowe na podstawie zebranych o nich danych i metryk, takich jak wygenerowane wydarzenia, wiek, płeć, lokalizacja, wykorzystywane urządzenie, używana wersja aplikacji, dane demograficzne oraz zainteresowania. Powyższe metryki są zbierane automatycznie przez Google Analytics. W zależności od potrzeb istnieje też możliwość dodawania własnych, lepiej dostosowanych do profilu działalności firmy i zawartości monitorowanego produktu metryk \cite{GA_Audiences}.
+Sekcja odbiorcy zawiera wszystkie informacje zebrane~na~temat użytkowników aplikacji. Umożliwia kategoryzowanie odbiorców~w~grupy docelowe~na~podstawie zebranych~o~nich danych~i~metryk, takich jak wygenerowane wydarzenia, wiek, płeć, lokalizacja, wykorzystywane urządzenie, używana wersja aplikacji, dane demograficzne oraz zainteresowania. Powyższe metryki~są~zbierane automatycznie~przez~Google Analytics. W zależności~od~potrzeb istnieje też możliwość dodawania własnych, lepiej dostosowanych~do~profilu działalności firmy~i~zawartości monitorowanego produktu metryk \cite{GA_Audiences}.
 
 \paragraph{Lejki}
 \label{par:ga-funnels}
-Służą do analizy i wizualizacji serii kroków wykonywanych przez użytkowników składających się na ważną z biznesowego punktu widzenia akcję, taką jak dokonanie zakupu lub założenie konta. Umożliwiają łatwe zidentyfikowanie problematycznych miejsc w których użytkownicy mają problemy, wahają się lub co gorsza  zupełnie rezygnują z wykonywanej czynności \cite{GA_Funnels}.
+Służą~do~analizy~i~wizualizacji serii kroków wykonywanych~przez~użytkowników składających się~na~ważną~z~biznesowego punktu widzenia akcję, taką jak dokonanie zakupu~lub~założenie konta. Umożliwiają łatwe zidentyfikowanie problematycznych miejsc~w~których użytkownicy mają problemy, wahają się~lub~co~gorsza  zupełnie rezygnują~z~wykonywanej czynności \cite{GA_Funnels}.
 
-\paragraph{Retencja i zaangażowanie} 
+\paragraph{Retencja~i~zaangażowanie} 
 \label{par:ga-retention}
-Retencja to ilość powracających do aplikacji  użytkowników w stosunku do nowych klientów odwiedzających ją po raz pierwszy. Z kolei zaangażowanie jest mierzone jako zmiana długości czasu który użytkownicy spędzają w aplikacji oraz ilości akcji które wykonują. Obie informacje dają bardzo ważny sygnał na temat jakości, atrakcyjności i użyteczności aplikacji z punktu widzenia klientów \cite{GA_Retention}.
+Retencja~to~ilość powracających~do~aplikacji  użytkowników~w~stosunku~do~nowych klientów odwiedzających~ją~po~raz pierwszy. Z kolei zaangażowanie jest mierzone jako zmiana długości czasu który użytkownicy spędzają~w~aplikacji oraz ilości akcji które wykonują. Obie informacje dają bardzo ważny sygnał~na~temat jakości, atrakcyjności~i~użyteczności aplikacji~z~punktu widzenia klientów \cite{GA_Retention}.
 
 \paragraph{Zdobywanie użytkowników}
-Informacja w jaki sposób użytkownicy dowiadują się o aplikacji jest kluczowa przy planowaniu jej reklamy i rozwoju. Google Analytics pozwala na śledzenie źródła z którego użytkownik pobrał aplikację. Jeśli jest ona dostępna na wielu platformach pokazywane są też statystyki popularności w każdym ze sklepów \cite{GA_Aquisition}.
+Informacja~w~jaki sposób użytkownicy dowiadują się~o~aplikacji jest kluczowa przy planowaniu jej reklamy~i~rozwoju. Google Analytics pozwala~na~śledzenie źródła~z~którego użytkownik pobrał aplikację. Jeśli jest ona dostępna~na~wielu platformach pokazywane~są~też statystyki popularności~w~każdym~ze~sklepów \cite{GA_Aquisition}.

@@ -1,42 +1,42 @@
 \subsection{Architektura}
-Narzędzie składa się z dwóch części. Do aplikacji mobilnej dołączana jest wtyczka odpowiedzialna za zbieranie i wstępne przetwarzanie danych. Pakiety od poszczególnych użytkowników są serializowane i zapisywane w chmurze. Drugim komponentem jest procesor danych który po pobraniu zebranych danych deserializuje je, grupuje ze względu na ekran którego dotyczą i przetwarza na mapy cieplne. Diagram architektury został przedstawiony na rysunku \ref{fig:round_spot_diagram}.
+Narzędzie składa się~z~dwóch części. Do aplikacji mobilnej dołączana jest wtyczka odpowiedzialna~za~zbieranie~i~wstępne przetwarzanie danych. Pakiety~od~poszczególnych użytkowników~są~serializowane~i~zapisywane~w~chmurze. Drugim komponentem jest procesor danych który~po~pobraniu zebranych danych deserializuje je, grupuje~ze~względu~na~ekran którego dotyczą~i~przetwarza~na~mapy cieplne. Diagram architektury został przedstawiony~na~rysunku \ref{fig:round_spot_diagram}.
 \bigskip
 \img{\chapterPath/RoundSpot_Architecture.png}{Round Spot - Diagram architektury}{round_spot_diagram}{.9}
 
 \paragraph{Aplikacja}
-Twórca aplikacji dokonuje integracji narzędzia poprzez jego inicjalizację, w ramach której podawane są  opcjonalne parametry konfiguracyjne. Ponadto z uwagi na aktualne ograniczenia wymagane jest ręczne umieszczenie detektorów w odpowiednich miejscach w interfejsie aplikacji.
+Twórca aplikacji dokonuje integracji narzędzia poprzez jego inicjalizację,~w~ramach której podawane~są~ opcjonalne parametry konfiguracyjne. Ponadto~z~uwagi~na~aktualne ograniczenia wymagane jest ręczne umieszczenie detektorów~w~odpowiednich miejscach~w~interfejsie aplikacji.
 
-\paragraph{Flutter} Platforma będąca podstawą działania aplikacji obsługuje zdarzenia takie jak zmiana ekranu, wyjście z aplikacji a także interakcje użytkownika które są przekazywane odpowiednio do obserwatorów stanu oraz detektorów.
+\paragraph{Flutter} Platforma będąca podstawą działania aplikacji obsługuje zdarzenia takie jak zmiana ekranu, wyjście~z~aplikacji~a~także interakcje użytkownika które~są~przekazywane odpowiednio~do~obserwatorów stanu oraz detektorów.
 
 \paragraph{Detektory} 
 \label{par:rs_detectors}
-Są odpowiedzialne za zbieranie przetwarzanych później danych, takich jak interakcje użytkownika i częściowe obrazy tła. Każdy z detektorów zbiera dane z fragmentu ekranu którego jest przodkiem w drzewie elementów interfejsu.
+Są odpowiedzialne~za~zbieranie przetwarzanych później danych, takich jak interakcje użytkownika~i~częściowe obrazy tła. Każdy~z~detektorów zbiera dane~z~fragmentu ekranu którego jest przodkiem~w~drzewie elementów interfejsu.
 
 \paragraph{Obserwatory stanu} 
 \label{par:rs_observers}
-Ich zadaniem jest informowanie menedżera sesji o wydarzeniach takich jak zmiana ekranu lub wyjście z aplikacji.
+Ich zadaniem jest informowanie menedżera sesji~o~wydarzeniach takich jak zmiana ekranu~lub~wyjście~z~aplikacji.
 
 \paragraph{Sesja}
 \label{par:rs_session}
-Ograniczony czasowo zbiór danych, odpowiadający konkretnemu obszarowi interfejsu, zawierający wykonane w nim przez użytkownika interakcje oraz zrzut ekranu. Każda sesja posiada tekstowy identyfikator jednoznacznie identyfikujący obszar ekranu którego dotyczy.
+Ograniczony czasowo zbiór danych, odpowiadający konkretnemu obszarowi interfejsu, zawierający wykonane~w~nim~przez~użytkownika interakcje oraz zrzut ekranu. Każda sesja posiada tekstowy identyfikator jednoznacznie identyfikujący obszar ekranu którego dotyczy.
 
 \paragraph{Menedżer sesji} 
 \label{par:rs_session_manager}
-Centralny komponent odpowiedzialny zbieranie danych do aktualnie tworzonych map cieplnych oraz koordynację działania pozostałych komponentów. Decyduje, w oparciu o otrzymaną konfigurację, kiedy każda z sesji powinna się zakończyć i przekazuje zebrane w ramach niej dane do serializacji. Informuje też menedżera tła o zachodzących zdarzeniach, takich jak przewijanie ekranu.
+Centralny komponent odpowiedzialny zbieranie danych~do~aktualnie tworzonych map cieplnych oraz koordynację działania pozostałych komponentów. Decyduje,~w~oparciu~o~otrzymaną konfigurację, kiedy każda~z~sesji powinna się zakończyć~i~przekazuje zebrane~w~ramach niej dane~do~serializacji. Informuje też menedżera tła~o~zachodzących zdarzeniach, takich jak przewijanie ekranu.
 
 \paragraph{Menedżer tła} 
 \label{par:rs_bg_manager}
-Tworzy obrazy interfejsu aplikacji będące tłem dla tworzonych map cieplnych polegając na sygnałach otrzymanych od menedżera sesji. W przypadku obszaru przewijanego wynikowy obraz jest efektem złączenia wielu  obrazów cząstkowych zbieranych w miarę wyświetlania się na ekranie kolejnych fragmentów interfejsu.
+Tworzy obrazy interfejsu aplikacji będące tłem dla tworzonych map cieplnych polegając~na~sygnałach otrzymanych~od~menedżera sesji. W przypadku obszaru przewijanego wynikowy obraz jest efektem złączenia wielu  obrazów cząstkowych zbieranych~w~miarę wyświetlania się~na~ekranie kolejnych fragmentów interfejsu.
 
 \paragraph{Serializacja danych}
-Przygotowuje aktualnie zebrany zestaw danych do wysłania poprzez przetworzenie go do postaci pliku binarnego. Jako protokół serializacji została użyta biblioteka {\it Protocol Buffers} stworzona przez Google.
+Przygotowuje aktualnie zebrany zestaw danych~do~wysłania poprzez przetworzenie~go~do~postaci pliku binarnego. Jako protokół serializacji została użyta biblioteka {\it Protocol Buffers} stworzona~przez~Google.
 
 \paragraph{Google Cloud Storage}
-Pakiety danych ze wszystkich urządzeń są wysyłane do jednej lokalizacji umożliwiając ich późniejsze pobranie i dalsze przetwarzanie. Do składowania danych została użyta usługa {\it Firebase Storage} zbudowana na {\it Google Cloud Storage}.
+Pakiety danych~ze~wszystkich urządzeń~są~wysyłane~do~jednej lokalizacji umożliwiając ich późniejsze pobranie~i~dalsze przetwarzanie. Do składowania danych została użyta usługa {\it Firebase Storage} zbudowana~na~{\it Google Cloud Storage}.
 
-\paragraph{Deserializacja i agregacja}
-Po pobraniu, paczki są deserializowane z użyciem biblioteki {\it Protocol Buffers}. Następnie otrzymane dane podlegają agregacji służącej połączeniu informacji zebranych ze wszystkich urządzeń i pogrupowaniu ich ze względu na ekran którego dotyczą.
+\paragraph{Deserializacja~i~agregacja}
+Po pobraniu, paczki~są~deserializowane~z~użyciem biblioteki {\it Protocol Buffers}. Następnie otrzymane dane podlegają agregacji służącej połączeniu informacji zebranych~ze~wszystkich urządzeń~i~pogrupowaniu ich~ze~względu~na~ekran którego dotyczą.
 
 \paragraph{Procesor graficzny} 
 \label{par:rs_graphical_processor}
-Przetwarza zgrupowane interakcje do graficznej postaci mapy cieplnej nałożonej na obraz zawartości ekranu. Interakcje położone blisko siebie są grupowane za pomocą algorytmu DBSCAN \cite{DBSCAN_Wiki} a ich ilość i rozłożenie w grupie definiuje jej intensywność i kształt na wynikowej mapie.
+Przetwarza zgrupowane interakcje~do~graficznej postaci mapy cieplnej nałożonej~na~obraz zawartości ekranu. Interakcje położone blisko siebie~są~grupowane~za~pomocą algorytmu DBSCAN \cite{DBSCAN_Wiki}~a~ich ilość~i~rozłożenie~w~grupie definiuje jej intensywność~i~kształt~na~wynikowej mapie.

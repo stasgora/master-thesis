@@ -1,17 +1,17 @@
-\section{Przygotowanie do wydania}
+\section{Przygotowanie~do~wydania}
 
 \subsection{Dokumentacja}
-Każdy opublikowany pakiet powinien posiadać dokumentację ułatwiającą jego użycie. Twórcy języka Dart udostępnili wytyczne standaryzujące sposób pisania dokumentacji w plikach źródłowych \cite{Dart_Doc_Guidelines}. Komentarze zaczynające się od potrójnego znaku \codeinline{///} zawierają opisy elementów i struktur które poprzedzają. Istnieje też możliwość formatowania ich zawartości (np. \codeinline{_kursywa_}), odwoływania się do innych framentów kodu (\codeinline{[Klasa.pole]}) oraz zamieszczania przykładów (\codeinline{`kod`} oraz \codeinline{```wielolinijkowy fragment kodu```}).
+Każdy opublikowany pakiet powinien posiadać dokumentację ułatwiającą jego użycie. Twórcy języka Dart udostępnili wytyczne standaryzujące sposób pisania dokumentacji~w~plikach źródłowych \cite{Dart_Doc_Guidelines}. Komentarze zaczynające się~od~potrójnego znaku \codeinline{///} zawierają opisy elementów~i~struktur które poprzedzają. Istnieje też możliwość formatowania ich zawartości (np. \codeinline{_kursywa_}), odwoływania się~do~innych framentów kodu (\codeinline{[Klasa.pole]}) oraz zamieszczania przykładów (\codeinline{`kod`} oraz \codeinline{```wielolinijkowy fragment kodu```}).
 
-\begin{lstlisting}[language=dartcomment,caption={Fragment dokumentacji zawartej w kodzie źródłowym pakietu},label=lst:rs_docs]
+\begin{lstlisting}[language=dartcomment,caption={Fragment dokumentacji zawartej~w~kodzie źródłowym pakietu},label=lst:rs_docs]
 /// Initializes the _Round Spot_ library.
 ///
-/// Takes a [child] widget, an optional [config],
-/// a [loggingLevel] which defaults to [LogLevel.off]
+/// Takes~a~[child] widget, an optional [config],
+///~a~[loggingLevel] which defaults~to~[LogLevel.off]
 /// and output callbacks ([localRenderCallback] and [dataCallback]) 
-/// that must be set depending on the [Config.outputType] requested.
+/// that must~be~set depending~on~the [Config.outputType] requested.
 ///
-/// Should be invoked in `main()` or otherwise wrap the [MaterialApp] widget:
+/// Should~be~invoked in `main()` or otherwise wrap the [MaterialApp] widget:
 /// ```dart
 /// void main() {
 ///   runApp(initialize(
@@ -21,21 +21,21 @@ Każdy opublikowany pakiet powinien posiadać dokumentację ułatwiającą jego 
 /// ```
 \end{lstlisting}
 
-Aby umożliwić korzystanie z dokumentacji w wygodnej i interaktywnej formie stworzone zostało narzędzie \codeinline{dartdoc} \cite{Dart_Doc} przetwarzające komentarze z plików kodu źródłowego projektu do postaci strony internetowej. Przetwarzana treść jest formatowana a w miejsce odwołań są wstawiane linki. Wynik przetwarzania listingu \ref{lst:rs_docs} znajduje się na rysunku \ref{fig:rs_html_docs}. Powtarzające się fragmenty mogą zostać wstawione w szablony których treść zostanie skopiowana we wskazane miejsca podczas przetwarzania. Podczas publikacji pakietu w repozytorium \href{https://pub.dev/}{pub.dev} strony z dokumentacją są automatycznie tworzone i umieszczane w serwisie zapewniając łatwy dostęp każdemu kto chce użyć pakietu \cite{RS_Documentation}.
+Aby umożliwić korzystanie~z~dokumentacji~w~wygodnej~i~interaktywnej formie stworzone zostało narzędzie \codeinline{dartdoc} \cite{Dart_Doc} przetwarzające komentarze~z~plików kodu źródłowego projektu~do~postaci strony internetowej. Przetwarzana treść jest formatowana~a~w~miejsce odwołań~są~wstawiane linki. Wynik przetwarzania listingu \ref{lst:rs_docs} znajduje się~na~rysunku \ref{fig:rs_html_docs}. Powtarzające się fragmenty mogą zostać wstawione~w~szablony których treść zostanie skopiowana~we~wskazane miejsca podczas przetwarzania. Podczas publikacji pakietu~w~repozytorium \href{https://pub.dev/}{pub.dev} strony~z~dokumentacją~są~automatycznie tworzone~i~umieszczane~w~serwisie zapewniając łatwy dostęp każdemu kto chce użyć pakietu \cite{RS_Documentation}.
 
-\img{\chapterPath/rs_docs.png}{Fragment przetworzonej na stronę internetową dokumentacji}{rs_html_docs}{.8}
+\img{\chapterPath/rs_docs.png}{Fragment przetworzonej~na~stronę internetową dokumentacji}{rs_html_docs}{.8}
 
 \subsection{Przykład}
 \label{sec:rs_example}
-Sugeruje się żeby każdy opublikowany pakiet posiadał dołączony przykład ilustrujący sugerowany sposób jego użycia. Powinien być jak najprostszy, przy czym jednocześnie wyraźnie pokazywać funkcjonalność oferowaną przez zawierający go pakiet. W tym przypadku przykład zawiera prostą aplikację z dwoma ekranami i przewijaną listą oraz instrukcję jak ją uruchomić i uzyskać pliki map cieplnych używając lokalnego przetwarzania danych \cite{RS_Example}.
+Sugeruje się żeby każdy opublikowany pakiet posiadał dołączony przykład ilustrujący sugerowany sposób jego użycia. Powinien być jak najprostszy, przy czym jednocześnie wyraźnie pokazywać funkcjonalność oferowaną~przez~zawierający~go~pakiet. W tym przypadku przykład zawiera prostą aplikację~z~dwoma ekranami~i~przewijaną listą oraz instrukcję jak~ją~uruchomić~i~uzyskać pliki map cieplnych używając lokalnego przetwarzania danych \cite{RS_Example}.
 
 \subsection{Repozytorium kodu}
-Kod źródłowy projektu jest publicznie dostępny w serwisie GitHub \cite{RoundSpot_GitHub}. Serwis został wybrany z powodu popularności i ilości oferowanych funkcji. Akcje umożliwiają stworzenie procesu \hyperref[sec:rs_ci]{ciągłej integracji} opartego o konteneryzację. Zakładka problemów \ang{Issues} pozwala każdemu na zadawanie pytań i zgłaszanie uwag podczas gdy projekty oferują prostą tablicę typu Kanban ułatwiającą organizację zadań. Na stronie głównej projektu wyświetlany jest plik informacyjny \codeinline{README.md} zawierający podstawowe informacje i pierwsze kroki. Kod udostępniony jest na otwartej licencji MIT.
+Kod źródłowy projektu jest publicznie dostępny~w~serwisie GitHub \cite{RoundSpot_GitHub}. Serwis został wybrany~z~powodu popularności~i~ilości oferowanych funkcji. Akcje umożliwiają stworzenie procesu \hyperref[sec:rs_ci]{ciągłej integracji} opartego~o~konteneryzację. Zakładka problemów \ang{Issues} pozwala każdemu~na~zadawanie pytań~i~zgłaszanie uwag podczas gdy projekty oferują prostą tablicę typu Kanban ułatwiającą organizację zadań. Na stronie głównej projektu wyświetlany jest plik informacyjny \codeinline{README.md} zawierający podstawowe informacje~i~pierwsze kroki. Kod udostępniony jest~na~otwartej licencji MIT.
 
 \subsection{Pub.dev}
-Oficjalne repozytorium otwartych i darmowych pakietów stworzonych w języku Dart oraz na platformie Flutter. Na głównej stronie pakietu wyświetlony jest jego plik \codeinline{README.md}. Pozostałe zakładki zawierają między innymi historię zmian (braną z pliku \codeinline{CHANGELOG.md}), dodany \hyperref[sec:rs_example]{przykład} oraz instrukcje instalacji. Po prawej stronie znajduje się kolumna zawierająca dodatkowe informacje i linki do repozytorium, dokumentacji i licencji \cite{RS_Pub_dev}.
+Oficjalne repozytorium otwartych~i~darmowych pakietów stworzonych~w~języku Dart oraz~na~platformie Flutter. Na głównej stronie pakietu wyświetlony jest jego plik \codeinline{README.md}. Pozostałe zakładki zawierają między innymi historię zmian (braną~z~pliku \codeinline{CHANGELOG.md}), dodany \hyperref[sec:rs_example]{przykład} oraz instrukcje instalacji. Po prawej stronie znajduje się kolumna zawierająca dodatkowe informacje~i~linki~do~repozytorium, dokumentacji~i~licencji \cite{RS_Pub_dev}.
 
-\paragraph{Ocena} Każdy pakiet jest automaczynie oceniany w skali 0-130. Na ocenę wpływ ma między innymi wynik działania \hyperref[par:static_analysis]{analizy statycznej}, obecność dokumentacji, wsparcie dostępnych platform oraz najnowszych funkcji języka.
+\paragraph{Ocena} Każdy pakiet jest automaczynie oceniany~w~skali 0-130. Na ocenę wpływ~ma~między innymi wynik działania \hyperref[par:static_analysis]{analizy statycznej}, obecność dokumentacji, wsparcie dostępnych platform oraz najnowszych funkcji języka.
 
-\img{\chapterPath/rs_pub_dev.png}{Strona główna pakietu w repozytorium pub.dev}{rs_pub_dev}{1}
+\img{\chapterPath/rs_pub_dev.png}{Strona główna pakietu~w~repozytorium pub.dev}{rs_pub_dev}{1}
 

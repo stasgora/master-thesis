@@ -4,7 +4,7 @@
 
 \begin{document}
 
-% Tikz commands based on https://tex.stackexchange.com/a/263761
+% Tikz commands based~on~https://tex.stackexchange.com/a/263761
 
 \begin{tikzpicture}[
 	node distance=15mm and 10mm,
@@ -12,7 +12,7 @@
 	mynode/.style = {
 		draw, rectangle, align=center, text width=4cm,
 		font=\small, inner ysep=3ex, inner xsep=2ex, 
-		outer sep=0pt, on chain},
+		outer sep=0pt,~on~chain},
 	smallnode/.style = {
 		mynode, text width=3.7cm
 	},
@@ -34,9 +34,9 @@
 
 \node (n2)  [mynode, below=of n1b]   {Records after duplicates\\
                                      removed: {\bf 648}};
-\node (n3a)  [mynode,join]   {Records screened\\ by title: {\bf 648}};
-\node (n3b)  [mynode,join]   {Records screened\\ by abstract: {\bf 83}};
-\node (n3c)  [mynode,join]   {Records screened by abstract (2\textsuperscript{nd} pass): {\bf 45}};
+\node (n3a)  [mynode,join]   {Records screened\\~by~title: {\bf 648}};
+\node (n3b)  [mynode,join]   {Records screened\\~by~abstract: {\bf 83}};
+\node (n3c)  [mynode,join]   {Records screened~by~abstract (2\textsuperscript{nd} pass): {\bf 45}};
 \node (n4)  [smallnode] at (n1a |- n3b.south)  {Full-text articles accessed 
                              for eligibility: {\bf 17}};
 \node (n6)  [smallnode,join]   {Studies included in

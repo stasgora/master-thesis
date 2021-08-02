@@ -1,9 +1,9 @@
 \section{Przegląd}
 
 \subsection{Zbieranie publikacji}
-Zapytanie zostało wykonane na trzech wyszukiwarkach: \textit{Web of Science}, \textit{IEEE Explore} oraz \textit{PubMed}. Z powodu różnic w składni musiało ono zostać dostosowane do każdej z wyszukiwarek z osobna. Zależnie od możliwości wyszukiwarki końcówki słów z zapytania zostały zamienione na symbole wieloznaczne (*) w celu ich dopasowania do możliwie wielu form danego słowa.
+Zapytanie zostało wykonane~na~trzech wyszukiwarkach: \textit{Web of Science}, \textit{IEEE Explore} oraz \textit{PubMed}. Z powodu różnic~w~składni musiało ono zostać dostosowane~do~każdej~z~wyszukiwarek~z~osobna. Zależnie~od~możliwości wyszukiwarki końcówki słów~z~zapytania zostały zamienione~na~symbole wieloznaczne (*)~w~celu ich dopasowania~do~możliwie wielu form danego słowa.
 
-Dla przykładu \textit{Web of Science} stosuje dwuliterowe klucze dla każdego z pól, np. atrybutowi {\bf Title} odpowiada {\bf TI}. Zapytanie dostosowane do tej wyszukiwarki wygląda następująco:
+Dla przykładu \textit{Web of Science} stosuje dwuliterowe klucze dla każdego~z~pól, np. atrybutowi {\bf Title} odpowiada {\bf TI}. Zapytanie dostosowane~do~tej wyszukiwarki wygląda następująco:
 \begin{center}
 	\begin{minipage}{0.85\linewidth}
 		\begin{verbatim}
@@ -26,7 +26,7 @@ Zastosowane zaawansowane ustawienia wyszukiwania:
 \end{itemize}
 
 \subsection{Łączenie wyników}
-Każda z używanych wyszukiwarek oferuje poprawnie danych w formie pliku {\it .csv}, jednak zawarte w nim kolumny są różnie ułożone i inaczej podpisane. Z tego powodu został stworzony skrypt łączący wyniki z trzech baz w całość, wybierający tylko potrzebne kolumny (Tytuł, Abstrakt oraz Listę autorów). Dodatkowo sprawdzał on i pomijał duplikaty wyników występujące w przypadku gdy ta sama publikacja została znaleziona przez więcej niż jedną wyszukiwarkę. W wyniku otrzymano 648 artykułów.
+Każda~z~używanych wyszukiwarek oferuje poprawnie danych~w~formie pliku {\it .csv}, jednak zawarte~w~nim kolumny~są~różnie ułożone~i~inaczej podpisane. Z tego powodu został stworzony skrypt łączący wyniki~z~trzech baz~w~całość, wybierający~tylko~ potrzebne kolumny (Tytuł, Abstrakt oraz Listę autorów). Dodatkowo sprawdzał~on~i~pomijał duplikaty wyników występujące~w~przypadku gdy~ta~sama publikacja została znaleziona~przez~więcej niż jedną wyszukiwarkę. W wyniku otrzymano 648 artykułów.
 \centertable{\toprule
 	\textbf{Wyszukiwarka} & \textbf{Ilość zwróconych wyników} & \textbf{Ilość duplikatów} \\\toprule
 	Web of Science & 329 & nd. \\\midrule
@@ -35,29 +35,29 @@ Każda z używanych wyszukiwarek oferuje poprawnie danych w formie pliku {\it .c
 }{l c c}{Ilość zwróconych wyników}{article_count}
 
 \subsection{Selekcja artykułów}
-W celu wyodrębnienia najbardziej pasujących artykułów oraz zmniejszenia ich liczby została zastosowana wielostopniowa selekcja. W każdym z etapów przyjęte zostały następujące kryteria oraz skala oceny pozycji:
+W celu wyodrębnienia najbardziej pasujących artykułów oraz zmniejszenia ich liczby została zastosowana wielostopniowa selekcja. W każdym~z~etapów przyjęte zostały następujące kryteria oraz skala oceny pozycji:
 \begin{itemize}
-    \item {\bf 0} - Publikacja zupełnie nie pasuje do zadawanego pytania
-    \item {\bf 1} - Artykuł dotyczy rozważanego zagadnienia, jednak nie pasuje do kryteriów kategorii {\it 2}
-    \item {\bf 2} - Pozycja porusza oryginalny lub interesujący temat mogący wnieść dużą wartość do przeglądu
+    \item {\bf 0} - Publikacja zupełnie~nie~pasuje~do~zadawanego pytania
+    \item {\bf 1} - Artykuł dotyczy rozważanego zagadnienia, jednak~nie~pasuje~do~kryteriów kategorii {\it 2}
+    \item {\bf 2} - Pozycja porusza oryginalny~lub~interesujący temat mogący wnieść dużą wartość~do~przeglądu
 \end{itemize}
-Pierwszym etapem była ocena istotności wyników po ich tytułach:
+Pierwszym etapem była ocena istotności wyników~po~ich tytułach:
 \centertable{\toprule
 	\textbf{Źródło}& \textbf{Ilość} & \textbf{0} & \textbf{1} & \textbf{2} \\\toprule
 	Web of Science & 329 & 98 & 180 & 51 \\\midrule
 	IEEE & 302 & 79 & 193 & 30 \\\midrule
 	PubMed & 17 & 10 & 5 & 2 \\\midrule
 	\textbf{Suma} & 648 & 187 & 378 & 83 \\\bottomrule
-}{l c c c r}{Selekcja po tytułach}{title_tagging}
+}{l c c c r}{Selekcja~po~tytułach}{title_tagging}
 
-Artykuły zaklasyfikowane jako {\bf0} i {\bf1} zostały odrzucone pozostawiając tylko {\bf2}. Następnie analogiczna selekcja została wykonana na podstawie abstraktów.
+Artykuły zaklasyfikowane jako {\bf0}~i~{\bf1} zostały odrzucone pozostawiając~tylko~ {\bf2}. Następnie analogiczna selekcja została wykonana~na~podstawie abstraktów.
 \centertable{\toprule
 	\textbf{Ilość} & \textbf{-\footnotemark} & \textbf{0} & \textbf{1} & \textbf{2} \\\midrule
 	83 & 1 & 20 & 45 & 17 \\\bottomrule
-}{l c c c r}{Selekcja po abstraktach}{abstract_tagging}
+}{l c c c r}{Selekcja~po~abstraktach}{abstract_tagging}
 \footnotetext{Brak abstraktu}
 
-Analiza jakościowa została przeprowadzona na artykułach sklasyfikowanych jako \textbf{2}. W celu przeprowadzenia analizy ilościowej na większej liczbie próbek przeprowadzono dodatkową selekcję na wynikach oznaczonych jako \textbf{1} w poprzedniej klasyfikacji.
+Analiza jakościowa została przeprowadzona~na~artykułach sklasyfikowanych jako \textbf{2}. W celu przeprowadzenia analizy ilościowej~na~większej liczbie próbek przeprowadzono dodatkową selekcję~na~wynikach oznaczonych jako \textbf{1}~w~poprzedniej klasyfikacji.
 
 \centertable{\toprule
 	\textbf{Ilość} & \textbf{0} & \textbf{1} & \textbf{2} \\\midrule

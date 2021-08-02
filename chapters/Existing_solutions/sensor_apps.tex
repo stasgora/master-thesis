@@ -1,42 +1,42 @@
-\section{Aplikacje przetwarzające dane z czujników}
+\section{Aplikacje przetwarzające dane~z~czujników}
 
 \subsection{Strava}
 \label{sec:strava}
-Popularna usługa pozwalająca na śledzenie aktywności fizycznej. Jest oparta o moduł GPS, dzięki któremu zapisuje trasę przebytą przez użytkownika. Biorąc pod uwagę typ aktywności wybrany przez użytkownika, jego wagę, szybkość przemieszczania oraz różnicę elewacji aplikacja szacuje ilość spalonych podczas treningu kalorii. Strava posiada wersję na inteligentne zegarki, które dzięki wyposażeniu w zaawansowane czujniki dostarczają aplikacji dodatkowych metryk takich jak tętno użytkownika. 
+Popularna usługa pozwalająca~na~śledzenie aktywności fizycznej. Jest oparta~o~moduł GPS, dzięki któremu zapisuje trasę przebytą~przez~użytkownika. Biorąc~pod~uwagę typ aktywności wybrany~przez~użytkownika, jego wagę, szybkość przemieszczania oraz różnicę elewacji aplikacja szacuje ilość spalonych podczas treningu kalorii. Strava posiada wersję~na~inteligentne zegarki, które dzięki wyposażeniu~w~zaawansowane czujniki dostarczają aplikacji dodatkowych metryk takich jak tętno użytkownika. 
 
-Historia przebytych tras jest zapisywana i może być udostępniana innym. Publiczne aktywności są automatycznie grupowane ze względu na lokalizację, typ i czas. W 2017 roku została udostępniona globalna mapa cieplna (widoczna na rysunku \ref{fig:strava-heatmap}) zawierająca publicznie udostępnione dane użytkowników z dwóch poprzednich lat \cite{Strava_Heatmap}. Według autorów to największy tego typu zbiór danych, zawierający 700 milionów zapisanych aktywności o całkowitej długości 16 miliardów kilometrów.
+Historia przebytych tras jest zapisywana~i~może być udostępniana innym. Publiczne aktywności~są~automatycznie grupowane~ze~względu~na~lokalizację, typ~i~czas. W 2017 roku została udostępniona globalna mapa cieplna (widoczna~na~rysunku \ref{fig:strava-heatmap}) zawierająca publicznie udostępnione dane użytkowników~z~dwóch poprzednich lat \cite{Strava_Heatmap}. Według autorów~to~największy tego typu zbiór danych, zawierający 700 milionów zapisanych aktywności~o~całkowitej długości 16 miliardów kilometrów.
 
-\img[\footnotemark]{\chapterPath/strava-heatmap.jpeg}{Strava - Mapa cieplna zarejestrowanych aktywności fizycznych w Moskwie}{strava-heatmap}{.9}
+\img[\footnotemark]{\chapterPath/strava-heatmap.jpeg}{Strava - Mapa cieplna zarejestrowanych aktywności fizycznych~w~Moskwie}{strava-heatmap}{.9}
 \footnotetext{\url{https://medium.com/strava-engineering/the-global-heatmap-now-6x-hotter-23fc01d301de}}
 
 \subsection{Samsung Health}
-Aplikacja firmy Samsung towarzysząca produktom takim jak zegarek Galaxy Watch oraz opaska Galaxy Fit. Przetwarza i magazynuje dane zbierane przez zawarte w nich czujniki. Podobnie jak \nameref{sec:strava} pozwala na zapisywanie przebytych tras i aktywności sportowych. Samsung projektuje i wytwarza urządzenia na których działa aplikacja, dzięki czemu jest w stanie wykorzystać pełen potencjał zawartych w nich czujników.
+Aplikacja firmy Samsung towarzysząca produktom takim jak zegarek Galaxy Watch oraz opaska Galaxy Fit. Przetwarza~i~magazynuje dane zbierane~przez~zawarte~w~nich czujniki. Podobnie jak \nameref{sec:strava} pozwala~na~zapisywanie przebytych tras~i~aktywności sportowych. Samsung projektuje~i~wytwarza urządzenia~na~których działa aplikacja, dzięki czemu jest~w~stanie wykorzystać pełen potencjał zawartych~w~nich czujników.
 
-\paragraph{Puls} Obecność pulsometra w nowszych modelach linii Galaxy umożliwia mierzenie pulsu, pulsoksymetrii (wysycenia krwi tlenem) oraz poziomu stresu użytkownika. 
+\paragraph{Puls} Obecność pulsometra~w~nowszych modelach linii Galaxy umożliwia mierzenie pulsu, pulsoksymetrii (wysycenia krwi tlenem) oraz poziomu stresu użytkownika. 
 
-\paragraph{Kroki} Wbudowany w smartfon lub opaskę pedometr pozwala na mierzenie ilości kroków wykonanych każdego dnia porównując ją do ustawionego celu (domyślnie 10~000 kroków). Na podstawie liczby kroków obliczany jest także przebyty dystans oraz ilość spalonych kalorii. Dane historyczne są widoczne na grafie.
+\paragraph{Kroki} Wbudowany~w~smartfon~lub~opaskę pedometr pozwala~na~mierzenie ilości kroków wykonanych każdego dnia porównując~ją~do~ustawionego celu (domyślnie 10~000 kroków). Na podstawie liczby kroków obliczany jest także przebyty dystans oraz ilość spalonych kalorii. Dane historyczne~są~widoczne~na~grafie.
 
-\paragraph{Sen} Jeśli użytkownik nie zdejmuje zegarka lub opaski na noc aplikacja jest w stanie monitorować jakość snu oraz wykrywać jego fazy na podstawie wykonywanych przez śpiącego ruchów. Zebrane dane pomagają dostosować harmonogram snu użytkownika tak aby czuł się on bardziej wypoczęty.
+\paragraph{Sen} Jeśli użytkownik~nie~zdejmuje zegarka~lub~opaski~na~noc aplikacja jest~w~stanie monitorować jakość snu oraz wykrywać jego fazy~na~podstawie wykonywanych~przez~śpiącego ruchów. Zebrane dane pomagają dostosować harmonogram snu użytkownika~tak~aby czuł się~on~bardziej wypoczęty.
 
-\paragraph{Inne} Oprócz danych automatycznie zbieranych z czujników aplikacja służy jako dziennik mogący rejestrować ręcznie wprowadzane przez użytkownika dane. Monitorowanie diety wymaga wpisywania spożytych kalorii i składników odżywczych. Możliwe jest też wprowadzanie aktualnej wagi oraz ilości wypitej wody. 
+\paragraph{Inne} Oprócz danych automatycznie zbieranych~z~czujników aplikacja służy jako dziennik mogący rejestrować ręcznie wprowadzane~przez~użytkownika dane. Monitorowanie diety wymaga wpisywania spożytych kalorii~i~składników odżywczych. Możliwe jest też wprowadzanie aktualnej wagi oraz ilości wypitej wody. 
 
 \subsection{Sleep Cycle}
-Aplikacja Sleep Cycle może być zakwalifikowana jako budzik. Tym co odróżnia ją od innych tego typu rozwiązań jest innowacyjne użycie podstawowych sensorów zawartych w smartfonach w celu poprawy jakości snu użytkownika. 
+Aplikacja Sleep Cycle może być zakwalifikowana jako budzik. Tym~co~odróżnia~ją~od~innych tego typu rozwiązań jest innowacyjne użycie podstawowych sensorów zawartych~w~smartfonach~w~celu poprawy jakości snu użytkownika. 
 
 \paragraph{Monitorowanie snu}
-Sen składa się z występujących na przemian faz snu głębokiego i płytkiego (w których najczęściej występują sny). Ilość wykonywanych ruchów i wydawanych dźwięków, włączając w to oddychanie różnią się znacznie w zależności od aktualnej fazy snu. Dzięki tym właściwościom aplikacja Sleep Cycle jest w stanie rozpoznawać i monitorować sen. Używa do tego jednego z dwóch sensorów:
+Sen składa się~z~występujących~na~przemian faz snu głębokiego~i~płytkiego (w których najczęściej występują sny). Ilość wykonywanych ruchów~i~wydawanych dźwięków, włączając~w~to~oddychanie różnią się znacznie~w~zależności~od~aktualnej fazy snu. Dzięki tym właściwościom aplikacja Sleep Cycle jest~w~stanie rozpoznawać~i~monitorować sen. Używa~do~tego jednego~z~dwóch sensorów:
 
 \begin{itemize}
-	\item {\bf Akcelerometr} W tym trybie telefon musi leżeć na łóżku śpiącego przez całą noc. Ruchy śpiącego są rejestrowane poprzez uginanie się materaca na którym spoczywa smartfon. 
-	\item {\bf Mikrofon} Telefon analizuje oddech i inne dźwięki wydawane przez śpiącego. Te dane, jako mniej bezpośrednie i bardziej zróżnicowane wskaźniki snu, są przetwarzane przez sieć neuronową w celu interpretacji.
+	\item {\bf Akcelerometr} W tym trybie telefon musi leżeć~na~łóżku śpiącego~przez~całą noc. Ruchy śpiącego~są~rejestrowane poprzez uginanie się materaca~na~którym spoczywa smartfon. 
+	\item {\bf Mikrofon} Telefon analizuje oddech~i~inne dźwięki wydawane~przez~śpiącego. Te dane, jako mniej bezpośrednie~i~bardziej zróżnicowane wskaźniki snu,~są~przetwarzane~przez~sieć neuronową~w~celu interpretacji.
 \end{itemize}
 
-Po wstępnym okresie kalibracji aplikacja rozpoczyna ocenę jakości snu na podstawie danych z poprzednich nocy.
+Po wstępnym okresie kalibracji aplikacja rozpoczyna ocenę jakości snu~na~podstawie danych~z~poprzednich nocy.
 
-\img[\footnotemark]{\chapterPath/Sleep_Cycle.jpg}{Sleep Cycle - Dziennik snu z wykresem zarejestrowanych faz}{sleep-cycle}{.4}
+\img[\footnotemark]{\chapterPath/Sleep_Cycle.jpg}{Sleep Cycle - Dziennik snu~z~wykresem zarejestrowanych faz}{sleep-cycle}{.4}
 \footnotetext{\url{https://www.sleepcycle.com/press/}}
 
 \paragraph{Budzenie śpiącego}
-Faza snu z której zostaniemy obudzeni ma duży wypływ na uczucie wypoczęcia lub jego brak. Wyrwaniu z fazy głębokiego snu często towarzyszy uczucie zmęczenia i niewyspania. Zwykłe budziki nastawiane na konkretną godzinę mogą dzwoniąc trafić na dowolny moment w cyklu faz snu powodując ten nieprzyjemny stan. 
+Faza snu~z~której zostaniemy obudzeni~ma~duży wypływ~na~uczucie wypoczęcia~lub~jego brak. Wyrwaniu~z~fazy głębokiego snu często towarzyszy uczucie zmęczenia~i~niewyspania. Zwykłe budziki nastawiane~na~konkretną godzinę mogą dzwoniąc trafić~na~dowolny moment~w~cyklu faz snu powodując ten nieprzyjemny stan. 
 
-Dzięki rozpoznawaniu fazy snu śpiącego w czasie rzeczywistym Sleep Cycle rozwiązuje ten problem. Nastawiając budzik na konkretną godzinę użytkownik wybiera tu koniec okna czasowego w którym chce zostać obudzony. Domyślnie ma ono pół godziny jednak ta wartość jest konfigurowalna. Dokładny moment zadzwonienia budzika jest automatycznie wybierany przez aplikację na podstawie aktualnego momentu cyklu faz snu w którym znajduje się śpiący. Celem takiego działania jest obudzenie użytkownika w jak najpłytszej fazie snu co poprawi jego samopoczucie i sprawi że będzie się czuł bardziej wypoczęty po wstaniu.
+Dzięki rozpoznawaniu fazy snu śpiącego~w~czasie rzeczywistym Sleep Cycle rozwiązuje ten problem. Nastawiając budzik~na~konkretną godzinę użytkownik wybiera~tu~koniec okna czasowego~w~którym chce zostać obudzony. Domyślnie~ma~ono pół godziny jednak~ta~wartość jest konfigurowalna. Dokładny moment zadzwonienia budzika jest automatycznie wybierany~przez~aplikację~na~podstawie aktualnego momentu cyklu faz snu~w~którym znajduje się śpiący. Celem takiego działania jest obudzenie użytkownika~w~jak najpłytszej fazie snu~co~poprawi jego samopoczucie~i~sprawi~że~będzie się czuł bardziej wypoczęty~po~wstaniu.
