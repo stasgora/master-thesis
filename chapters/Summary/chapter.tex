@@ -1,18 +1,18 @@
  \begin{chapter}{Podsumowanie}
 	\newcommand{\chapterPath}{chapters/Summary}
 
-	Cel pracy
+	Pierwszym celem pracy była analiza i porównanie z sobą różnych mechanizmów monitorowania użytkowników, głównie w kontekście aplikacji mobilnych. Drugie wskazane w temacie pracy do realizacji zadanie dotyczyło wybrania jednego z analizowanych mechanizmów i zaimplementowania go w istniejącej aplikacji terapeutycznej. 
 	
 	\section{Osiągnięte rezultaty}
 	
 	\subsection{Przegląd mechanizmów}
-	analiza wielu perspektyw, naukowej i~komercyjnej
+	Wykonana analiza istniejących mechanizmów monitorujących zajmująca rozdziały \ref{cha:existing_solutions} do \ref{cha:heat_maps} rozpatruje temat z możliwie wielu perspektyw. Opisane zostały przykłady gotowych rozwiązań, takich jak aplikacje, mechanizmy systemów mobilnych i komercyjne platformy \ang{frameworks} oferujące usługi z zakresu monitorowania. Wykonany systematyczny przegląd literatury naukowej skupia się za to na aspekcie wykorzystania czujników w urządzeniach takich jak smartfony w celu wykrywania i opisu aktywności ludzkich. Przedstawione zostały także przykłady popularnych produktów z wybranego do implementacji w dalszej części pracy typu rozwiązań tworzących mapy cieplne interakcji użytkowników. Wymienione w każdej kategorii przykłady są ze sobą porównane pod względem funkcji, podobieństw i zaawansowania.
 	
 	\subsection{Autorskie rozwiązanie}
-	stworzenie, ewaluacja, publikacja. Przydatność
+	Wybrany do implementacji aspekt monitorowania polega na obserwacji interakcji użytkowników z interfejsem aplikacji i ich późniejszym przetwarzaniu do graficznej formy map cieplnych poszczególnych ekranów. Zamiast bezpośredniej implementacji w docelowej aplikacji terapeutycznej powstało uniwersalne narzędzie które może zostać wykorzystane w dowolnej aplikacji opartej o platformę Flutter, co znacznie zwiększa jego potencjalny obszar wpływu. Praca nad tworzeniem rozwiązania była przeprowadzona według najlepszych standardów jakości kodu oraz jego testowania. Wykonana ewaluacja składająca się ze wstępnej weryfikacji oraz walidacji z udziałem testerów wykazała słabe i mocne strony działania narzędzia potwierdzając jednocześnie jego przydatność w analizie dostępności interfejsu i zachowań użytkowników.
 	
 	\section{Napotkane wyzwania}
-	problem techniczny platformy, błędne założenie odnośnie postaci danych wyjściowych
+	Podczas procesu implementacji i ewaluacji tworzonego narzędzia wystąpiło wiele problemów stanowiących poważne wyzwania stojące na drodze do poprawnie działającego, użytecznego rozwiązania. Część z nich wynikała z potrzeby uzyskania bardzo specyficznie określonego zestawu danych który częściowo wychodził poza założenia na których zbudowany został interfejs programistyczny \ang{Application Programming Interface - API} platformy Flutter. Wyzwaniami okazały się też właściwa architektura i przepływ przetwarzania danych dający odpowiednią swobodę, a także rysowanie samej mapy cieplnej w atrakcyjny wizualnie i przejrzysty w analizie sposób.
 	
 	\section{Sformułowane wnioski}
 	
