@@ -1,4 +1,8 @@
 \section{Walidacja}
+Przygotowana wersja aplikacji Fokus została udostępniona grupie użytkowników w różnym wieku. Mieli oni za zadanie przetestować funkcje i działanie aplikacji we własnym zakresie. Brak z góry narzuconych scenariuszy testowych oraz kroków do wykonania miał stworzyć warunki naturalnej eksploracji i użycia aplikacji po jej samodzielnym ściągnięciu ze sklepu. Ta decyzja umożliwiła też ocenę bardziej reprezentatywnych statystyk użycia poszczególnych funkcji aplikacji która nie byłaby możliwa w przypadku zastosowania scenariuszy użycia. 
+
+Większość z testerów po raz pierwszy miała styczność z używaną aplikacją co było celowe i miało zwiększyć szansę na uchwycenie wartościowych danych o błędach popełnianych z powodu nieznajomości interfejsu. W miarę jak użytkownicy uczą się nawigacji i elementów aplikacji ich interakcje stają się mechaniczne i nieomylne co zminiejsza prawdopodobieństwo na wyciągnięcie ciekawych wniosków z zebranych danych.
+
 \subsection{Powierzchnie interaktywne}
 Elementy interfejsu często zawierają wizualnie zaznaczone obszary służące~do~wchodzenia~z~nimi~w~interakcje. Na~poniższym rysunku \ref{fig:interactive_areas} widać dwa przykłady listy elementów~z~których każdy posiada~po~prawej stronie strzałkę. Mając~do~stworzenia tego typu fragment interfejsu pierwszym instynktem może być stworzenie przycisku~ze~strzałką~i~umieszczenie~go~po prawej stronie elementu.
 
@@ -21,6 +25,41 @@ Powyższe obserwacje wskazują~na~problem~z~opisanym podejściem~do~projektu ele
 \caption{Przykłady elementów interaktywnych}
 \label{fig:interactive_areas}
 \end{figure}
+
+\subsection{Statystyki}
+
+\bigskip
+\begin{figure}[H]
+\centering
+\begin{minipage}{.3\textwidth}
+	\centering
+	\includegraphics[width=.9\linewidth]{\chapterPath/stars.png}
+\end{minipage}
+\begin{minipage}{.3\textwidth}
+	\centering
+	\includegraphics[width=.9\linewidth]{\chapterPath/signin-methods.png}
+\end{minipage}
+\begin{minipage}{.35\textwidth}
+	\centering
+	\includegraphics[width=.9\linewidth]{\chapterPath/plan-length.png}
+\end{minipage}
+\bigskip
+\caption{Statystyki użycia aplikacji}
+\label{fig:statistics}
+\end{figure}
+
+\bigskip
+\img{\chapterPath/sections.png}{Użycie poszczególnych sekcji aplikacji}{sections_usage}{.7}
+
+\subsection{Problemy użytkowników}
+
+\bigskip
+\img{\chapterPath/pass-issues.png}{Powtarzanie hasła}{pass_issues}{.35}
+
+\subsection{Ostrzeżenia}
+
+\bigskip
+\img{\chapterPath/confirm-warning.png}{Działanie ostrzeżenia}{confirm_warning}{.35}
 
 \section{Wnioski}
 
