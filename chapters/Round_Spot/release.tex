@@ -6,12 +6,12 @@ Każdy opublikowany pakiet powinien posiadać dokumentację ułatwiającą jego 
 \begin{lstlisting}[language=dartcomment,caption={Fragment dokumentacji zawartej~w~kodzie źródłowym pakietu},label=lst:rs_docs]
 /// Initializes the _Round Spot_ library.
 ///
-/// Takes~a~[child] widget, an optional [config],
-///~a~[loggingLevel] which defaults~to~[LogLevel.off]
+/// Takes a [child] widget, an optional [config],
+/// a [loggingLevel] which defaults to [LogLevel.off]
 /// and output callbacks ([localRenderCallback] and [dataCallback]) 
-/// that must~be~set depending~on~the [Config.outputType] requested.
+/// that must be set depending on the [Config.outputType] requested.
 ///
-/// Should~be~invoked in `main()` or otherwise wrap the [MaterialApp] widget:
+/// Should be invoked in `main()` or otherwise wrap the [MaterialApp] widget:
 /// ```dart
 /// void main() {
 ///   runApp(initialize(
