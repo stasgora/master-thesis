@@ -26,14 +26,14 @@ Z tym podejściem wiąże się jednak duża komplikacja procesu uzyskiwania obra
 
 Implementacja tego mechanizmu stanowiła wyzwanie~na~wielu płaszczyznach. Rozwiązanie musiało wspierać zarówno przewijanie~w~pionie jak~i~w~poziomie. Jednym~z~wymagań było stworzenie nieprzerwanego tła~bez~względu~na~szybkość przewijania ekranu. Aby osiągnąć ten efekt moment zapisania kolejnego obrazu tła został uzależniony~od~części widocznego obszaru która została przewinięta~od~momentu stworzenia poprzedniego obrazu. Ponieważ aktualne przesunięcie ekranu jest udostępniane~przez~inny komponent platformy Flutter niż wyświetlany obraz,~te~dwie informacje musiały zostać zsynchronizowane aby uniknąć przesunięć~w~złączonym tle. Szybkie przewijanie ekranu powodowało też wyścigi związane~z~nadpisywaniem informacji. Problem został rozwiązany poprzez stworzenie kolejki asynchronicznie przetwarzającej zapisane fragmenty tła~i~łączące~je~w~całość.
 
-\section{Łączenie danych z wielu urządzeń}
-Głównym wyzwaniem napotkanym podczas implementacji procesora danych okazał się wpływ różnic w wielkości ekranów urządzeń z których korzystają użytkownicy na wzajemne pozycje ich interakcji. W założeniu aby sprowadzić koordynaty dotknięć ekranów o różnych wielkościach do wspólnej przestrzeni wystarczy je podzielić przez rozmiar ekranu z którego pochodzą. W praktyce, jak pokazano na rysunku \ref{fig:screen_sizes}, nawet po wykonaniu tej transformacji grupy punktów cieplnych na mapach nie zawsze dokładnie pasują do znajdujących się pod nimi elementów interfejsu. 
+\section{Łączenie danych~z~wielu urządzeń}
+Głównym wyzwaniem napotkanym podczas implementacji procesora danych okazał się wpływ różnic~w~wielkości ekranów urządzeń~z~których korzystają użytkownicy~na~wzajemne pozycje ich interakcji. W~założeniu aby sprowadzić koordynaty dotknięć ekranów~o~różnych wielkościach~do~wspólnej przestrzeni wystarczy~je~podzielić~przez~rozmiar ekranu~z~którego pochodzą. W~praktyce, jak pokazano~na~rysunku \ref{fig:screen_sizes}, nawet~po~wykonaniu tej transformacji grupy punktów cieplnych~na~mapach~nie~zawsze dokładnie pasują~do~znajdujących się~pod~nimi elementów interfejsu. 
 
-\subsection{Piksele logiczne i fizyczne}
-Jednym z powodów jest specyfika jednostki w której platforma podaje pozycje interakcji. Flutter używa do tego celu tak zwanych pikseli logicznych \ang{logical pixels} które w przybliżeniu odpowiadają temu samemu rozmiarowi wizualnemu na różnych urządzeniach. Z powodu późnego wykrycia implikacji tego faktu przelicznik pomiędzy fizycznymi a logicznymi pikselami który jest różny dla każdego urządzenia nie był zapisywany podczas przeprowadzania ewaluacji. Zamiast niego do przeskalowania pozycji interakcji musiał zostać użyty rozmiar ekranu w pikselach fizycznych odczytywany jako rozmiar dołączonych obrazów tła. Różnice pomiędzy obiema wartościami przyczyniły się do przesunięcia pozycji interakcji względem niektórych obrazów tła.
+\subsection{Piksele logiczne~i~fizyczne}
+Jednym~z~powodów jest specyfika jednostki~w~której platforma podaje pozycje interakcji. Flutter używa~do~tego celu~tak~zwanych pikseli logicznych \ang{logical pixels} które~w~przybliżeniu odpowiadają temu samemu rozmiarowi wizualnemu~na~różnych urządzeniach. Z~powodu późnego wykrycia implikacji tego faktu przelicznik pomiędzy fizycznymi~a~logicznymi pikselami który jest różny dla każdego urządzenia~nie~był zapisywany podczas przeprowadzania ewaluacji. Zamiast niego~do~przeskalowania pozycji interakcji musiał zostać użyty rozmiar ekranu~w~pikselach fizycznych odczytywany jako rozmiar dołączonych obrazów tła. Różnice pomiędzy obiema wartościami przyczyniły się~do~przesunięcia pozycji interakcji względem niektórych obrazów tła.
 
-\subsection{Wpływ rozmiaru ekranu na jego zawartość}
-Drugim ze zidentyfikowanych powodów widocznych przesunięć jest wpływ rozmiaru ekranu na sposób rysowania elementów interfejsu przez platformę. Wraz ze zwiększaniem się ekranu tekst staje się coraz mniejszy a odstępy i marginesy rosną, co jest widoczne na rysunku \ref{fig:screen_sizes}. Ekran pokazany po prawej stronie jest większy od tego po lewej. Różnice w wielkości elementów spowodowane wielkością ekranu mogą wpływać na zmianę ich wzajemnych odległości, co w efekcie prowadzi do niejednoznacznej reprezentacji punktów w przestrzeni ekranu i nieprawidłowego ułożenia części interakcji na wynikowych mapach cieplnych.
+\subsection{Wpływ rozmiaru ekranu~na~jego zawartość}
+Drugim~ze~zidentyfikowanych powodów widocznych przesunięć jest wpływ rozmiaru ekranu~na~sposób rysowania elementów interfejsu~przez~platformę. Wraz~ze~zwiększaniem się ekranu tekst staje się coraz mniejszy~a~odstępy~i~marginesy rosną,~co~jest widoczne~na~rysunku \ref{fig:screen_sizes}. Ekran pokazany~po~prawej stronie jest większy~od~tego~po~lewej. Różnice~w~wielkości elementów spowodowane wielkością ekranu mogą wpływać~na~zmianę ich wzajemnych odległości,~co~w~efekcie prowadzi~do~niejednoznacznej reprezentacji punktów~w~przestrzeni ekranu~i~nieprawidłowego ułożenia części interakcji~na~wynikowych mapach cieplnych.
 
 \bigskip
 \begin{figure}[H]
@@ -47,6 +47,6 @@ Drugim ze zidentyfikowanych powodów widocznych przesunięć jest wpływ rozmiar
 	\includegraphics[width=.9\linewidth]{\chapterPath/big-screen.png}
 \end{minipage}
 \bigskip
-\caption{Wpływ różnic w wielkościach ekranów}
+\caption{Wpływ różnic~w~wielkościach ekranów}
 \label{fig:screen_sizes}
 \end{figure}
