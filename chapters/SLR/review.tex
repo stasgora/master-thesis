@@ -30,7 +30,7 @@ Dla przykładu \textit{Web of Science} stosuje dwuliterowe klucze dla każdego~z
 \end{itemize}
 
 \subsection{Łączenie wyników}
-Każda~z~używanych wyszukiwarek oferuje zapis wyników wyszukiwania~w~formie pliku {\it .csv}, jednak zawarte~w~nim kolumny~są~różnie ułożone~i~inaczej podpisane. Z~tego powodu został stworzony skrypt łączący wyniki~z~trzech baz~w~całość, wybierający~tylko~ potrzebne kolumny (Tytuł, Abstrakt oraz Listę autorów). Dodatkowo sprawdzał~on~i~pomijał duplikaty wyników występujące~w~przypadku gdy~ta~sama publikacja została znaleziona~przez~więcej niż jedną wyszukiwarkę. W~wyniku otrzymano 648 artykułów.
+Każda~z~używanych wyszukiwarek oferuje zapis wyników wyszukiwania~w~formie pliku {\it .csv}, jednak zawarte~w~nim kolumny~są~różnie ułożone~i~inaczej podpisane. Z~tego powodu został stworzony skrypt łączący wyniki~z~trzech baz~w~całość, wybierający~tylko~potrzebne kolumny (Tytuł, Abstrakt oraz Listę autorów). Dodatkowo sprawdzał~on~i~pomijał duplikaty wyników występujące~w~przypadku gdy~ta~sama publikacja została znaleziona~przez~więcej niż jedną wyszukiwarkę. W~wyniku otrzymano 648 artykułów.
 \centertable{\toprule
 	\textbf{Wyszukiwarka} & \textbf{Ilość zwróconych wyników} & \textbf{Ilość duplikatów} \\\toprule
 	Web of Science & 329 & nd. \\\midrule
@@ -54,7 +54,7 @@ Pierwszym etapem była ocena istotności wyników~po~ich tytułach:
 	\textbf{Suma} & 648 & 187 & 378 & 83 \\\bottomrule
 }{l c c c r}{Selekcja~po~tytułach}{title_tagging}
 
-Artykuły zaklasyfikowane jako {\bf0}~i~{\bf1} zostały odrzucone pozostawiając~tylko~ {\bf2}. Następnie analogiczna selekcja została wykonana~na~podstawie abstraktów.
+Artykuły zaklasyfikowane jako {\bf0}~i~{\bf1} zostały odrzucone pozostawiając~tylko~{\bf2}. Następnie analogiczna selekcja została wykonana~na~podstawie abstraktów.
 \centertable{\toprule
 	\textbf{Ilość} & \textbf{-\footnotemark} & \textbf{0} & \textbf{1} & \textbf{2} \\\midrule
 	83 & 1 & 20 & 45 & 17 \\\bottomrule
