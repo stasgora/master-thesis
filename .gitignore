@@ -1,6 +1,7 @@
 meta/*.pdf
 thesis.pdf
 .kile
+*.sh
 *.kilepr
 
 ## Core latex/pdflatex auxiliary files:
