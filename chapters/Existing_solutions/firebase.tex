@@ -8,7 +8,7 @@ Firebase jest platformą firmy Google oferującą szereg usług skierowanych~do~
 \paragraph{Crashlytics}
 Usługa wykrywająca występujące~w~aplikacji błędy natury programistycznej. Zebrane informacje związane~z~błędami~są~wysyłane~i~prezentowane~w~użytecznej dla twórcy aplikacji formie. Narzędzie oferuje statystyki ilości dotkniętych błędem użytkowników oraz możliwość powiadomienia twórców aplikacji~o~pojawieniu się nowego problemu \cite{Fb_Crashlytics}.
 
-Powtarzające się błędy~są~grupowane~a~ich wystąpienia zostają oznaczone~na~osi czasu. Do~każdego dołączony jest zrzut stosu zawierający kolejne wykonywane~w~kodzie funkcje ułatwiający znalezienie przyczyny błędu. Istnieje też możliwość przeglądnięcia zebranych~przez~Google Analytics \hyperref[par:ga-events]{wydarzeń} które miały miejsce bezpośrednio przed wystąpieniem błędu, takich jak otwierane strony~i~wykonywane akcje. 
+Powtarzające się błędy~są~grupowane~a~ich wystąpienia zostają oznaczone~na~osi czasu. Do~każdego z nich dołączany jest pomocny w znajdowaniu przyczyny błędu zrzut stosu wywołań funkcji. Istnieje też możliwość przeglądnięcia zebranych~przez~Google Analytics \hyperref[par:ga-events]{wydarzeń} które miały miejsce bezpośrednio przed wystąpieniem błędu, takich jak otwierane strony~i~wykonywane akcje. 
 
 \paragraph{Monitoring wydajności}
 Narzędzie automatyczne zbierające metryki dotyczące wydajności działania aplikacji takie jak:
@@ -22,7 +22,7 @@ Narzędzie automatyczne zbierające metryki dotyczące wydajności działania ap
 \end{itemize}
 \bigskip
 
-Istnieje możliwość mierzenia dodatkowych zadań wykonywanych~przez~aplikację, zdefiniowanych~przez~jej twórcę. Domyślną metryką jest czas, można też jednak dodawać inne. Do~wszystkich pomiarów dodawane~są~atrybuty dotyczące urządzenia~i~systemu~na~którym były wykonywane, używanej wersji aplikacji oraz przybliżonej lokalizacji geograficznej. Możliwe jest też dodawanie własnych parametrów. Wszystkie zebrane metadane służą~do~kategoryzacji zebranych pomiarów umożliwiając ich  filtrowanie~i~ułatwiając identyfikację źródeł problemów~z~wydajnością \cite{Fb_Pref_Monitor}.
+Istnieje możliwość definiowania i mierzenia dodatkowych wykonywanych~przez~aplikację zadań. Domyślną metryką jest czas, można też jednak dodawać inne. Do~wszystkich pomiarów dodawane~są~atrybuty dotyczące urządzenia~i~systemu~na~którym były wykonywane, używanej wersji aplikacji oraz przybliżonej lokalizacji geograficznej. Możliwe jest też dodawanie własnych parametrów. Wszystkie zebrane metadane służą~do~kategoryzacji zebranych pomiarów umożliwiając ich  filtrowanie~i~ułatwiając identyfikację źródeł problemów~z~wydajnością \cite{Fb_Pref_Monitor}.
 
 \paragraph{Testy A/B}
 Rodzaj testów polegających~na~porównaniu dwóch~lub~więcej wersji elementu interfejsu. Każda~z~nich jest wyświetlana innej grupie odbiorców których reakcje, zebrane~w~formie metryk, wskazują~na~efektywność każdej~z~wersji. 
