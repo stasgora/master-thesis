@@ -17,6 +17,7 @@ Round Spot posiada wiele parametrów konfiguracyjnych pozwalających~na~dostosow
 
 Aby umożliwić prostą zdalną zmianę konfiguracji, która może być potrzebna~w~środowisku produkcyjnym, umożliwiony został mechanizm pozwalający~na~wczytanie konfiguracji~z~pliku json, który może być łatwo przesłany~na~urządzenia użytkowników. Stworzony został także schemat pliku konfiguracyjnego \ang{JSON Schema} pozwalający zweryfikować jego poprawność \cite{RoundSpot_Config_Schema}.
 
+\bigskip
 \begin{lstlisting}[language=json,caption={Przykładowy plik konfiguracyjny~w~formacie json},label=lst:rs_config_json]
 {
   "enabled": true,
@@ -48,10 +49,12 @@ Obecnie wspierane~są~trzy rodzaje map cieplnych: mapy ekranów, obszarów przew
 
 \paragraph{Mapy obszarów} Dodatkowo używający biblioteki twórca aplikacji może dodawać detektory monitorujące wybrane części ekranów~w~celu izolacji zachodzących~na~nich interakcji~i~umieszczenia ich~na~osobnej mapie cieplnej. Przypadkiem~w~którym jest~to~niezbędne~do~otrzymania poprawnego, zgodnego~z~rzeczywistością zapisu działań użytkownika~są~przewijane części interfejsu. Bez~dodatkowego detektora dotknięcia zarejestrowane~na~przewijanym fragmencie zostałyby narysowane~na~mapie cieplnej obejmującej cały ekran. Ponieważ~na~statycznym, dwuwymiarowym obrazie~nie~jest możliwe przestawienie niemieszczącej się~na~ekranie zawartości~bez~zasłonienia jego części, względne odległości tych interakcji~i~ich pozycja względem tła byłaby nieprawidłowa. Osobna mapa cieplna obejmująca~tylko~~i~wyłącznie obszar przewijany może objąć całą jego powierzchnię~i~poprawnie narysować wszystkie interakcje użytkownika.
 
+\bigskip
 \img{\chapterPath/area-map.png}{Mapa cieplna przewijanych kart}{rs_area_map}{.95}
 
 \paragraph{Mapy kumulowane} Trzeci typ map cieplnych może zawierać interakcje~z~więcej niż jednego ekranu aplikacji. Jest~on~użyteczny~w~sytuacjach,~w~których celem jest przeanalizowanie skumulowanego użycia elementu interfejsu występującego~w~tej samej postaci~na~wielu stronach aplikacji, takiego jak pasek nawigacji~lub~menu. Dzięki tej możliwości oprócz rozbitych~na~ekrany interakcji dotyczących wspólnego elementu stworzona zostanie dodatkowa mapa cieplna zbierająca~je~wszystkie.
 
+\bigskip
 \img{\chapterPath/global-map.png}{Mapa cieplna paska nawigacji aplikacji}{rs_global_map}{.7}
 
 \paragraph{Kontrola sesji}
@@ -62,11 +65,13 @@ Istnieją trzy mechanizmy powodujące zakończenie sesji~i~wygenerowanie~z~nich 
 \subsection{Procesor danych}
 Ostatni fragment~w~łańcuchu przepływu danych odpowiedzialny~za~przetwarzanie zebranych paczek danych~na~końcowe mapy cieplne przyjmuje formę samodzielnej aplikacji opartej~o~platformę Flutter. Po~otwarciu zbioru plików zawierających zebrane dane~są~one wczytywane, łączone~i~przedstawiane~w~formie hierarchicznej listy reprezentującej ekrany aplikacji~i~wyszczególnione~na~nich obszary. Po~wyborze jednego~z~nich rysowana jest odpowiadająca~mu~mapa cieplna zawierająca wszystkie zarejestrowane interakcje. Opcja eksportu pozwala~na~zapisanie jej jako obraz~w~formacie \codeinline{.png}.
 
+\bigskip
 \img{\chapterPath/processor.png}{Konsola procesora zebranych danych}{rs_processor}{.9}
 
 \subsection{Tworzenie map cieplnych}
 Mapy cieplne~są~tworzone~ze~zbioru dwuwymiarowych punktów znajdujących się~w~układzie współrzędnych ekranu urządzenia (proces pokazano~na~rysunku \ref{fig:rs_point_steps}) \circled{1}. Pierwszą operacją która jest~na~nich wykonywana jest uruchomienie algorytmu klasteryzacji DBSCAN \cite{DBSCAN_Wiki}. Jego wynikiem~są~zbiory pogrupowanych~w~zależności~od~odległości punktów \circled{2}. Punkty~w~grupie ulegają rozmyciu \circled{3}~i~po~połączeniu tworzą podstawowy kształt graficznej reprezentacji grupy \circled{4}. Kształty grup~są~rysowane wielokrotnie~z~użyciem zmieniających się parametrów (opisanych dokładnie~w~kolejnym akapicie) \circled{5}~i~po~nałożeniu~na~siebie tworzą końcowy wygląd punktów cieplnych umieszczanych~na~mapie \circled{6}.
 
+\bigskip
 \img{\chapterPath/point_steps.png}{Proces tworzenia punktów cieplnych~z~interakcji użytkowników}{rs_point_steps}{.7}
 
 Ilość punktów znajdujących się~w~przetwarzanej grupie~w~stosunku~do~najliczniejszej grupy jest głównym parametrem odpowiedzialnym~za~jej wygląd. Im~liczniejsza jest grupa tym więcej razy zostanie powtórzony jej kształt, osiągając coraz większy rozmiar. Kolory kolejnych rysowanych warstw~są~wybierane~ze~spektrum pomiędzy barwą czerwoną~a~niebieską~z~uwzględnieniem liczności grupy. Na~przykładzie zamieszczonym~na~rysunku \ref{fig:rs_point_colors} najliczniejsza grupa~ma~$6$ punktów~i~będzie używać całego dostępnego spektrum, podczas gdy grupa posiadająca $3$ punkty~tylko~połowy~z~niego. Dzięki temu~na~mapach cieplnych oddana jest względna liczność każdego~z~punktów cieplnych. Wszystkie warstwy~są~rysowane~z~efektem rozmycia~i~nakładane~na~siebie. 

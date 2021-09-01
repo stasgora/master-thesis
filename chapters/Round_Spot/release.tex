@@ -1,12 +1,14 @@
 \section{Przygotowanie~do~wydania}
 
 \subsection{Dokumentacja}
-Każdy opublikowany pakiet powinien posiadać dokumentację ułatwiającą jego użycie. Twórcy języka Dart udostępnili wytyczne standaryzujące sposób pisania dokumentacji~w~plikach źródłowych \cite{Dart_Doc_Guidelines}. Komentarze zaczynające się~od~potrójnego znaku \codeinline{///} zawierają opisy elementów~i~struktur które poprzedzają. Istnieje też możliwość formatowania ich zawartości (np. \codeinline{_kursywa_}), odwoływania się~do~innych framentów kodu (\codeinline{[Klasa.pole]}) oraz zamieszczania przykładów (\codeinline{`kod`} oraz \codeinline{```wielolinijkowy fragment kodu```}).
+Każdy opublikowany pakiet powinien posiadać dokumentację ułatwiającą jego użycie. Twórcy języka Dart udostępnili wytyczne standaryzujące sposób pisania dokumentacji~w~plikach źródłowych \cite{Dart_Doc_Guidelines}. Komentarze zaczynające się~od~potrójnego znaku \codeinline{///} zawierają opisy elementów~i~struktur które poprzedzają. Istnieje też możliwość formatowania ich zawartości (np. \codeinline{_kursywa_}), odwoływania się~do~innych fragmentów kodu (\codeinline{[Klasa.pole]}) oraz zamieszczania przykładów (\codeinline{`kod`} oraz \codeinline{```wielolinijkowy fragment kodu```}).
 
+\bigskip
 \input{\chapterPath/comment_listing.tex}
 
 Aby umożliwić korzystanie~z~dokumentacji~w~wygodnej~i~interaktywnej formie stworzone zostało narzędzie \codeinline{dartdoc} \cite{Dart_Doc} przetwarzające komentarze~z~plików kodu źródłowego projektu~do~postaci strony internetowej. Przetwarzana treść jest formatowana~a~w~miejsce odwołań~są~wstawiane linki. Wynik przetwarzania listingu \ref{lst:rs_docs} znajduje się~na~rysunku \ref{fig:rs_html_docs}. Powtarzające się fragmenty mogą zostać wstawione~w~szablony których treść zostanie skopiowana~we~wskazane miejsca podczas przetwarzania. Podczas publikacji pakietu~w~repozytorium \href{https://pub.dev/}{pub.dev} strony~z~dokumentacją~są~automatycznie tworzone~i~umieszczane~w~serwisie zapewniając łatwy dostęp każdemu kto chce użyć pakietu \cite{RS_Documentation}.
 
+\bigskip
 \img{\chapterPath/rs_docs.png}{Fragment przetworzonej~na~stronę internetową dokumentacji}{rs_html_docs}{.8}
 
 \subsection{Przykład}
@@ -19,7 +21,8 @@ Kod źródłowy projektu jest publicznie dostępny~w~serwisie GitHub \cite{Round
 \subsection{Pub.dev}
 Oficjalne repozytorium otwartych~i~darmowych pakietów stworzonych~w~języku Dart oraz~na~platformie Flutter. Na~głównej stronie pakietu wyświetlony jest jego plik \codeinline{README.md}. Pozostałe zakładki zawierają między innymi historię zmian (braną~z~pliku \codeinline{CHANGELOG.md}), dodany \hyperref[sec:rs_example]{przykład} oraz instrukcje instalacji. Po~prawej stronie znajduje się kolumna zawierająca dodatkowe informacje~i~linki~do~repozytorium, dokumentacji~i~licencji \cite{RS_Pub_dev}.
 
-\paragraph{Ocena} Każdy pakiet jest automaczynie oceniany~w~skali 0-130. Na~ocenę wpływ~ma~między innymi wynik działania \hyperref[par:static_analysis]{analizy statycznej}, obecność dokumentacji, wsparcie dostępnych platform oraz najnowszych funkcji języka.
+\paragraph{Ocena} Każdy pakiet jest automatycznie oceniany~w~skali 0-130. Na~ocenę wpływ~ma~między innymi wynik działania \hyperref[par:static_analysis]{analizy statycznej}, obecność dokumentacji, wsparcie dostępnych platform oraz najnowszych funkcji języka.
 
+\bigskip
 \img{\chapterPath/rs_pub_dev.png}{Strona główna pakietu~w~repozytorium pub.dev}{rs_pub_dev}{1}
 
