@@ -15,7 +15,7 @@ Round Spot posiada wiele parametrów konfiguracyjnych pozwalających~na~dostosow
 	\item {\bf heatMapPixelRatio}: Określa rozdzielczość tworzonych obrazów map cieplnych.
 \end{itemize}
 
-Aby umożliwić prostą zdalną zmianę konfiguracji, która może być potrzebna~w~środowisku produkcyjnym, umożliwiony został mechanizm pozwalający~na~wczytanie konfiguracji~z~pliku JSON, który może być łatwo przesłany~na~urządzenia użytkowników. Stworzony został także schemat pliku konfiguracyjnego \ang{JSON Schema} pozwalający zweryfikować jego poprawność \cite{RoundSpot_Config_Schema}.
+Aby umożliwić prostą zdalną zmianę konfiguracji, która może być potrzebna~w~środowisku produkcyjnym, umożliwiony został mechanizm pozwalający~na~wczytanie konfiguracji~z~pliku JSON (listing \ref{lst:rs_config_json}), który może być łatwo przesłany~na~urządzenia użytkowników. Stworzony został także schemat pliku konfiguracyjnego \ang{JSON Schema} pozwalający zweryfikować jego poprawność \cite{RoundSpot_Config_Schema}.
 
 \bigskip
 \begin{lstlisting}[language=json,caption={Przykładowy plik konfiguracyjny~w~formacie JSON},label=lst:rs_config_json]
@@ -43,16 +43,16 @@ Obecnie wspierane~są~trzy rodzaje map cieplnych: mapy ekranów, obszarów przew
 
 \img{\chapterPath/banner.png}{Infografika przedstawiająca typy tworzonych sesji}{rs_infographic}{.82}
 
-\paragraph{Mapy ekranów} Każdy detektor umieszczony~w~interfejsie aplikacji odpowiada jednemu obszarowi,~z~którego zbiera dane. Informacją~są~dzielone~na~okresy czasowe, tworząc sesje,~z~których powstają pojedyncze mapy cieplne. Domyślnie,~bez~umieszczania dodatkowych detektorów, każdy ekran aplikacji, który~nie~został wskazany~w~konfiguracji jako ignorowany, jest nagrywany~w~celu tworzenia map cieplnych.
+\paragraph{Mapy ekranów} Każdy detektor umieszczony~w~interfejsie aplikacji odpowiada jednemu obszarowi,~z~którego zbiera dane. Informacją~są~dzielone~na~okresy czasowe, tworząc sesje,~z~których powstają pojedyncze mapy cieplne. Domyślnie,~bez~umieszczania dodatkowych detektorów, każdy ekran aplikacji, który~nie~został wskazany~w~konfiguracji jako ignorowany, jest nagrywany~w~celu tworzenia map cieplnych (rysunek \ref{fig:rs_screen_map}).
 
 \img{\chapterPath/screen-map.png}{Mapa cieplna ekranu aplikacji}{rs_screen_map}{.3}
 
-\paragraph{Mapy obszarów} Dodatkowo używający biblioteki twórca aplikacji może dodawać detektory monitorujące wybrane części ekranów~w~celu izolacji zachodzących~na~nich interakcji~i~umieszczenia ich~na~osobnej mapie cieplnej. Przypadkiem,~w~którym jest~to~niezbędne~do~otrzymania poprawnego, zgodnego~z~rzeczywistością zapisu działań użytkownika~są~przewijane części interfejsu. Bez~dodatkowego detektora dotknięcia zarejestrowane~na~przewijanym fragmencie zostałyby narysowane~na~mapie cieplnej obejmującej cały ekran. Ponieważ~na~statycznym, dwuwymiarowym obrazie~nie~jest możliwe przestawienie niemieszczącej się~na~ekranie zawartości~bez~zasłonienia jego części, względne odległości tych interakcji~i~ich pozycja względem tła byłaby nieprawidłowa. Osobna mapa cieplna obejmująca~tylko~i~wyłącznie obszar przewijany może objąć całą jego powierzchnię~i~poprawnie umiejscowić wszystkie interakcje użytkownika.
+\paragraph{Mapy obszarów} Dodatkowo używający biblioteki twórca aplikacji może dodawać detektory monitorujące wybrane części ekranów~w~celu izolacji zachodzących~na~nich interakcji~i~umieszczenia ich~na~osobnej mapie cieplnej. Przypadkiem,~w~którym jest~to~niezbędne~do~otrzymania poprawnego, zgodnego~z~rzeczywistością zapisu działań użytkownika~są~przewijane części interfejsu. Bez~dodatkowego detektora dotknięcia zarejestrowane~na~przewijanym fragmencie zostałyby narysowane~na~mapie cieplnej obejmującej cały ekran. Ponieważ~na~statycznym, dwuwymiarowym obrazie~nie~jest możliwe przestawienie niemieszczącej się~na~ekranie zawartości~bez~zasłonienia jego części, względne odległości tych interakcji~i~ich pozycja względem tła byłaby nieprawidłowa. Osobna mapa cieplna obejmująca~tylko~i~wyłącznie obszar przewijany może objąć całą jego powierzchnię~i~poprawnie umiejscowić wszystkie interakcje użytkownika (rysunek \ref{fig:rs_area_map}).
 
 \bigskip
 \img{\chapterPath/area-map.png}{Mapa cieplna przewijanych kart}{rs_area_map}{.95}
 
-\paragraph{Mapy kumulowane} Trzeci typ map cieplnych może zawierać interakcje~z~więcej niż jednego ekranu aplikacji. Jest~on~użyteczny~w~sytuacjach,~w~których celem jest przeanalizowanie skumulowanego użycia elementu interfejsu występującego~w~tej samej postaci~na~wielu stronach aplikacji, takiego jak pasek nawigacji~lub~menu. Dzięki tej możliwości oprócz rozbitych~na~ekrany interakcji dotyczących wspólnego elementu stworzona zostanie dodatkowa mapa cieplna zbierająca~je~wszystkie.
+\paragraph{Mapy kumulowane} Trzeci typ map cieplnych może zawierać interakcje~z~więcej niż jednego ekranu aplikacji. Jest~on~użyteczny~w~sytuacjach,~w~których celem jest przeanalizowanie skumulowanego użycia elementu interfejsu występującego~w~tej samej postaci~na~wielu stronach aplikacji, takiego jak pasek nawigacji~lub~menu. Dzięki tej możliwości oprócz rozbitych~na~ekrany interakcji dotyczących wspólnego elementu stworzona zostanie dodatkowa mapa cieplna zbierająca~je~wszystkie (rysunek \ref{fig:rs_global_map}).
 
 \bigskip
 \img{\chapterPath/global-map.png}{Mapa cieplna paska nawigacji aplikacji}{rs_global_map}{.7}
@@ -63,7 +63,7 @@ Istnieją trzy mechanizmy powodujące zakończenie sesji~i~wygenerowanie~z~nich 
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=1.2pt] (char) {#1};}}
 
 \subsection{Procesor danych}
-Ostatni fragment~w~łańcuchu przepływu danych odpowiedzialny~za~przetwarzanie zebranych paczek danych~na~końcowe mapy cieplne przyjmuje formę samodzielnej aplikacji opartej~o~platformę Flutter. Po~otwarciu zbioru plików zawierających zebrane dane~są~one wczytywane, łączone~i~przedstawiane~w~formie hierarchicznej listy reprezentującej ekrany aplikacji~i~wyszczególnione~na~nich obszary. Po~wyborze jednego~z~nich rysowana jest odpowiadająca~mu~mapa cieplna zawierająca wszystkie zarejestrowane interakcje. Opcja eksportu pozwala~na~zapisanie jej jako obraz~w~formacie \codeinline{.png}.
+Ostatni fragment~w~łańcuchu przepływu danych odpowiedzialny~za~przetwarzanie zebranych paczek danych~na~końcowe mapy cieplne przyjmuje formę samodzielnej aplikacji opartej~o~platformę Flutter (rysunek \ref{fig:rs_processor}). Po~otwarciu zbioru plików zawierających zebrane dane~są~one wczytywane, łączone~i~przedstawiane~w~formie hierarchicznej listy reprezentującej ekrany aplikacji~i~wyszczególnione~na~nich obszary. Po~wyborze jednego~z~nich rysowana jest odpowiadająca~mu~mapa cieplna zawierająca wszystkie zarejestrowane interakcje. Opcja eksportu pozwala~na~zapisanie jej jako obraz~w~formacie \codeinline{.png}.
 
 \bigskip
 \img{\chapterPath/processor.png}{Konsola procesora zebranych danych}{rs_processor}{.9}
