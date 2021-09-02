@@ -1,4 +1,4 @@
-meta/*.pdf
+**/*.pdf
 thesis.pdf
 .kile
 *.sh

@@ -18,7 +18,7 @@ Round Spot posiada wiele parametrów konfiguracyjnych pozwalających~na~dostosow
 Aby umożliwić prostą zdalną zmianę konfiguracji, która może być potrzebna~w~środowisku produkcyjnym, umożliwiony został mechanizm pozwalający~na~wczytanie konfiguracji~z~pliku JSON, który może być łatwo przesłany~na~urządzenia użytkowników. Stworzony został także schemat pliku konfiguracyjnego \ang{JSON Schema} pozwalający zweryfikować jego poprawność \cite{RoundSpot_Config_Schema}.
 
 \bigskip
-\begin{lstlisting}[language=json,caption={Przykładowy plik konfiguracyjny~w~formacie json},label=lst:rs_config_json]
+\begin{lstlisting}[language=json,caption={Przykładowy plik konfiguracyjny~w~formacie JSON},label=lst:rs_config_json]
 {
   "enabled": true,
   "uiElementSize": 10,
@@ -47,7 +47,7 @@ Obecnie wspierane~są~trzy rodzaje map cieplnych: mapy ekranów, obszarów przew
 
 \img{\chapterPath/screen-map.png}{Mapa cieplna ekranu aplikacji}{rs_screen_map}{.3}
 
-\paragraph{Mapy obszarów} Dodatkowo używający biblioteki twórca aplikacji może dodawać detektory monitorujące wybrane części ekranów~w~celu izolacji zachodzących~na~nich interakcji~i~umieszczenia ich~na~osobnej mapie cieplnej. Przypadkiem,~w~którym jest~to~niezbędne~do~otrzymania poprawnego, zgodnego~z~rzeczywistością zapisu działań użytkownika~są~przewijane części interfejsu. Bez~dodatkowego detektora dotknięcia zarejestrowane~na~przewijanym fragmencie zostałyby narysowane~na~mapie cieplnej obejmującej cały ekran. Ponieważ~na~statycznym, dwuwymiarowym obrazie~nie~jest możliwe przestawienie niemieszczącej się~na~ekranie zawartości~bez~zasłonienia jego części, względne odległości tych interakcji~i~ich pozycja względem tła byłaby nieprawidłowa. Osobna mapa cieplna obejmująca~tylko~~i~wyłącznie obszar przewijany może objąć całą jego powierzchnię~i~poprawnie narysować wszystkie interakcje użytkownika.
+\paragraph{Mapy obszarów} Dodatkowo używający biblioteki twórca aplikacji może dodawać detektory monitorujące wybrane części ekranów~w~celu izolacji zachodzących~na~nich interakcji~i~umieszczenia ich~na~osobnej mapie cieplnej. Przypadkiem,~w~którym jest~to~niezbędne~do~otrzymania poprawnego, zgodnego~z~rzeczywistością zapisu działań użytkownika~są~przewijane części interfejsu. Bez~dodatkowego detektora dotknięcia zarejestrowane~na~przewijanym fragmencie zostałyby narysowane~na~mapie cieplnej obejmującej cały ekran. Ponieważ~na~statycznym, dwuwymiarowym obrazie~nie~jest możliwe przestawienie niemieszczącej się~na~ekranie zawartości~bez~zasłonienia jego części, względne odległości tych interakcji~i~ich pozycja względem tła byłaby nieprawidłowa. Osobna mapa cieplna obejmująca~tylko~i~wyłącznie obszar przewijany może objąć całą jego powierzchnię~i~poprawnie umiejscowić wszystkie interakcje użytkownika.
 
 \bigskip
 \img{\chapterPath/area-map.png}{Mapa cieplna przewijanych kart}{rs_area_map}{.95}
