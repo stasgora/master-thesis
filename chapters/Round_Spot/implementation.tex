@@ -2,7 +2,7 @@
 
 \subsection{Konfiguracja}
 \label{sec:rs_config}
-Round Spot posiada wiele parametrów konfiguracyjnych pozwalających~na~dostosowanie jego działania~do~potrzeb twórcy aplikacji \cite{RoundSpot_Config_Docs}.
+Round Spot posiada wiele parametrów konfiguracyjnych pozwalających~na~dostosowanie jego działania~do~potrzeb twórcy aplikacji. Ich pełna lista zgodna z opublikowaną dokumentacją narzędzia \cite{RoundSpot_Config_Docs} jest zamieszczona poniżej.
 \begin{itemize}
 	\item {\bf enabled}: Określa,~czy~biblioteka jest aktualnie aktywna~i~zbiera dane.
 	\item {\bf uiElementSize}: Umożliwia dostosowanie mechanizmu grupowania interakcji~i~rysowania map cieplnych~do~średniego rozmiaru elementów interfejsu użytkownika.
@@ -15,10 +15,10 @@ Round Spot posiada wiele parametrów konfiguracyjnych pozwalających~na~dostosow
 	\item {\bf heatMapPixelRatio}: Określa rozdzielczość tworzonych obrazów map cieplnych.
 \end{itemize}
 
-Aby umożliwić prostą zdalną zmianę konfiguracji, która może być potrzebna~w~środowisku produkcyjnym, umożliwiony został mechanizm pozwalający~na~wczytanie konfiguracji~z~pliku JSON (listing \ref{lst:rs_config_json}), który może być łatwo przesłany~na~urządzenia użytkowników. Stworzony został także schemat pliku konfiguracyjnego \ang{JSON Schema} pozwalający zweryfikować jego poprawność \cite{RoundSpot_Config_Schema}.
+Aby umożliwić prostą zdalną zmianę konfiguracji, która może być potrzebna~w~środowisku produkcyjnym, umożliwiony został mechanizm pozwalający~na~wczytanie konfiguracji~z~pliku {\it JSON} (listing \ref{lst:rs_config_json}), który może być łatwo przesłany~na~urządzenia użytkowników. Stworzony został także schemat pliku konfiguracyjnego \ang{JSON Schema} pozwalający zweryfikować jego poprawność \cite{RoundSpot_Config_Schema}.
 
 \bigskip
-\begin{lstlisting}[language=json,caption={Przykładowy plik konfiguracyjny~w~formacie JSON},label=lst:rs_config_json]
+\begin{lstlisting}[language=json,caption={Przykładowy plik konfiguracyjny~w~formacie {\it JSON}},label=lst:rs_config_json]
 {
   "enabled": true,
   "uiElementSize": 10,
@@ -63,7 +63,7 @@ Istnieją trzy mechanizmy powodujące zakończenie sesji~i~wygenerowanie~z~nich 
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=1.2pt] (char) {#1};}}
 
 \subsection{Procesor danych}
-Ostatni fragment~w~łańcuchu przepływu danych odpowiedzialny~za~przetwarzanie zebranych paczek danych~na~końcowe mapy cieplne przyjmuje formę samodzielnej aplikacji opartej~o~platformę Flutter (rysunek \ref{fig:rs_processor}). Po~otwarciu zbioru plików zawierających zebrane dane~są~one wczytywane, łączone~i~przedstawiane~w~formie hierarchicznej listy reprezentującej ekrany aplikacji~i~wyszczególnione~na~nich obszary. Po~wyborze jednego~z~nich rysowana jest odpowiadająca~mu~mapa cieplna zawierająca wszystkie zarejestrowane interakcje. Opcja eksportu pozwala~na~zapisanie jej jako obraz~w~formacie \codeinline{.png}.
+Ostatni fragment~w~łańcuchu przepływu danych odpowiedzialny~za~przetwarzanie zebranych paczek danych~na~końcowe mapy cieplne przyjmuje formę samodzielnej, stworzonej przez autora pracy aplikacji opartej~o~platformę Flutter (rysunek \ref{fig:rs_processor}). Po~otwarciu zbioru plików zawierających zebrane dane~są~one wczytywane, łączone~i~przedstawiane~w~formie hierarchicznej listy reprezentującej ekrany aplikacji~i~wyszczególnione~na~nich obszary. Po~wyborze jednego~z~nich rysowana jest odpowiadająca~mu~mapa cieplna zawierająca wszystkie zarejestrowane interakcje. Opcja eksportu pozwala~na~zapisanie jej jako obraz~w~formacie \codeinline{.png}.
 
 \bigskip
 \img{\chapterPath/processor.png}{Konsola procesora zebranych danych}{rs_processor}{.9}

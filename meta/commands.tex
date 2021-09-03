@@ -14,6 +14,8 @@
 \newcommand\centertable[4]{
 	\bigskip
 	\begin{table}[H]
+		\caption{#3}
+		\label{tab:#4}
 		\begin{center}
 			\bgroup
 			\def\arraystretch{1}
@@ -22,8 +24,6 @@
 			\end{tabular}
 			\egroup
 		\end{center}
-		\caption{#3}
-		\label{tab:#4}
 	\end{table}
 }
 

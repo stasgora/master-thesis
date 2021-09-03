@@ -16,10 +16,15 @@ Testy jednostkowe~są~podstawową metodą weryfikacji działania poszczególnych
  
 \paragraph{Pokrycie testami}
 \label{par:test_coverage}
-Narzędzie Round Spot zostało pokryte testami jednostkowymi weryfikującymi jego poprawne działanie. Do~mierzenia pokrycia testami, czyli części kodu źródłowego programu wykonywanego podczas działania testów, używany jest serwis \href{https://codecov.io/}{codecov.io}. Jedną~z~jego zalet jest wizualizacja pokrycia~w~formie wykresu pierścieniowego (zamieszczonego na rysunku \ref{fig:rs_coverage}),~w~którym kolejne poziomy odpowiadają folderom~w~projekcie, zewnętrzne łuki plikom kodu źródłowego~a~kolory procentowi ich pokrycia testami \cite{RS_Coverage}. Aktualne pokrycie projektu wynosi ponad 50\%. Duża część nieprzetestowanego jeszcze kodu znajduje się~w~menedżerze tła, który sprawia~pod~tym względem trudności, ponieważ operuje~na~binarnych danych obrazów, przetwarzając~i~łącząc je. W~planach~na~przyszłość jest zwiększenie liczby testów~i~pokrycie nimi całego projektu \ref{sec:future_coverage}.
+Narzędzie Round Spot zostało pokryte testami jednostkowymi weryfikującymi jego poprawne działanie. Do~mierzenia pokrycia testami, czyli części kodu źródłowego programu wykonywanego podczas działania testów, używany jest serwis \href{https://codecov.io/}{codecov.io}. Jedną~z~jego zalet jest intuicyjna wizualizacja pokrycia~w~formie wykresu pierścieniowego, zamieszczonego na rysunku \ref{fig:rs_coverage}, który przedstawia radialną reprezentację struktury folderów i plików w projekcie. 
 
 \bigskip
-\img{\chapterPath/coverage_sunburst.png}{Wykres pierścieniowy \ang{sunburst} pokrycia projektu Round Spot testami}{rs_coverage}{.45}
+\img[\footnotemark]{\chapterPath/coverage_sunburst.png}{Wykres pierścieniowy \ang{sunburst} pokrycia projektu Round Spot testami}{rs_coverage}{.5}
+\footnotetext{\url{https://app.codecov.io/gh/stasgora/round-spot}}
+
+Środkowe koło wykresu symbolizuje główny folder projektu zawierający podfoldery i pliki reprezentowane jako kolejne warstwy łuków (patrząc od centrum na zewnątrz). Łuki tworzące obwód wykresu reprezentują pliki z kodem źródłowym projektu. Długość każdego łuku jest proporcjonalna do liczby linii kodu zawartych w reprezentowanym przez niego elemencie (pliku lub folderze) w stosunku do sumy linii kodu w całym projekcie. Kolor każdego łuku odpowiada procentowi odpowiadających mu linii kodu które są pokryte testami jednostkowymi. Rozkład kolorów jest nierównomierny, 90\% pokrycia odpowiada kolorowi żółtemu, a już 80\% to kolor pomarańczowy. 
+
+Pokrycie projektu w aktualnie używanej wersji wynosi ponad 50\% \cite{RS_Coverage}. Duża część nieprzetestowanego jeszcze kodu znajduje się~w~menedżerze tła, który sprawia~pod~tym względem trudności, ponieważ operuje~na~binarnych danych obrazów, przetwarzając~i~łącząc je. W~planach~na~przyszłość jest zwiększenie liczby testów~i~pokrycie nimi całego projektu \ref{sec:future_coverage}.
 
 \subsection{Ciągła integracja}
 \label{sec:rs_ci}
