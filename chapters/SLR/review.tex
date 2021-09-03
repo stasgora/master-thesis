@@ -23,49 +23,49 @@ Dla przykładu \textit{Web of Science} stosuje dwuliterowe klucze dla każdego~z
 
 \noindent Zastosowane zaawansowane ustawienia wyszukiwania:
 \begin{itemize}
-    \item Język: {\it Angielski}
-    \item Typ dokumentów: {\it Artykuł}
-    \item Okres czasu: {\it 2010} - {\it 2020}
-    \item Kolekcja podstawowa WoS: {\it Science Citation Index Expanded (SCI-EXPANDED) --1900-present}
+    \item Język: {\it Angielski};
+    \item Typ dokumentów: {\it Artykuł};
+    \item Okres czasu: {\it 2010} - {\it 2020};
+    \item Kolekcja podstawowa WoS: {\it Science Citation Index Expanded (SCI-EXPANDED) --1900-present}.
 \end{itemize}
 
 \subsection{Łączenie wyników}
-Każda~z~używanych wyszukiwarek oferuje zapis wyników wyszukiwania~w~formie pliku {\it .csv}, jednak zawarte~w~nich kolumny~są~różnie ułożone~i~podpisane. Z~tego powodu został stworzony skrypt łączący wyniki~z~trzech baz~w~całość, wybierający~tylko~potrzebne kolumny (Tytuł, Abstrakt oraz Listę autorów). Dodatkowo sprawdza~on~i~pomija duplikaty wyników występujące~w~przypadku gdy~ta~sama publikacja została znaleziona~przez~więcej niż jedną wyszukiwarkę. Wykaz ilości wyników wyszukiwania i duplikatów został zamieszczony w tabeli \ref{tab:article_count}. W~wyniku otrzymano 648 artykułów.
+Każda~z~używanych wyszukiwarek oferuje zapis wyników wyszukiwania~w~formie pliku {\it .csv}, jednak zawarte~w~nich kolumny~są~różnie ułożone~i~podpisane. Z~tego powodu został stworzony skrypt łączący wyniki~z~trzech baz~w~całość, wybierający~tylko~potrzebne kolumny (Tytuł, Abstrakt oraz Listę autorów). Dodatkowo sprawdza~on~i~pomija duplikaty wyników występujące~w~przypadku gdy~ta~sama publikacja została znaleziona~przez~więcej niż jedną wyszukiwarkę. Wykaz liczby wyników wyszukiwania i duplikatów został zamieszczony w tabeli \ref{tab:article_count}. W~wyniku otrzymano 648 artykułów.
 \centertable{\toprule
-	\textbf{Wyszukiwarka} & \textbf{Ilość zwróconych wyników} & \textbf{Ilość duplikatów} \\\toprule
+	\textbf{Wyszukiwarka} & \textbf{Liczba zwróconych wyników} & \textbf{Liczba duplikatów} \\\toprule
 	Web of Science & 329 & nd. \\\midrule
 	IEEE Explore & 378 & 77 \\\midrule
 	PubMed & 114 & 96 \\\bottomrule
-}{l c c}{Ilość zwróconych wyników}{article_count}
+}{l c c}{Liczba zwróconych wyników}{article_count}
 
 \subsection{Selekcja artykułów}
 W celu wyodrębnienia najbardziej pasujących artykułów oraz zmniejszenia ich liczby została zastosowana wielostopniowa selekcja. W~każdym~z~etapów przyjęte zostały następujące kryteria oraz skala oceny pozycji:
 \begin{itemize}
-    \item {\bf 0} - Publikacja zupełnie~nie~pasuje~do~zadawanego pytania
-    \item {\bf 1} - Artykuł dotyczy rozważanego zagadnienia, jednak~nie~pasuje~do~kryteriów kategorii {\it 2}
-    \item {\bf 2} - Pozycja porusza oryginalny~lub~interesujący temat mogący wnieść dużą wartość~do~przeglądu
+    \item {\bf 0} - Publikacja zupełnie~nie~pasuje~do~zadawanego pytania,
+    \item {\bf 1} - Artykuł dotyczy rozważanego zagadnienia, jednak~nie~pasuje~do~kryteriów kategorii {\it 2},
+    \item {\bf 2} - Pozycja porusza oryginalny~lub~interesujący temat mogący wnieść dużą wartość~do~przeglądu.
 \end{itemize}
 
-\noindent Pierwszym etapem była ocena istotności artykułów na podstawie ich tytułów:
+\noindent Pierwszym etapem była ocena istotności artykułów na podstawie ich tytułów, której wyniki widać w tabeli \ref{tab:title_tagging}.
 \centertable{\toprule
-	\textbf{Źródło}& \textbf{Ilość} & \textbf{0} & \textbf{1} & \textbf{2} \\\toprule
+	\textbf{Źródło}& \textbf{Liczba} & \textbf{0} & \textbf{1} & \textbf{2} \\\toprule
 	Web of Science & 329 & 98 & 180 & 51 \\\midrule
 	IEEE & 302 & 79 & 193 & 30 \\\midrule
 	PubMed & 17 & 10 & 5 & 2 \\\midrule
 	\textbf{Suma} & 648 & 187 & 378 & 83 \\\bottomrule
 }{l c c c r}{Selekcja~po~tytułach}{title_tagging}
 
-Artykuły zaklasyfikowane jako {\bf0}~i~{\bf1} zostały odrzucone pozostawiając~tylko~{\bf2}. Następnie analogiczna selekcja została wykonana~na~podstawie abstraktów.
+Artykuły zaklasyfikowane jako {\bf0}~i~{\bf1} zostały odrzucone pozostawiając~tylko~{\bf2}. Następnie analogiczna selekcja (tabela \ref{tab:abstract_tagging}) została wykonana~na~podstawie abstraktów.
 \centertable{\toprule
-	\textbf{Ilość} & \textbf{-\footnotemark} & \textbf{0} & \textbf{1} & \textbf{2} \\\midrule
+	\textbf{Liczba} & \textbf{-\footnotemark} & \textbf{0} & \textbf{1} & \textbf{2} \\\midrule
 	83 & 1 & 20 & 45 & 17 \\\bottomrule
 }{l c c c r}{Selekcja~po~abstraktach}{abstract_tagging}
 \footnotetext{Brak abstraktu}
 
-Analiza jakościowa została przeprowadzona~na~artykułach sklasyfikowanych jako \textbf{2}. W~celu przeprowadzenia analizy ilościowej~na~większej liczbie próbek przeprowadzono dodatkową selekcję~na~wynikach oznaczonych jako \textbf{1}~w~poprzedniej klasyfikacji.
+Analiza jakościowa została przeprowadzona~na~artykułach sklasyfikowanych jako \textbf{2}. W~celu przeprowadzenia analizy ilościowej~na~większej liczbie próbek przeprowadzono dodatkową selekcję (tabela \ref{tab:ones_tagging})~na~wynikach oznaczonych jako \textbf{1}~w~poprzedniej klasyfikacji.
 
 \centertable{\toprule
-	\textbf{Ilość} & \textbf{0} & \textbf{1} & \textbf{2} \\\midrule
+	\textbf{Liczba} & \textbf{0} & \textbf{1} & \textbf{2} \\\midrule
 	45 & 21 & 9 & 15 \\\bottomrule
 }{l c c r}{Dodatkowa selekcja jedynek}{ones_tagging}
 
