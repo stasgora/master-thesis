@@ -2,7 +2,7 @@
 
 \subsection{Konfiguracja}
 \label{sec:rs_config}
-Round Spot posiada wiele parametrów konfiguracyjnych pozwalających~na~dostosowanie jego działania~do~potrzeb twórcy aplikacji. Ich pełna lista zgodna z opublikowaną dokumentacją narzędzia \cite{RoundSpot_Config_Docs} jest zamieszczona poniżej.
+Round Spot posiada wiele parametrów konfiguracyjnych pozwalających~na~dostosowanie jego działania~do~potrzeb twórcy aplikacji. Ich pełna lista zgodna~z~opublikowaną dokumentacją narzędzia \cite{RoundSpot_Config_Docs} jest zamieszczona poniżej.
 \begin{itemize}
 	\item {\bf enabled}: Określa,~czy~biblioteka jest aktualnie aktywna~i~zbiera dane.
 	\item {\bf uiElementSize}: Umożliwia dostosowanie mechanizmu grupowania interakcji~i~rysowania map cieplnych~do~średniego rozmiaru elementów interfejsu użytkownika.
@@ -63,7 +63,7 @@ Istnieją trzy mechanizmy powodujące zakończenie sesji~i~wygenerowanie~z~nich 
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=1.2pt] (char) {#1};}}
 
 \subsection{Procesor danych}
-Ostatni fragment~w~łańcuchu przepływu danych odpowiedzialny~za~przetwarzanie zebranych paczek danych~na~końcowe mapy cieplne przyjmuje formę samodzielnej, stworzonej przez autora pracy aplikacji opartej~o~platformę Flutter (rysunek \ref{fig:rs_processor}). Po~otwarciu zbioru plików zawierających zebrane dane~są~one wczytywane, łączone~i~przedstawiane~w~formie hierarchicznej listy reprezentującej ekrany aplikacji~i~wyszczególnione~na~nich obszary. Po~wyborze jednego~z~nich rysowana jest odpowiadająca~mu~mapa cieplna zawierająca wszystkie zarejestrowane interakcje. Opcja eksportu pozwala~na~zapisanie jej jako obraz~w~formacie \codeinline{.png}.
+Ostatni fragment~w~łańcuchu przepływu danych odpowiedzialny~za~przetwarzanie zebranych paczek danych~na~końcowe mapy cieplne przyjmuje formę samodzielnej, stworzonej~przez~autora pracy aplikacji opartej~o~platformę Flutter (rysunek \ref{fig:rs_processor}). Po~otwarciu zbioru plików zawierających zebrane dane~są~one wczytywane, łączone~i~przedstawiane~w~formie hierarchicznej listy reprezentującej ekrany aplikacji~i~wyszczególnione~na~nich obszary. Po~wyborze jednego~z~nich rysowana jest odpowiadająca~mu~mapa cieplna zawierająca wszystkie zarejestrowane interakcje. Opcja eksportu pozwala~na~zapisanie jej jako obraz~w~formacie \textit{.png}.
 
 \bigskip
 \img{\chapterPath/processor.png}{Konsola procesora zebranych danych}{rs_processor}{.9}
@@ -74,7 +74,7 @@ Mapy cieplne~są~tworzone~ze~zbioru dwuwymiarowych punktów znajdujących się~w
 \bigskip
 \img{\chapterPath/point_steps.png}{Proces tworzenia punktów cieplnych~z~interakcji użytkowników}{rs_point_steps}{.7}
 
-Liczba punktów znajdujących się~w~przetwarzanej grupie~w~stosunku~do~najliczniejszej grupy jest głównym parametrem odpowiedzialnym~za~jej wygląd. Im~liczniejsza jest grupa, tym więcej razy zostanie powtórzony jej kształt, osiągając coraz większy rozmiar. Kolory kolejnych rysowanych warstw~są~wybierane~ze~spektrum pomiędzy barwą czerwoną~a~niebieską~z~uwzględnieniem liczności grupy. Na~przykładzie zamieszczonym~na~rysunku \ref{fig:rs_point_colors} najliczniejsza grupa~ma~$6$ punktów~i~będzie używać całego dostępnego spektrum, podczas gdy grupa posiadająca $3$ punkty~tylko~połowy~z~niego. Dzięki temu~na~mapach cieplnych oddana jest względna liczność każdego~z~punktów cieplnych. Wszystkie warstwy~są~rysowane~z~efektem rozmycia~i~nakładane~na~siebie. 
+Liczba punktów znajdujących się~w~przetwarzanej grupie~w~stosunku~do~najliczniejszej grupy jest głównym parametrem odpowiedzialnym~za~jej wygląd. Im~liczniejsza jest grupa, tym więcej razy zostanie powtórzony jej kształt, osiągając coraz większy rozmiar. Kolory kolejnych rysowanych warstw~są~wybierane~ze~spektrum pomiędzy barwą czerwoną~a~niebieską~z~uwzględnieniem liczności grupy. Na~przykładzie zamieszczonym~na~rysunku \ref{fig:rs_point_colors} najliczniejsza grupa~ma~6 punktów~i~będzie używać całego dostępnego spektrum, podczas gdy grupa posiadająca 3 punkty~tylko~połowy~z~niego. Dzięki temu~na~mapach cieplnych oddana jest względna liczność każdego~z~punktów cieplnych. Wszystkie warstwy~są~rysowane~z~efektem rozmycia~i~nakładane~na~siebie. 
 
 \bigskip
 \img{\chapterPath/point_colors.png}{Spektrum kolorów używane~w~zależności~od~liczności grupy}{rs_point_colors}{.7}
