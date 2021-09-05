@@ -10,7 +10,8 @@
 \end{itemize}
 
 \subsection{Hotjar}
-Przodujące~w~branży rozwiązanie oferujące usługi~w~zakresie analizy doświadczenia użytkownika \ang{user experience} prezentujące interakcje użytkowników~w~formie map cieplnych oraz nagrań. Firma oferuje też gotowe rozwiązania zbierające opinie użytkowników~w~formie tekstu, oceny oraz ankiet \cite{Hotjar_website}. Oprócz wymienionych wyżej \hyperref[{par:heat_map_types}]{rodzajów map} Hotjar oferuje także nagranie sesji użytkowników prezentowane~w~formie filmu~z~zaznaczonymi interakcjami użytkownika. Ruchy myszy pozostawiają ślad rysowany~na~ekranie jako linia łamana.
+\label{sec:hotjar}
+Przodujące~w~branży rozwiązanie oferujące usługi~w~zakresie analizy doświadczenia użytkowników \ang{user experience - UX} prezentujące ich interakcje~w~formie map cieplnych oraz nagrań. Firma oferuje też gotowe rozwiązania zbierające opinie użytkowników~w~formie tekstu, oceny oraz ankiet \cite{Hotjar_website}. Oprócz wymienionych wyżej \hyperref[{par:heat_map_types}]{rodzajów map} Hotjar oferuje także nagranie sesji użytkowników prezentowane~w~formie filmu~z~zaznaczonymi interakcjami użytkownika. Ruchy myszy pozostawiają ślad rysowany~na~ekranie jako linia łamana.
 
 \paragraph{Wsparcie platform} 
 Środowiskiem uruchomieniowym wspieranym~przez~Hotjar jest przeglądarka internetowa oraz język JavaScript. Usługi firmy~są~projektowane~z~myślą~o~stronach internetowych, jednak działają też~na~hybrydowych aplikacjach mobilnych opierających się~na~silniku przeglądarki internetowej. Zależność~od~stosu webowego znacznie ogranicza grupę klientów, zupełnie wykluczając wszystkie aplikacje bazujące~na~rozwiązaniach natywnych dla ich systemu operacyjnego.
@@ -19,10 +20,15 @@ Przodujące~w~branży rozwiązanie oferujące usługi~w~zakresie analizy doświa
 Hotjar wymienia szereg ograniczeń związanych~z~tworzonymi~przez~ich narzędzie mapami cieplnymi \cite{Hotjar_limitations}. Najpoważniejsze~z~nich dotyczą braku wsparcia dla zawartości dynamicznych oraz przewijanych (z wyłączeniem znacznika \inline{<body>}). Z~powodu tego ograniczenia części strony, które pokazują się~w~reakcji~na~działanie użytkownika, takie jak rozwijane menu~lub~okna dialogowe,~nie~będą zawarte~na~mapie cieplnej.
 
 \subsection{Matomo}
+\label{sec:matomo_heatmap}
 Otwarte rozwiązanie monitorujące opisane~w~rozdziale \ref{sec:matomo}. Jedną~z~oferowanych~przez~nie~funkcji jest tworzenie map cieplnych. Podobnie jak Hotjar oferuje trzy rodzaje map: kliknięć, ruchu myszy oraz przewijania ekranu \cite{Matomo_heatmaps}. Pomimo tych podobieństw Matomo szczyci się zapewnianiem ochrony danych użytkowników oraz wskazuje~na~większy zestaw oferowanych funkcji analitycznych~w~stosunku~do~konkurencyjnego rozwiązania Hotjar \cite{Matomo_hotjar}.
 
 \paragraph{Wsparcie platform} 
 Główną platformą wspieraną~przez~Matomo jest środowisko webowe. Dodatkowo oferowane~są~też wtyczki obsługujące platformy mobilne Android oraz iOS. Dzięki temu,~że~Matomo jest otwarte~i~darmowe istnieje też wiele narzędzi stworzonych~przez~społeczność ułatwiających integrację~z~wieloma systemami zarządzania treścią, sklepami internetowymi oraz forami.
 
 \subsection{Smartlook}
-Płatne rozwiązanie monitorujące oferujące podobne~do~firmy Hotjar rozwiązania~w~zakresie tworzenia map cieplnych. Wspiera platformy webowe oraz aplikacje mobilne tworzone natywnie, oraz przy użyciu narzędzi takich jak React Native, Unity, Flutter, Ionic oraz Xamarin.
+\label{sec:smartlook}
+Płatne rozwiązanie monitorujące oferujące podobne~do~firmy Hotjar rozwiązania~w~zakresie tworzenia map cieplnych. Wspiera platformy webowe oraz aplikacje mobilne tworzone natywnie, oraz przy użyciu narzędzi takich jak React Native, Unity, Flutter, Ionic oraz Xamarin. Twórcy rozwiązania~nie~publikują wyczerpującego podsumowania wspieranych~na~różnych platformach funkcji, jednak zamieszczona~w~dokumentacji tabela możliwości analizy zawartości monitorowanej strony wskazuje~na~ograniczone możliwości działania tego narzędzia~na~platformach innych niż natywne \cite{Smartlook_support}. Platforma Flutter,~na~której skupia się druga część tej pracy, jest najsłabiej wspierana.
+
+\subsection{Porównanie rozwiązań}
+Pomimo~że~\nameref{sec:hotjar} jest liderem~w~dziedzinie analizy zachowania użytkowników przy użyciu map cieplnych interakcji, posiada szereg ograniczeń, zarówno~w~zakresie wsparcia platform jak~i~oferowanych funkcji. Wskazują one potencjalne kierunki rozwoju tego typu rozwiązań mogące znacznie zwiększyć ich użyteczność~i~grono klientów. Rozwiązania oferowane~przez~\nameref{sec:matomo_heatmap} oraz \nameref{sec:smartlook}~w~zakresie tworzenia map cieplnych są,~z~wyjątkiem wspieranych platform, praktycznie identyczne~do~usługi \nameref{sec:hotjar}.  Mała ilość tego typu rozwiązań połączona~z~brakiem innowacji może wskazywać~na~ograniczoną wiedzę~o~ich istnieniu~i~potencjalnych zaletach zastosowania.
