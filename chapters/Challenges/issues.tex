@@ -9,10 +9,10 @@ Rozwiązaniem tego problemu było oddzielenie części przetwarzającej dane~na~
 \section{Tworzenie map przewijanych}
 Największa trudność napotkana podczas implementacji dotyczyła zbierania danych~z~obszarów przewijanych, które~nie~mieszczą się~w~całości~na~ekranie aplikacji. Detektor może zostać umieszczony~w~drzewie elementów interfejsu~na~dwa sposoby (zilustrowane~na~rysunku \ref{fig:rs_scroll_diagram}), jako rodzic obszaru przewijanego~lub~jego dziecko. W~zależności~od~tego jego pole widzenia~i~rozmiar będą się różniły. Jeśli jest dzieckiem (znajduje się~w~środku obszaru)~ma~dostęp~do~całej jego zawartości, nawet tej aktualnie niewyświetlonej. W~przeciwnym wypadku (będąc rodzicem obszaru) znajduje się~naokoło niego~i~``widzi'' jedynie aktualnie wyświetloną~na~ekranie zawartość.
 
-\img{\chapterPath/scroll-diagram.png}{Możliwości zbierania danych~o~obszarach przewijanych}{rs_scroll_diagram}{.6}
+\img{\chapterPath/scroll-diagram.png}{Możliwości zbierania danych~o~obszarach przewijanych}{rs_scroll_diagram}{.65}
 
 \subsection{Pierwsze podejście}
-Pierwszym wybranym podczas implementacji podejściem było umieszczenie detektora~w~środku obszaru przewijanego. Dzięki dostępowi~do~całej zawartości~w~każdym momencie stworzenie jej obrazu~do~późniejszego użycia~w~mapie cieplnej było~tak~samo łatwe jak~w~przypadku nieprzewijanych obszarów. Podczas testów okazało się~że~to~podejście, chociaż proste,~ma~poważne wady.
+Pierwszym wybranym podczas implementacji podejściem było umieszczenie detektora~w~środku obszaru przewijanego. Dzięki dostępowi~do~całej zawartości~w~każdym momencie stworzenie jej obrazu~do~późniejszego użycia~w~mapie cieplnej było~tak~samo łatwe jak~w~przypadku nieprzewijanych obszarów. Podczas testów okazało się,~że~to~podejście, chociaż proste,~ma~poważne wady.
 
 \paragraph{Zdarzenia~we~Flutterze}
 Dotknięcia ekranu nazywane zdarzeniami \ang{events},~są~zaimplementowane~we~Flutterze podobnie jak~w~standardzie DOM używanym~przez~przeglądarki. Po~rejestracji~przez~urządzenie zdarzenie jest przekazywane~od~korzenia drzewa elementów interfejsu (czyli całej strony)~w~głąb~do~kolejnych dzieci zajmujących obszar zawierający współrzędne dotknięcia. Ten proces jest rekurencyjnie powtarzany~do~czasu gdy zdarzenie zostanie ``wykorzystane''~lub~przekazane~do~liścia drzewa. Wykorzystanie oznacza podjęcie akcji takiej jak naciśnięcie przycisku.
@@ -40,11 +40,11 @@ Drugim~ze~zidentyfikowanych powodów widocznych przesunięć jest wpływ rozmiar
 \bigskip
 \begin{figure}[H]
 \centering
-\begin{minipage}{.36\textwidth}
+\begin{minipage}{.43\textwidth}
 	\centering
 	\includegraphics[width=.9\linewidth]{\chapterPath/small-screen.png}
 \end{minipage}
-\begin{minipage}{.4\textwidth}
+\begin{minipage}{.48\textwidth}
 	\centering
 	\includegraphics[width=.9\linewidth]{\chapterPath/big-screen.png}
 \end{minipage}

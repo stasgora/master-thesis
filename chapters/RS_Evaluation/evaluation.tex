@@ -13,11 +13,11 @@ Powyższe obserwacje wskazują~na~problem~z~opisanym podejściem~do~projektu ele
 \bigskip
 \begin{figure}[H]
 \centering
-\begin{minipage}{.3\textwidth}
+\begin{minipage}{.35\textwidth}
 	\centering
 	\includegraphics[width=.9\linewidth]{\chapterPath/plan-form.png}
 \end{minipage}
-\begin{minipage}{.4\textwidth}
+\begin{minipage}{.45\textwidth}
 	\centering
 	\includegraphics[width=.9\linewidth]{\chapterPath/child-profiles.png}
 \end{minipage}
@@ -33,13 +33,13 @@ Rozwiązanie monitorujące interakcje użytkowników takie jak~to~stworzone~w~ra
 
 Na rysunku \ref{fig:pass_issues} widać zgoła inną sytuację. Liczba interakcji~z~kolejnymi polami formularza tworzenia konta~w~aplikacji znacząco wzrasta, podczas gdy dotknięć przycisku ``Załóż konto'' jest stosunkowo mało. Ponieważ zdecydowana większość użytkowników wypełnia formularze~z~góry~na~dół, spadek liczby interakcji~z~kolejnymi polami jest równoznaczny~z~zaprzestaniem tej czynności. Sytuacja odwrotna,~w~której kolejne pola mają zdecydowanie więcej interakcji niż poprzednie, może wskazywać~na~problemy~z~prawidłowym wypełnieniem~przez~użytkownika pola posiadającego dodatkową walidację. 
 
-Aplikując powyższe założenia~do~sytuacji przedstawionej~na~mapie cieplnej, można wywnioskować,~że~niektórzy użytkownicy napotkali~na~problemy~z~polem ``Powtórz hasło'' które przypuszczalnie zwracało komunikat~o~niejednakowych hasłach. Użytkownicy następnie próbowali wielokrotnie wpisywać ponownie hasło~w~obu polach, przypuszczając,~że~się pomylili. Nie~wiadomo~czy~problemy były spowodowane~tylko~i~wyłącznie błędnymi danymi wprowadzanymi~przez~użytkowników,~czy~też aplikacja działa nieprawidłowo~w~niewiadomych warunkach, jednak teraz gdy problem został wykryty, twórcy mogą zająć się identyfikacją jego dokładnej przyczyny~i~poprawą działania aplikacji.
-
 \bigskip
-\img{\chapterPath/pass-issues.png}{Wypełnianie formularza tworzenia konta}{pass_issues}{.35}
+\img{\chapterPath/pass-issues.png}{Wypełnianie formularza tworzenia konta}{pass_issues}{.42}
+
+Aplikując powyższe założenia~do~sytuacji przedstawionej~na~mapie cieplnej, można wywnioskować,~że~niektórzy użytkownicy napotkali~na~problemy~z~polem ``Powtórz hasło'' które przypuszczalnie zwracało komunikat~o~niejednakowych hasłach. Użytkownicy następnie próbowali wielokrotnie wpisywać ponownie hasło~w~obu polach, przypuszczając,~że~się pomylili. Nie~wiadomo~czy~problemy były spowodowane~tylko~i~wyłącznie błędnymi danymi wprowadzanymi~przez~użytkowników,~czy~też aplikacja działa nieprawidłowo~w~niewiadomych warunkach, jednak teraz gdy problem został wykryty, twórcy mogą zająć się identyfikacją jego dokładnej przyczyny~i~poprawą działania aplikacji.
 
 \subsection{Działanie ostrzeżeń}
 Jedna~z~ośmiu złotych zasad projektowania interfejsów użytkownika zaproponowanych~przez~Bena Schneidermana~w~znanej książce ``Designing the User Interface: Strategies for Effective Human-Computer Interaction'' \cite{Designing_IU} dotyczy umożliwiania łatwego odwrócenia działań mogących mieć niechciane~i~potencjalnie negatywne dla użytkownika konsekwencje. Kierując się~tą~zasadą formularze tworzenia planów, nagród oraz odznak~w~aplikacji Fokus ostrzegają użytkownika~o~utracie wprowadzonych zmian przy próbie wyjścia~z~nich. Mapa cieplna okna dialogowego~z~tym ostrzeżeniem widoczna~na~rysunku \ref{fig:confirm_warning} potwierdza zasadność reguły Bena Schneidermana. Po~przeczytaniu ostrzeżenia większość użytkowników orientuje się,~że~nie~chce stracić wprowadzonych zmian~i~anuluje akcję wyjścia~z~formularza.
 
 \bigskip
-\img{\chapterPath/confirm-warning.png}{Reakcja~na~ostrzeżenie~o~utracie danych}{confirm_warning}{.35}
+\img{\chapterPath/confirm-warning.png}{Reakcja~na~ostrzeżenie~o~utracie danych}{confirm_warning}{.45}

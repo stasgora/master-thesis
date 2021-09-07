@@ -41,11 +41,11 @@ Aby umożliwić prostą zdalną zmianę konfiguracji, która może być potrzebn
 \subsection{Sesje}
 Obecnie wspierane~są~trzy rodzaje map cieplnych: mapy ekranów, obszarów przewijanych oraz mapy kumulowane. Rysunek \ref{fig:rs_infographic} przedstawia każdy~z~nich.
 
-\img{\chapterPath/banner.png}{Infografika przedstawiająca typy tworzonych sesji}{rs_infographic}{.82}
+\img{\chapterPath/banner.png}{Infografika przedstawiająca typy tworzonych sesji}{rs_infographic}{.75}
 
 \paragraph{Mapy ekranów} Każdy detektor umieszczony~w~interfejsie aplikacji odpowiada jednemu obszarowi,~z~którego zbiera dane. Informacją~są~dzielone~na~okresy czasowe, tworząc sesje,~z~których powstają pojedyncze mapy cieplne. Domyślnie,~bez~umieszczania dodatkowych detektorów, każdy ekran aplikacji, który~nie~został wskazany~w~konfiguracji jako ignorowany, jest nagrywany~w~celu tworzenia map cieplnych (rysunek \ref{fig:rs_screen_map}).
 
-\img{\chapterPath/screen-map.png}{Mapa cieplna ekranu aplikacji}{rs_screen_map}{.3}
+\img{\chapterPath/screen-map.png}{Mapa cieplna ekranu aplikacji}{rs_screen_map}{.27}
 
 \paragraph{Mapy obszarów} Dodatkowo używający biblioteki twórca aplikacji może dodawać detektory monitorujące wybrane części ekranów~w~celu izolacji zachodzących~na~nich interakcji~i~umieszczenia ich~na~osobnej mapie cieplnej. Przypadkiem,~w~którym jest~to~niezbędne~do~otrzymania poprawnego, zgodnego~z~rzeczywistością zapisu działań użytkownika~są~przewijane części interfejsu. Bez~dodatkowego detektora dotknięcia zarejestrowane~na~przewijanym fragmencie zostałyby narysowane~na~mapie cieplnej obejmującej cały ekran. Ponieważ~na~statycznym, dwuwymiarowym obrazie~nie~jest możliwe przestawienie niemieszczącej się~na~ekranie zawartości~bez~zasłonienia jego części, względne odległości tych interakcji~i~ich pozycja względem tła byłaby nieprawidłowa. Osobna mapa cieplna obejmująca~tylko~i~wyłącznie obszar przewijany może objąć całą jego powierzchnię~i~poprawnie umiejscowić wszystkie interakcje użytkownika (rysunek \ref{fig:rs_area_map}).
 
@@ -72,7 +72,7 @@ Ostatni fragment~w~łańcuchu przepływu danych odpowiedzialny~za~przetwarzanie 
 Mapy cieplne~są~tworzone~ze~zbioru dwuwymiarowych punktów znajdujących się~w~układzie współrzędnych ekranu urządzenia (proces pokazano~na~rysunku \ref{fig:rs_point_steps}) \circled{1}. Pierwszą operacją, która jest~na~nich wykonywana jest uruchomienie algorytmu klasteryzacji DBSCAN \cite{DBSCAN_Wiki}. Jego wynikiem~są~zbiory pogrupowanych~w~zależności~od~odległości punktów \circled{2}. Punkty~w~grupie ulegają rozmyciu \circled{3}~i~po~połączeniu tworzą podstawowy kształt graficznej reprezentacji grupy \circled{4}. Kształty grup~są~rysowane wielokrotnie~z~użyciem zmieniających się parametrów (opisanych dokładnie~w~kolejnym akapicie) \circled{5}~i~po~nałożeniu~na~siebie tworzą końcowy wygląd punktów cieplnych umieszczanych~na~mapie \circled{6}.
 
 \bigskip
-\img{\chapterPath/point_steps.png}{Proces tworzenia punktów cieplnych~z~interakcji użytkowników}{rs_point_steps}{.7}
+\img{\chapterPath/point_steps.png}{Proces tworzenia punktów cieplnych~z~interakcji użytkowników}{rs_point_steps}{.8}
 
 Liczba punktów znajdujących się~w~przetwarzanej grupie~w~stosunku~do~najliczniejszej grupy jest głównym parametrem odpowiedzialnym~za~jej wygląd. Im~liczniejsza jest grupa, tym więcej razy zostanie powtórzony jej kształt, osiągając coraz większy rozmiar. Kolory kolejnych rysowanych warstw~są~wybierane~ze~spektrum pomiędzy barwą czerwoną~a~niebieską~z~uwzględnieniem liczności grupy. Na~przykładzie zamieszczonym~na~rysunku \ref{fig:rs_point_colors} najliczniejsza grupa~ma~6 punktów~i~będzie używać całego dostępnego spektrum, podczas gdy grupa posiadająca 3 punkty~tylko~połowy~z~niego. Dzięki temu~na~mapach cieplnych oddana jest względna liczność każdego~z~punktów cieplnych. Wszystkie warstwy~są~rysowane~z~efektem rozmycia~i~nakładane~na~siebie. 
 
