@@ -32,7 +32,7 @@
 \LoadClass[
   a4paper,                      % format A4
   10pt,                         % rozmiar czcionki
-  oneside,                      % druk jednostronny
+  twoside,                      % druk jednostronny
   notitlepage,                  % brak strony tytułowej
   openright,                    % orientacja otwierania dokumentu
 ]{report}
